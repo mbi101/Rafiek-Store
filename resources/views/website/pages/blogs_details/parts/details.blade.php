@@ -40,7 +40,7 @@
                                     </span>
                                 </div>
                             </div>
-                            <a href="blogs.html" class="about-details wrapper-details blog-details-heading">Business-to-consumer that
+                            <a href="{{ route('website.blogs') }}" class="about-details wrapper-details blog-details-heading">Business-to-consumer that
                                 involves selling fight into the find to a products and services ship and cargo plane
                             </a>
                             <div class="blog-details">

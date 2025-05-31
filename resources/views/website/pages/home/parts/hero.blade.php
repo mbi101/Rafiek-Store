@@ -10,7 +10,7 @@
                                 </h5>
                                 <h1 class="wrapper-details">Fashion Collection
                                     Summer Sale</h1>
-                                <a href="product-sidebar.html" class="shop-btn">Shop Now</a>
+                                <a href="{{ route('website.product_sidebar') }}" class="shop-btn">Shop Now</a>
                             </div>
                         </div>
                     </div>

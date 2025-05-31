@@ -9,7 +9,7 @@
                             <h4 class="wrapper-details">Get 65% Offer
                                 <span class="wrapper-inner-title">& Make New</span> Fusion.
                             </h4>
-                            <a href="product-sidebar.html" class="shop-btn">Shop Now
+                            <a href="{{ route('website.product_sidebar') }}" class="shop-btn">Shop Now
                                 <span>
                                     <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <rect x="1.45312" y="0.914062" width="9.25346" height="2.05632" transform="rotate(45 1.45312 0.914062)"/>
@@ -29,7 +29,7 @@
                                 <span class="wrapper-inner-title">Styles with Our</span>
                                 Products
                             </h4>
-                            <a href="product-sidebar.html" class="shop-btn">Shop Now
+                            <a href="{{ route('website.product_sidebar') }}" class="shop-btn">Shop Now
                                 <span>
                                     <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <rect x="1.45312" y="0.914062" width="9.25346" height="2.05632" transform="rotate(45 1.45312 0.914062)"/>

@@ -2,7 +2,7 @@
     <div class="container">
         <div class="section-title">
             <h5>Flash Sale</h5>
-            <a href="flash-sale.html" class="view">View All</a>
+            <a href="{{ route('website.flash_sale') }}" class="view">View All</a>
         </div>
         <div class="best-product-section">
             <div class="row g-4">
@@ -34,7 +34,7 @@
                                 </span>
                             </div>
                             <div class="product-description">
-                                <a href="product-info.html" class="product-details">Half Sleeve Dress
+                                <a href="{{ route('website.product_info') }}" class="product-details">Half Sleeve Dress
                                 </a>
                                 <div class="price">
                                     <span class="price-cut">$12.99</span>
@@ -72,7 +72,7 @@
                                 </span>
                             </div>
                             <div class="product-description">
-                                <a href="product-info.html" class="product-details">Feminine Wrap coat
+                                <a href="{{ route('website.product_info') }}" class="product-details">Feminine Wrap coat
                                 </a>
                                 <div class="price">
                                     <span class="price-cut">$18.99</span>
@@ -110,7 +110,7 @@
                                 </span>
                             </div>
                             <div class="product-description">
-                                <a href="product-info.html" class="product-details">Black suit
+                                <a href="{{ route('website.product_info') }}" class="product-details">Black suit
                                 </a>
                                 <div class="price">
                                     <span class="price-cut">$10.99</span>
@@ -148,7 +148,7 @@
                                 </span>
                             </div>
                             <div class="product-description">
-                                <a href="product-info.html" class="product-details">Rainbow Party Dress
+                                <a href="{{ route('website.product_info') }}" class="product-details">Rainbow Party Dress
                                 </a>
                                 <div class="price">
                                     <span class="price-cut">$19.99</span>
@@ -186,7 +186,7 @@
                                 </span>
                             </div>
                             <div class="product-description">
-                                <a href="product-info.html" class="product-details">Rainbow Sequin Skart
+                                <a href="{{ route('website.product_info') }}" class="product-details">Rainbow Sequin Skart
                                 </a>
                                 <div class="price">
                                     <span class="price-cut">$15.99</span>
@@ -224,7 +224,7 @@
                                 </span>
                             </div>
                             <div class="product-description">
-                                <a href="product-info.html" class="product-details">Red Sequin Hat
+                                <a href="{{ route('website.product_info') }}" class="product-details">Red Sequin Hat
                                 </a>
                                 <div class="price">
                                     <span class="price-cut">$13.99</span>
@@ -262,7 +262,7 @@
                                 </span>
                             </div>
                             <div class="product-description">
-                                <a href="product-info.html" class="product-details">Gradient Party Shirt
+                                <a href="{{ route('website.product_info') }}" class="product-details">Gradient Party Shirt
                                 </a>
                                 <div class="price">
                                     <span class="price-cut">$19.99</span>
@@ -300,7 +300,7 @@
                                 </span>
                             </div>
                             <div class="product-description">
-                                <a href="product-info.html" class="product-details">Flower Design Dress
+                                <a href="{{ route('website.product_info') }}" class="product-details">Flower Design Dress
                                 </a>
                                 <div class="price">
                                     <span class="price-cut">$19.99</span>
@@ -338,7 +338,7 @@
                                 </span>
                             </div>
                             <div class="product-description">
-                                <a href="product-info.html" class="product-details">Blue Suit
+                                <a href="{{ route('website.product_info') }}" class="product-details">Blue Suit
                                 </a>
                                 <div class="price">
                                     <span class="price-cut">$10.99</span>
@@ -376,7 +376,7 @@
                                 </span>
                             </div>
                             <div class="product-description">
-                                <a href="product-info.html" class="product-details">Blue Party Dress
+                                <a href="{{ route('website.product_info') }}" class="product-details">Blue Party Dress
                                 </a>
                                 <div class="price">
                                     <span class="price-cut">$9.99</span>
@@ -414,7 +414,7 @@
                                 </span>
                             </div>
                             <div class="product-description">
-                                <a href="product-info.html" class="product-details">White Hat
+                                <a href="{{ route('website.product_info') }}" class="product-details">White Hat
                                 </a>
                                 <div class="price">
                                     <span class="price-cut">$29.99</span>
@@ -452,7 +452,7 @@
                                 </span>
                             </div>
                             <div class="product-description">
-                                <a href="product-info.html" class="product-details">White Checked Shirt
+                                <a href="{{ route('website.product_info') }}" class="product-details">White Checked Shirt
                                 </a>
                                 <div class="price">
                                     <span class="price-cut">$19.99</span>

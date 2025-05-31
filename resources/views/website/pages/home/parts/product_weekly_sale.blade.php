@@ -2,7 +2,7 @@
     <div class="container">
         <div class="section-title">
             <h5>Best Sell in this Week</h5>
-            <a href="product-sidebar.html" class="view">View All</a>
+            <a href="{{ route('website.product_sidebar') }}" class="view">View All</a>
         </div>
         <div class="weekly-sale-section">
             <div class="row g-5">
@@ -42,7 +42,7 @@
                                         </svg>
                                     </span>
                                 </a>
-                                <a href="wishlist.html" class="favourite cart-item">
+                                <a href="{{ route('website.wishlist') }}" class="favourite cart-item">
                                     <span>
                                         <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <rect width="40" height="40" rx="20" fill="#AE1C9A"/>
@@ -52,7 +52,7 @@
                                         </svg>
                                     </span>
                                 </a>
-                                <a href="compaire.html" class="compaire cart-item">
+                                <a href="{{ route('website.compare') }}" class="compaire cart-item">
                                     <span>
                                         <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <rect width="40" height="40" rx="20" fill="white"/>
@@ -96,7 +96,7 @@
                                 </span>
                             </div>
                             <div class="product-description">
-                                <a href="product-info.html" class="product-details">Slim-Fit Shirt
+                                <a href="{{ route('website.product_info') }}" class="product-details">Slim-Fit Shirt
                                 </a>
                                 <div class="price">
                                     <span class="price-cut">$14.99</span>
@@ -105,7 +105,7 @@
                             </div>
                         </div>
                         <div class="product-cart-btn">
-                            <a href="cart.html" class="product-btn">Add To Cart</a>
+                            <a href="{{ route('website.cart') }}" class="product-btn">Add To Cart</a>
                         </div>
                     </div>
                 </div>
@@ -145,7 +145,7 @@
                                         </svg>
                                     </span>
                                 </a>
-                                <a href="wishlist.html" class="favourite cart-item">
+                                <a href="{{ route('website.wishlist') }}" class="favourite cart-item">
                                     <span>
                                         <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <rect width="40" height="40" rx="20" fill="#AE1C9A"/>
@@ -155,7 +155,7 @@
                                         </svg>
                                     </span>
                                 </a>
-                                <a href="compaire.html" class="compaire cart-item">
+                                <a href="{{ route('website.compare') }}" class="compaire cart-item">
                                     <span>
                                         <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <rect width="40" height="40" rx="20" fill="white"/>
@@ -199,7 +199,7 @@
                                 </span>
                             </div>
                             <div class="product-description">
-                                <a href="product-info.html" class="product-details">Sequin Dress
+                                <a href="{{ route('website.product_info') }}" class="product-details">Sequin Dress
                                 </a>
                                 <div class="price">
                                     <span class="price-cut">$30.99</span>
@@ -208,7 +208,7 @@
                             </div>
                         </div>
                         <div class="product-cart-btn">
-                            <a href="cart.html" class="product-btn">Add To Cart</a>
+                            <a href="{{ route('website.cart') }}" class="product-btn">Add To Cart</a>
                         </div>
                     </div>
                 </div>
@@ -248,7 +248,7 @@
                                         </svg>
                                     </span>
                                 </a>
-                                <a href="wishlist.html" class="favourite cart-item">
+                                <a href="{{ route('website.wishlist') }}" class="favourite cart-item">
                                     <span>
                                         <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <rect width="40" height="40" rx="20" fill="#AE1C9A"/>
@@ -258,7 +258,7 @@
                                         </svg>
                                     </span>
                                 </a>
-                                <a href="compaire.html" class="compaire cart-item">
+                                <a href="{{ route('website.compare') }}" class="compaire cart-item">
                                     <span>
                                         <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <rect width="40" height="40" rx="20" fill="white"/>
@@ -302,7 +302,7 @@
                                 </span>
                             </div>
                             <div class="product-description">
-                                <a href="product-info.html" class="product-details">Red Sequin Dress
+                                <a href="{{ route('website.product_info') }}" class="product-details">Red Sequin Dress
                                 </a>
                                 <div class="price">
                                     <span class="price-cut">$20.99</span>
@@ -311,7 +311,7 @@
                             </div>
                         </div>
                         <div class="product-cart-btn">
-                            <a href="cart.html" class="product-btn">Add To Cart</a>
+                            <a href="{{ route('website.cart') }}" class="product-btn">Add To Cart</a>
                         </div>
                     </div>
                 </div>
@@ -351,7 +351,7 @@
                                         </svg>
                                     </span>
                                 </a>
-                                <a href="wishlist.html" class="favourite cart-item">
+                                <a href="{{ route('website.wishlist') }}" class="favourite cart-item">
                                     <span>
                                         <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <rect width="40" height="40" rx="20" fill="#AE1C9A"/>
@@ -361,7 +361,7 @@
                                         </svg>
                                     </span>
                                 </a>
-                                <a href="compaire.html" class="compaire cart-item">
+                                <a href="{{ route('website.compare') }}" class="compaire cart-item">
                                     <span>
                                         <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <rect width="40" height="40" rx="20" fill="white"/>
@@ -405,7 +405,7 @@
                                 </span>
                             </div>
                             <div class="product-description">
-                                <a href="product-info.html" class="product-details">Rainbow Sequin Dress
+                                <a href="{{ route('website.product_info') }}" class="product-details">Rainbow Sequin Dress
                                 </a>
                                 <div class="price">
                                     <span class="price-cut">$19.99</span>
@@ -414,7 +414,7 @@
                             </div>
                         </div>
                         <div class="product-cart-btn">
-                            <a href="cart.html" class="product-btn">Add To Cart</a>
+                            <a href="{{ route('website.cart') }}" class="product-btn">Add To Cart</a>
                         </div>
                     </div>
                 </div>
@@ -429,7 +429,7 @@
                             <h4 class="wrapper-details">Get 65% Offer
                                 <span class="wrapper-inner-title">& Make New</span> Fusion.
                             </h4>
-                            <a href="product-sidebar.html" class="shop-btn">Shop Now
+                            <a href="{{ route('website.product_sidebar') }}" class="shop-btn">Shop Now
                                 <span>
                                     <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <rect x="1.45312" y="0.914062" width="9.25346" height="2.05632" transform="rotate(45 1.45312 0.914062)"/>
@@ -449,7 +449,7 @@
                                 <span class="wrapper-inner-title">Styles with Our</span>
                                 Products
                             </h4>
-                            <a href="product-sidebar.html" class="shop-btn">Shop Now
+                            <a href="{{ route('website.product_sidebar') }}" class="shop-btn">Shop Now
                                 <span>
                                     <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <rect x="1.45312" y="0.914062" width="9.25346" height="2.05632" transform="rotate(45 1.45312 0.914062)"/>

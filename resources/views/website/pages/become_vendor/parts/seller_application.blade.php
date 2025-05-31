@@ -44,8 +44,8 @@
                                                 I agree all terms and condition in ShopUs</label>
                                         </div>
                                         <div class="form-btn">
-                                            <a href="create-account.html" class="shop-btn">Create Seller Account</a>
-                                            <span class="shop-account">Already have an Account?<a href="login.html">Log
+                                            <a href="{{ route('website.create_account') }}" class="shop-btn">Create Seller Account</a>
+                                            <span class="shop-account">Already have an Account?<a href="{{ route('website.login') }}">Log
                                                     in</a></span>
                                         </div>
                                     </div>

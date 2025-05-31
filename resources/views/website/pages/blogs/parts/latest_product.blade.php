@@ -40,7 +40,7 @@
                                     </span>
                                 </div>
                             </div>
-                            <a href="blogs-details.html" class="about-details wrapper-details">It’s official! The
+                            <a href="{{ route('website.blogs.details') }}" class="about-details wrapper-details">It’s official! The
                                 iPhone 14 Series is on its way! Rumors turned out
                             </a>
                             <div class="divider"></div>
@@ -95,11 +95,11 @@
                                     </span>
                                 </div>
                             </div>
-                            <a href="blogs-details.html" class="about-details wrapper-details">Must-Have WordPress
+                            <a href="{{ route('website.blogs.details') }}" class="about-details wrapper-details">Must-Have WordPress
                                 Plugins for Ecommerce Websites in 2022
                             </a>
                             <div class="divider"></div>
-                            <a href="blog-details.html" class="shop-btn">
+                            <a href="{{ route('website.blogs.details') }}" class="shop-btn">
                                 Learn More
                                 <span>
                                     <svg width="16" height="11" viewBox="0 0 16 11" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -150,7 +150,7 @@
                                     </span>
                                 </div>
                             </div>
-                            <a href="blogs-details.html" class="about-details wrapper-details">15 Best WordPress
+                            <a href="{{ route('website.blogs.details') }}" class="about-details wrapper-details">15 Best WordPress
                                 Newspaper Themes to Look Out for in 2022
                             </a>
                             <div class="divider"></div>
@@ -205,7 +205,7 @@
                                     </span>
                                 </div>
                             </div>
-                            <a href="blogs-details.html" class="about-details wrapper-details">6 Best WordPress
+                            <a href="{{ route('website.blogs.details') }}" class="about-details wrapper-details">6 Best WordPress
                                 E-commerce Plugins for Online Stores in 2022
                             </a>
                             <div class="divider"></div>
@@ -260,7 +260,7 @@
                                     </span>
                                 </div>
                             </div>
-                            <a href="blogs-details.html" class="about-details wrapper-details">Top 10 Best Professional Ecommerce Blogging Platforms for 2022
+                            <a href="{{ route('website.blogs.details') }}" class="about-details wrapper-details">Top 10 Best Professional Ecommerce Blogging Platforms for 2022
                             </a>
                             <div class="divider"></div>
                             <a href="#" class="shop-btn">
@@ -314,7 +314,7 @@
                                     </span>
                                 </div>
                             </div>
-                            <a href="blogs-details.html" class="about-details wrapper-details">Business-to-consumer Ecommerce that involves selling fight products
+                            <a href="{{ route('website.blogs.details') }}" class="about-details wrapper-details">Business-to-consumer Ecommerce that involves selling fight products
                             </a>
                             <div class="divider"></div>
                             <a href="#" class="shop-btn">

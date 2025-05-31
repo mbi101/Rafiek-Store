@@ -94,9 +94,9 @@
                         </div>
                         <div class="footer-link order-link">
                             <ul>
-                                <li><a href="order.html">Track Order</a></li>
-                                <li><a href="cart.html">Delivery & Returns</a></li>
-                                <li><a href="about.html">Warranty</a></li>
+                                <li><a href="{{ route('website.order') }}">Track Order</a></li>
+                                <li><a href="{{ route('website.cart') }}">Delivery & Returns</a></li>
+                                <li><a href="{{ route('website.about') }}">Warranty</a></li>
                             </ul>
                         </div>
                     </div>
@@ -108,10 +108,10 @@
                         </h4>
                         <div class="footer-link about-link">
                             <ul>
-                                <li><a href="about.html">Rave’s Story</a></li>
-                                <li><a href="about.html">Work With Us</a></li>
-                                <li><a href="about.html">Coporate News</a></li>
-                                <li><a href="about.html">Investors</a></li>
+                                <li><a href="{{ route('website.about') }}">Rave’s Story</a></li>
+                                <li><a href="{{ route('website.about') }}">Work With Us</a></li>
+                                <li><a href="{{ route('website.about') }}">Coporate News</a></li>
+                                <li><a href="{{ route('website.about') }}">Investors</a></li>
                             </ul>
                         </div>
                     </div>
@@ -123,10 +123,10 @@
                         </h4>
                         <div class="footer-link useful-link">
                             <ul>
-                                <li><a href="about.html">Secure Payment</a></li>
-                                <li><a href="privacy.html">Privacy Policy</a></li>
-                                <li><a href="terms.html">Terms of Use</a></li>
-                                <li><a href="product-sidebar.html">Archived Products</a></li>
+                                <li><a href="{{ route('website.about') }}">Secure Payment</a></li>
+                                <li><a href="{{ route('website.privacy') }}">Privacy Policy</a></li>
+                                <li><a href="{{ route('website.terms') }}">Terms of Use</a></li>
+                                <li><a href="{{ route('website.product_sidebar') }}">Archived Products</a></li>
                             </ul>
                         </div>
                     </div>

@@ -4,7 +4,7 @@
             <div class="row gy-5">
                 <div class="col-lg-6">
                     <div class="checkout-wrapper">
-                        <a href="login.html" class="shop-btn">Log into Your Account</a>
+                        <a href="{{ route('website.login') }}" class="shop-btn">Log into Your Account</a>
                         <div class="account-section billing-section">
                             <h5 class="wrapper-heading">Billing Details</h5>
                             <div class="review-form">

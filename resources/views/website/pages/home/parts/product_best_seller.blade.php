@@ -3,7 +3,7 @@
         <div class="best-selling-section">
             <div class="section-title">
                 <h5>Best Sellers</h5>
-                <a href="sellers.html" class="view">View All</a>
+                <a href="{{ route('website.sellers') }}" class="view">View All</a>
             </div>
             <div class="best-selling-items">
                 <div class="product-wrapper">
@@ -20,7 +20,7 @@
                         </span>
                     </div>
                     <div class="wrapper-info">
-                        <a href="seller-sidebar.html" class="wrapper-details">Jansjina</a>
+                        <a href="{{ route('website.seller_sidebar') }}" class="wrapper-details">Jansjina</a>
                     </div>
                 </div>
                 <div class="product-wrapper">
@@ -34,7 +34,7 @@
                         </span>
                     </div>
                     <div class="wrapper-info">
-                        <a href="seller-sidebar.html" class="wrapper-details">Graoishta</a>
+                        <a href="{{ route('website.seller_sidebar') }}" class="wrapper-details">Graoishta</a>
                     </div>
                 </div>
                 <div class="product-wrapper">
@@ -48,7 +48,7 @@
                         </span>
                     </div>
                     <div class="wrapper-info">
-                        <a href="seller-sidebar.html" class="wrapper-details">Toaksiua</a>
+                        <a href="{{ route('website.seller_sidebar') }}" class="wrapper-details">Toaksiua</a>
                     </div>
                 </div>
                 <div class="product-wrapper">
@@ -62,7 +62,7 @@
                         </span>
                     </div>
                     <div class="wrapper-info">
-                        <a href="seller-sidebar.html" class="wrapper-details">Rouaop</a>
+                        <a href="{{ route('website.seller_sidebar') }}" class="wrapper-details">Rouaop</a>
                     </div>
                 </div>
                 <div class="product-wrapper">
@@ -85,7 +85,7 @@
                         </span>
                     </div>
                     <div class="wrapper-info">
-                        <a href="seller-sidebar.html" class="wrapper-details">Goloasx</a>
+                        <a href="{{ route('website.seller_sidebar') }}" class="wrapper-details">Goloasx</a>
                     </div>
                 </div>
                 <div class="product-wrapper">
@@ -99,7 +99,7 @@
                         </span>
                     </div>
                     <div class="wrapper-info">
-                        <a href="seller-sidebar.html" class="wrapper-details">Lkasafiak</a>
+                        <a href="{{ route('website.seller_sidebar') }}" class="wrapper-details">Lkasafiak</a>
                     </div>
                 </div>
             </div>

@@ -2,7 +2,7 @@
     <div class="container">
         <div class="section-title">
             <h5>Our Categories</h5>
-            <a href="product-sidebar.html" class="view">View All</a>
+            <a href="{{ route('website.product_sidebar') }}" class="view">View All</a>
         </div>
         <div class="category-section">
             <div class="product-wrapper" data-aos="fade-right" data-aos-duration="100">
@@ -10,7 +10,7 @@
                     <img src="{{ asset('website/assets/images/homepage-one/category-img/dresses.webp') }}" alt="dress">
                 </div>
                 <div class="wrapper-info">
-                    <a href="product-sidebar.html" class="wrapper-details">Dresses</a>
+                    <a href="{{ route('website.product_sidebar') }}" class="wrapper-details">Dresses</a>
                 </div>
             </div>
             <div class="product-wrapper" data-aos="fade-right" data-aos-duration="200">
@@ -18,7 +18,7 @@
                     <img src="{{ asset('website/assets/images/homepage-one/category-img/bags.webp') }}" alt="dress">
                 </div>
                 <div class="wrapper-info">
-                    <a href="product-sidebar.html" class="wrapper-details">Leather Bags</a>
+                    <a href="{{ route('website.product_sidebar') }}" class="wrapper-details">Leather Bags</a>
                 </div>
             </div>
             <div class="product-wrapper" data-aos="fade-right" data-aos-duration="300">
@@ -26,7 +26,7 @@
                     <img src="{{ asset('website/assets/images/homepage-one/category-img/sweaters.webp') }}" alt="dress">
                 </div>
                 <div class="wrapper-info">
-                    <a href="product-sidebar.html" class="wrapper-details">Sweaters</a>
+                    <a href="{{ route('website.product_sidebar') }}" class="wrapper-details">Sweaters</a>
                 </div>
             </div>
             <div class="product-wrapper" data-aos="fade-right" data-aos-duration="400">
@@ -34,7 +34,7 @@
                     <img src="{{ asset('website/assets/images/homepage-one/category-img/shoes.webp') }}" alt="dress">
                 </div>
                 <div class="wrapper-info">
-                    <a href="product-sidebar.html" class="wrapper-details">Boots</a>
+                    <a href="{{ route('website.product_sidebar') }}" class="wrapper-details">Boots</a>
                 </div>
             </div>
             <div class="product-wrapper" data-aos="fade-right" data-aos-duration="500">
@@ -42,7 +42,7 @@
                     <img src="{{ asset('website/assets/images/homepage-one/category-img/gift.webp') }}" alt="dress">
                 </div>
                 <div class="wrapper-info">
-                    <a href="product-sidebar.html" class="wrapper-details">Gift for Him</a>
+                    <a href="{{ route('website.product_sidebar') }}" class="wrapper-details">Gift for Him</a>
                 </div>
             </div>
             <div class="product-wrapper" data-aos="fade-right" data-aos-duration="600">
@@ -50,7 +50,7 @@
                     <img src="{{ asset('website/assets/images/homepage-one/category-img/sneakers.webp') }}" alt="dress">
                 </div>
                 <div class="wrapper-info">
-                    <a href="product-sidebar.html" class="wrapper-details">Sneakers</a>
+                    <a href="{{ route('website.product_sidebar') }}" class="wrapper-details">Sneakers</a>
                 </div>
             </div>
             <div class="product-wrapper" data-aos="fade-right" data-aos-duration="100">
@@ -58,7 +58,7 @@
                     <img src="{{ asset('website/assets/images/homepage-one/category-img/watch.webp') }}" alt="dress">
                 </div>
                 <div class="wrapper-info">
-                    <a href="product-sidebar.html" class="wrapper-details">Watch</a>
+                    <a href="{{ route('website.product_sidebar') }}" class="wrapper-details">Watch</a>
                 </div>
             </div>
             <div class="product-wrapper" data-aos="fade-right" data-aos-duration="200">
@@ -66,7 +66,7 @@
                     <img src="{{ asset('website/assets/images/homepage-one/category-img/ring.webp') }}" alt="dress">
                 </div>
                 <div class="wrapper-info">
-                    <a href="product-sidebar.html" class="wrapper-details">Gold Rings</a>
+                    <a href="{{ route('website.product_sidebar') }}" class="wrapper-details">Gold Rings</a>
                 </div>
             </div>
             <div class="product-wrapper" data-aos="fade-right" data-aos-duration="300">
@@ -74,7 +74,7 @@
                     <img src="{{ asset('website/assets/images/homepage-one/category-img/cap.webp') }}" alt="dress">
                 </div>
                 <div class="wrapper-info">
-                    <a href="product-sidebar.html" class="wrapper-details">Cap</a>
+                    <a href="{{ route('website.product_sidebar') }}" class="wrapper-details">Cap</a>
                 </div>
             </div>
             <div class="product-wrapper" data-aos="fade-right" data-aos-duration="400">
@@ -82,7 +82,7 @@
                     <img src="{{ asset('website/assets/images/homepage-one/category-img/glass.webp') }}" alt="dress">
                 </div>
                 <div class="wrapper-info">
-                    <a href="product-sidebar.html" class="wrapper-details">Sunglass</a>
+                    <a href="{{ route('website.product_sidebar') }}" class="wrapper-details">Sunglass</a>
                 </div>
             </div>
             <div class="product-wrapper" data-aos="fade-right" data-aos-duration="500">
@@ -90,7 +90,7 @@
                     <img src="{{ asset('website/assets/images/homepage-one/category-img/baby.webp') }}" alt="dress">
                 </div>
                 <div class="wrapper-info">
-                    <a href="product-sidebar.html" class="wrapper-details">Baby Shop</a>
+                    <a href="{{ route('website.product_sidebar') }}" class="wrapper-details">Baby Shop</a>
                 </div>
             </div>
             <div class="product-wrapper" data-aos="fade-right" data-aos-duration="200">
@@ -98,7 +98,7 @@
                     <img src="{{ asset('website/assets/images/homepage-one/category-img/bags.webp') }}" alt="dress">
                 </div>
                 <div class="wrapper-info">
-                    <a href="product-sidebar.html" class="wrapper-details">Leather Bags</a>
+                    <a href="{{ route('website.product_sidebar') }}" class="wrapper-details">Leather Bags</a>
                 </div>
             </div>
         </div>

@@ -43,11 +43,11 @@
                                     </span>
                                 </div>
                             </div>
-                            <a href="blogs-details.html" class="about-details wrapper-details">Top 10 Best
+                            <a href="{{ route('website.blogs.details') }}" class="about-details wrapper-details">Top 10 Best
                                 Professional Blogging Platforms for 2022
                             </a>
                             <div class="divider"></div>
-                            <a href="blogs-details.html" class="shop-btn">
+                            <a href="{{ route('website.blogs.details') }}" class="shop-btn">
                                 Learn More
                                 <span>
                                     <svg width="16" height="11" viewBox="0 0 16 11" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -98,12 +98,12 @@
                                     </span>
                                 </div>
                             </div>
-                            <a href="blogs-details.html" class="about-details wrapper-details">Logistics of
+                            <a href="{{ route('website.blogs.details') }}" class="about-details wrapper-details">Logistics of
                                 container cargo into
                                 ship and cargo plane
                             </a>
                             <div class="divider"></div>
-                            <a href="blogs-details.html" class="shop-btn">
+                            <a href="{{ route('website.blogs.details') }}" class="shop-btn">
                                 Learn More
                                 <span>
                                     <svg width="16" height="11" viewBox="0 0 16 11" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -154,11 +154,11 @@
                                     </span>
                                 </div>
                             </div>
-                            <a href="blogs-details.html" class="about-details wrapper-details">15 Best WordPress
+                            <a href="{{ route('website.blogs.details') }}" class="about-details wrapper-details">15 Best WordPress
                                 Newspaper Themes to Look Out
                             </a>
                             <div class="divider"></div>
-                            <a href="blogs-details.html" class="shop-btn">
+                            <a href="{{ route('website.blogs.details') }}" class="shop-btn">
                                 Learn More
                                 <span>
                                     <svg width="16" height="11" viewBox="0 0 16 11" fill="none" xmlns="http://www.w3.org/2000/svg">
