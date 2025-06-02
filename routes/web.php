@@ -20,8 +20,7 @@ Route::group(
     Route::get('blogs/details', fn() => view('website.pages.blogs_details.index'))->name('blogs.details');
 
     Route::get('cart', fn() => view('website.pages.cart.index'))->name('cart');
-
-
+    
     Route::get('wishlist', fn() => view('website.pages.wishlist.index'))->name('wishlist');
 
     Route::get('checkout', fn() => view('website.pages.checkout.index'))->name('checkout');
