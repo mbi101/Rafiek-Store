@@ -3,10 +3,10 @@
 {{-- seo keywords --}}
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
 <meta name="description"
-    content="Modern admin is super flexible, powerful, clean &amp; modern responsive bootstrap 4 admin template with unlimited possibilities with bitcoin dashboard.">
+      content="Modern admin is super flexible, powerful, clean &amp; modern responsive bootstrap 4 admin template with unlimited possibilities with bitcoin dashboard.">
 
 <meta name="keywords"
-    content="admin template, modern admin template, dashboard template, flat admin template, responsive admin template, web app, crypto dashboard, bitcoin dashboard">
+      content="admin template, modern admin template, dashboard template, flat admin template, responsive admin template, web app, crypto dashboard, bitcoin dashboard">
 <meta name="author" content="PIXINVENT">
 
 <!-- icons-->
@@ -21,33 +21,36 @@
 <!-- BEGIN VENDOR CSS-->
 
 @php
-    $page_dir = config('app.locale') == 'ar' ? 'css-rtl' : 'css';
+    $page_dir = app()->getLocale() == 'ar' ? 'css-rtl' : 'css';
 @endphp
 
-<link rel="stylesheet" type="text/css" href="{{ asset('assets/dashboard') }}/{{ $page_dir }}/vendors.css">
+<link rel="stylesheet" type="text/css" href="{{ asset('assets/dashboard/' . $page_dir . '/vendors.css') }}">
 <link rel="stylesheet" type="text/css"
-    href="{{ asset('assets/dashboard') }}/vendors/css/weather-icons/climacons.min.css">
+      href="{{ asset('assets/dashboard') }}/vendors/css/weather-icons/climacons.min.css">
 <link rel="stylesheet" type="text/css" href="{{ asset('assets/dashboard') }}/fonts/meteocons/style.css">
 <link rel="stylesheet" type="text/css" href="{{ asset('assets/dashboard') }}/vendors/css/charts/morris.css">
 <link rel="stylesheet" type="text/css" href="{{ asset('assets/dashboard') }}/vendors/css/charts/chartist.css">
 <link rel="stylesheet" type="text/css"
-    href="{{ asset('assets/dashboard') }}/vendors/css/charts/chartist-plugin-tooltip.css">
+      href="{{ asset('assets/dashboard') }}/vendors/css/charts/chartist-plugin-tooltip.css">
 <!-- END VENDOR CSS-->
 <!-- BEGIN MODERN CSS-->
 <link rel="stylesheet" type="text/css" href="{{ asset('assets/dashboard') }}/{{ $page_dir }}/app.css">
-<link rel="stylesheet" type="text/css" href="{{ asset('assets/dashboard') }}/{{ $page_dir }}/custom-rtl.css">
+@if(app()->getLocale() == 'ar')
+
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/dashboard/' . $page_dir . '/custom-rtl.css' ) }}">
+@endif
 <!-- END MODERN CSS-->
 <!-- BEGIN Page Level CSS-->
 <link rel="stylesheet" type="text/css"
-    href="{{ asset('assets/dashboard') }}/{{ $page_dir }}/core/menu/menu-types/vertical-menu-modern.css">
+      href="{{ asset('assets/dashboard') }}/{{ $page_dir }}/core/menu/menu-types/vertical-menu-modern.css">
 <link rel="stylesheet" type="text/css"
-    href="{{ asset('assets/dashboard') }}/{{ $page_dir }}/core/colors/palette-gradient.css">
+      href="{{ asset('assets/dashboard') }}/{{ $page_dir }}/core/colors/palette-gradient.css">
 <link rel="stylesheet" type="text/css" href="{{ asset('assets/dashboard') }}/fonts/simple-line-icons/style.css">
 <link rel="stylesheet" type="text/css"
-    href="{{ asset('assets/dashboard') }}/{{ $page_dir }}/core/colors/palette-gradient.css">
+      href="{{ asset('assets/dashboard') }}/{{ $page_dir }}/core/colors/palette-gradient.css">
 <link rel="stylesheet" type="text/css" href="{{ asset('assets/dashboard') }}/{{ $page_dir }}/pages/timeline.css">
 <link rel="stylesheet" type="text/css"
-    href="{{ asset('assets/dashboard') }}/{{ $page_dir }}/pages/dashboard-ecommerce.css">
+      href="{{ asset('assets/dashboard') }}/{{ $page_dir }}/pages/dashboard-ecommerce.css">
 <!-- END Page Level CSS-->
 <!-- BEGIN Custom CSS-->
 <link rel="stylesheet" type="text/css" href="{{ asset('assets/dashboard') }}/{{ $page_dir }}/custom/style.css">
