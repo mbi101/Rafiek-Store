@@ -10,7 +10,6 @@ Route::group(
         'middleware' => ['localeSessionRedirect', 'localizationRedirect', 'localeViewPath'],
     ],
     function () {
-
         Route::get('/', fn() => view('website.pages.home.index'))->name('home');
 
         Route::get('about', fn() => view('website.pages.about.index'))->name('about');
@@ -22,7 +21,6 @@ Route::group(
         Route::get('blogs/details', fn() => view('website.pages.blogs_details.index'))->name('blogs.details');
 
         Route::get('cart', fn() => view('website.pages.cart.index'))->name('cart');
-
 
         Route::get('wishlist', fn() => view('website.pages.wishlist.index'))->name('wishlist');
 
@@ -60,7 +58,7 @@ Route::group(
 
         Route::get('profile', fn() => view('website.pages.profile.index'))->name('profile');
 
-        // just for test 
+        // just for test
         Route::get('dash-test', fn() => view('dashboard.pages.index'))->name('dash.home');
     }
 );
