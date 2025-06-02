@@ -51,4 +51,4 @@
 <!-- END Page Level CSS-->
 <!-- BEGIN Custom CSS-->
 <link rel="stylesheet" type="text/css" href="{{ asset('assets/dashboard') }}/{{ $page_dir }}/custom/style.css">
-<!-- END Custom CSS-->
+<!-- END Custom CSS -->
