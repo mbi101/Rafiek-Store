@@ -60,6 +60,7 @@ Route::group(
 
         Route::get('profile', fn() => view('website.pages.profile.index'))->name('profile');
 
+        // just for test 
         Route::get('dash-test', fn() => view('dashboard.pages.index'))->name('dash.home');
     }
 );
