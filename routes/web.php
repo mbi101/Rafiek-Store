@@ -57,8 +57,5 @@ Route::group(
         Route::get('product-sidebar', fn() => view('website.pages.product_sidebar.index'))->name('product_sidebar');
 
         Route::get('profile', fn() => view('website.pages.profile.index'))->name('profile');
-
-        // just for test
-        Route::get('dash-test', fn() => view('dashboard.pages.index'))->name('dash.home');
     }
 );
