@@ -1,5 +1,8 @@
 <?php
 
 return [
-    'dashboard' => 'لوحة التحكم'
+    'dashboard' => 'لوحة التحكم',
+    'english' => 'إنجليزي',
+    'arabic' => 'عربي',
+    'login' => 'تسجيل الدخول',
 ];

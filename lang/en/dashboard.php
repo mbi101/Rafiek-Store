@@ -1,5 +1,8 @@
 <?php
 
 return [
-    'dashboard' => 'Dashboard'
+    'dashboard' => 'Dashboard',
+    'english' => 'English',
+    'arabic' => 'Arabic',
+    'login' => 'Login',
 ];

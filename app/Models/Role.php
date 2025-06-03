@@ -8,7 +8,7 @@ class Role extends Model
 {
     protected $table = 'roles';
     public $timestamps = true;
-    protected $fillable = array('name');
+    protected $fillable = array('name', 'permissions');
 
     public function admins()
     {

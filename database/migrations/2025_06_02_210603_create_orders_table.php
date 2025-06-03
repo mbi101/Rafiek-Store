@@ -19,7 +19,7 @@ class CreateOrdersTable extends Migration
             $table->decimal('shipping_price');
             $table->decimal('price');
             $table->decimal('total_price');
-            $table->enum('status', array('pending', 'canceled', 'completed', 'processing'))->default('pending');
+            $table->enum('status', array('pending', 'canceled', 'completed', 'delivered'))->default('pending');
         });
     }
 
