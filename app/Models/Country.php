@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Model;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Country extends Model 
+class Country extends Model
 {
 
     protected $table = 'countries';
@@ -13,7 +13,7 @@ class Country extends Model
 
     public function governorates()
     {
-        return $this->hasMany('App\Model\Governorate', 'country_id');
+        return $this->hasMany(Governorate::class, 'country_id');
     }
 
 }

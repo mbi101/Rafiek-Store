@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Model;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Brand extends Model 
+class Brand extends Model
 {
 
     protected $table = 'brands';
@@ -13,7 +13,7 @@ class Brand extends Model
 
     public function products()
     {
-        return $this->hasMany('App\Model\Product', 'brand_id');
+        return $this->hasMany(Product::class, 'brand_id');
     }
 
 }

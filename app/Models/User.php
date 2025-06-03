@@ -5,6 +5,8 @@ namespace App\Models;
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Database\Factories\UserFactory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
@@ -43,23 +45,23 @@ class User extends Authenticatable
         ];
     }
 
-    public function citiy()
+    public function city(): BelongsTo
     {
-        return $this->belongsTo('App\Model\City', 'city_id');
+        return $this->belongsTo(City::class, 'city_id');
     }
 
-    public function reviews()
+    public function reviews(): User|HasMany
     {
-        return $this->hasMany('App\Model\ProductReview', 'user_id');
+        return $this->hasMany(ProductReview::class, 'user_id');
     }
 
-    public function orders()
+    public function orders(): User|HasMany
     {
-        return $this->hasMany('App\Model\Order', 'user_id');
+        return $this->hasMany(Order::class, 'user_id');
     }
 
-    public function wishlists()
+    public function wishlists(): User|HasMany
     {
-        return $this->hasMany('App\Model\Wishlist', 'user_id');
+        return $this->hasMany(Wishlist::class, 'user_id');
     }
 }

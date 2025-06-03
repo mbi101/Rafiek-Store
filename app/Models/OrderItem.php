@@ -1,24 +1,25 @@
 <?php
 
-namespace App\Model;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-class OrderItem extends Model 
+class OrderItem extends Model
 {
 
     protected $table = 'order_items';
     public $timestamps = true;
     protected $fillable = array('product_id', 'order_id', 'quantity', 'price', 'data');
 
-    public function order()
+    public function order(): BelongsTo
     {
-        return $this->belongsTo('App\Model\Order', 'order_id');
+        return $this->belongsTo(Order::class, 'order_id');
     }
 
-    public function product()
+    public function product(): BelongsTo
     {
-        return $this->belongsTo('App\Model\Product', 'product_id');
+        return $this->belongsTo(Product::class, 'product_id');
     }
 
 }
