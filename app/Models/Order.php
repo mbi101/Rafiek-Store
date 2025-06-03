@@ -1,10 +1,11 @@
 <?php
 
-namespace App\Model;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-class Order extends Model 
+class Order extends Model
 {
 
     protected $table = 'orders';
@@ -13,22 +14,21 @@ class Order extends Model
 
     public function items()
     {
-        return $this->hasMany('App\Model\OrderItem', 'order_id');
+        return $this->hasMany(OrderItem::class, 'order_id');
     }
 
-    public function user()
+    public function user(): BelongsTo
     {
-        return $this->belongsTo('App\Model\User', 'user_id');
+        return $this->belongsTo(User::class, 'user_id');
     }
 
     public function transaction()
     {
-        return $this->hasMany('App\Model\Transaction', 'order_id');
+        return $this->hasMany(Transaction::class, 'order_id');
     }
 
-    public function city()
+    public function city(): BelongsTo
     {
-        return $this->belongsTo('App\Model\City', 'city_id');
+        return $this->belongsTo(City::class, 'city_id');
     }
-
 }

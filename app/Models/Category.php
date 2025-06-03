@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Model;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Category extends Model 
+class Category extends Model
 {
 
     protected $table = 'categories';
@@ -13,7 +13,7 @@ class Category extends Model
 
     public function products()
     {
-        return $this->hasMany('App\Model\Product', 'country_id');
+        return $this->hasMany(Product::class, 'country_id');
     }
 
 }

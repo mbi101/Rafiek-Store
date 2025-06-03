@@ -3,21 +3,20 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 
-class CreateFaqsTable extends Migration
+class CreateRolesTable extends Migration
 {
 
     public function up(): void
     {
-        Schema::create('faqs', function (Blueprint $table) {
+        Schema::create('roles', function (Blueprint $table) {
             $table->id();
-            $table->string('question');
-            $table->text('answer');
+            $table->string('name');
             $table->timestamps();
         });
     }
 
     public function down(): void
     {
-        Schema::dropIfExists('faqs');
+        Schema::dropIfExists('roles');
     }
 }

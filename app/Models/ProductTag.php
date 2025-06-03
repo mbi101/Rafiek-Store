@@ -1,24 +1,24 @@
 <?php
 
-namespace App\Model;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-class ProductTag extends Model 
+class ProductTag extends Model
 {
 
     protected $table = 'product_tag';
     public $timestamps = true;
     protected $fillable = array('product_id', 'tag_id');
 
-    public function product()
+    public function product(): BelongsTo
     {
-        return $this->belongsTo('App\Model\Product');
+        return $this->belongsTo(Product::class);
     }
 
-    public function tag()
+    public function tag(): BelongsTo
     {
-        return $this->belongsTo('App\Model\Tag');
+        return $this->belongsTo(Tag::class);
     }
-
 }

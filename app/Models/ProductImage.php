@@ -1,19 +1,20 @@
 <?php
 
-namespace App\Model;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-class ProductImage extends Model 
+class ProductImage extends Model
 {
 
     protected $table = 'product_images';
     public $timestamps = true;
     protected $fillable = array('product_id', 'name', 'type', 'path', 'size');
 
-    public function product()
+    public function product(): BelongsTo
     {
-        return $this->belongsTo('App\Model\Product', 'product_id');
+        return $this->belongsTo(Product::class, 'product_id');
     }
 
 }

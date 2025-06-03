@@ -3,21 +3,22 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 
-class CreateCitiesTable extends Migration
+class CreateBrandsTable extends Migration
 {
 
     public function up(): void
     {
-        Schema::create('cities', function (Blueprint $table) {
+        Schema::create('brands', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('governorate_id')->constrained('governorates')->cascadeOnUpdate()->cascadeOnDelete();
             $table->string('name');
+            $table->string('image')->nullable();
+            $table->boolean('status')->default(1);
             $table->timestamps();
         });
     }
 
     public function down(): void
     {
-        Schema::dropIfExists('cities');
+        Schema::dropIfExists('brands');
     }
 }
