@@ -13,9 +13,11 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'Laravel'),
-    'name_ar' => env('APP_NAME_AR', 'Laravel'),
-    'name_en' => env('APP_NAME_EN', 'Laravel'),
+    'name' => env('APP_NAME', 'Ecommerce'),
+    'name_ar' => env('APP_NAME_AR', 'Ecommerce'),
+    'name_en' => env('APP_NAME_EN', 'Ecommerce'),
+    'author_name' => env('AUTHOR_NAME', 'Pharao101'),
+    'website_keywords' => env('WEBSITE_KEYWORDS', 'Ecommerce'),
 
     /*
     |--------------------------------------------------------------------------

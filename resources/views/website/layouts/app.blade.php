@@ -1,10 +1,10 @@
 <!doctype html>
-<html lang="en">
-
-
+<html lang="{{ LaravelLocalization::getCurrentLocale() }}" data-textdirection="{{ LaravelLocalization::getCurrentLocaleDirection() }}">
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="{{ __('website.site_head_content') }}">
+    <meta name="description" content="{{ __('website.site_head_content') }}">
+    <meta name="keywords" content="{{ config('app.website_keywords') }}">
+    <meta name="author" content="{{ config('app.author_name') }}">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="{{ asset('./favicon.ico') }}">
 

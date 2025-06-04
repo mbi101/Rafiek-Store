@@ -5,9 +5,8 @@
 <meta name="description"
       content="{{ __('website.site_head_content') }}">
 
-<meta name="keywords"
-      content="Rafiek, Rafiek Group, رفيق, رفيق جروب, mattresses, Medical mattresses, Rolling Mattresses, Connected spring mattresses, Separate spring mattresses, مراتب, مراتب طبية, مراتب رولينج, مراتب سوست متصلة, مراتب سوست منفصلة">
-<meta name="author" content="Pharao101">
+<meta name="keywords" content="{{ config('app.website_keywords') }}">
+<meta name="author" content="{{ config('app.author_name') }}">
 
 <!-- icons-->
 <link rel="apple-touch-icon" href="{{ asset('./favicon.ico') }}">
