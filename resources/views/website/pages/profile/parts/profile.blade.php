@@ -381,7 +381,7 @@
                                             <p class="paragraph">Size300x300. Gifs work
                                                 too.Max 5mb.</p>
                                             <div class="logo-upload">
-                                                <img src="{{ asset('website/assets/images/homepage-one/sallers-cover.png') }}" alt="upload" class="upload-img" id="upload-img">
+                                                <img src="{{ asset('assets/website/images/homepage-one/sallers-cover.png') }}" alt="upload" class="upload-img" id="upload-img">
                                                 <div class="upload-input">
                                                     <label for="input-file">
                                                         <span>
@@ -409,7 +409,7 @@
                             <div class="wrapper">
                                 <div class="wrapper-item">
                                     <div class="wrapper-img">
-                                        <img src="{{ asset('website/assets/images/homepage-one/payment-img-1.png') }}" alt="payment">
+                                        <img src="{{ asset('assets/website/images/homepage-one/payment-img-1.png') }}" alt="payment">
                                     </div>
                                     <div class="wrapper-content">
                                         <h5 class="heading">Dutch Bangl Bank Lmtd</h5>
@@ -423,7 +423,7 @@
                             <div class="wrapper">
                                 <div class="wrapper-item">
                                     <div class="wrapper-img">
-                                        <img src="{{ asset('website/assets/images/homepage-one/payment-img-2.png') }}" alt="payment">
+                                        <img src="{{ asset('assets/website/images/homepage-one/payment-img-2.png') }}" alt="payment">
                                     </div>
                                     <div class="wrapper-content">
                                         <h5 class="heading">Master Card</h5>
@@ -437,7 +437,7 @@
                             <div class="wrapper">
                                 <div class="wrapper-item">
                                     <div class="wrapper-img">
-                                        <img src="{{ asset('website/assets/images/homepage-one/payment-img-3.png') }}" alt="payment">
+                                        <img src="{{ asset('assets/website/images/homepage-one/payment-img-3.png') }}" alt="payment">
                                     </div>
                                     <div class="wrapper-content">
                                         <h5 class="heading">Paypal Account</h5>
@@ -451,7 +451,7 @@
                             <div class="wrapper">
                                 <div class="wrapper-item">
                                     <div class="wrapper-img">
-                                        <img src="{{ asset('website/assets/images/homepage-one/payment-img-4.png') }}" alt="payment">
+                                        <img src="{{ asset('assets/website/images/homepage-one/payment-img-4.png') }}" alt="payment">
                                     </div>
                                     <div class="wrapper-content">
                                         <h5 class="heading">Visa Card</h5>
@@ -473,7 +473,7 @@
                                             <div class="review-content">
                                                 <h5 class="comment-title">Add New Card</h5>
                                                 <div class="close-btn">
-                                                    <img src="{{ asset('website/assets/images/homepage-one/close-btn.png') }}" onclick="modalAction('.cart')" alt="close-btn">
+                                                    <img src="{{ asset('assets/website/images/homepage-one/close-btn.png') }}" onclick="modalAction('.cart')" alt="close-btn">
                                                 </div>
                                             </div>
                                             <div class="review-form-name address-form">
@@ -512,7 +512,7 @@
                                             <div class="review-content">
                                                 <h5 class="comment-title">Add Bank Account</h5>
                                                 <div class="close-btn">
-                                                    <img src="{{ asset('website/assets/images/homepage-one/close-btn.png') }}" onclick="modalAction('.bank')" alt="close-btn">
+                                                    <img src="{{ asset('assets/website/images/homepage-one/close-btn.png') }}" onclick="modalAction('.bank')" alt="close-btn">
                                                 </div>
                                             </div>
                                             <div class="review-form-name address-form">
@@ -579,7 +579,7 @@
                                     <td class="table-wrapper wrapper-product">
                                         <div class="wrapper">
                                             <div class="wrapper-img">
-                                                <img src="{{ asset('website/assets/images/homepage-one/product-img/product-img-1.webp') }}" alt="img">
+                                                <img src="{{ asset('assets/website/images/homepage-one/product-img/product-img-1.webp') }}" alt="img">
                                             </div>
                                             <div class="wrapper-content">
                                                 <h5 class="heading">Classic Design Skart</h5>
@@ -625,7 +625,7 @@
                                     <td class="table-wrapper wrapper-product">
                                         <div class="wrapper">
                                             <div class="wrapper-img">
-                                                <img src="{{ asset('website/assets/images/homepage-one/product-img/product-img-2.webp') }}" alt="img">
+                                                <img src="{{ asset('assets/website/images/homepage-one/product-img/product-img-2.webp') }}" alt="img">
                                             </div>
                                             <div class="wrapper-content">
                                                 <h5 class="heading">Classic Black Suit</h5>
@@ -671,7 +671,7 @@
                                     <td class="table-wrapper wrapper-product">
                                         <div class="wrapper">
                                             <div class="wrapper-img">
-                                                <img src="{{ asset('website/assets/images/homepage-one/product-img/product-img-3.webp') }}" alt="img">
+                                                <img src="{{ asset('assets/website/images/homepage-one/product-img/product-img-3.webp') }}" alt="img">
                                             </div>
                                             <div class="wrapper-content">
                                                 <h5 class="heading">Blue Party Dress</h5>
@@ -717,7 +717,7 @@
                                     <td class="table-wrapper wrapper-product">
                                         <div class="wrapper">
                                             <div class="wrapper-img">
-                                                <img src="{{ asset('website/assets/images/homepage-one/product-img/product-img-4.webp') }}" alt="img">
+                                                <img src="{{ asset('assets/website/images/homepage-one/product-img/product-img-4.webp') }}" alt="img">
                                             </div>
                                             <div class="wrapper-content">
                                                 <h5 class="heading">Classic Party Dress</h5>
@@ -791,7 +791,7 @@
                                         <td class="table-wrapper wrapper-product">
                                             <div class="wrapper">
                                                 <div class="wrapper-img">
-                                                    <img src="{{ asset('website/assets/images/homepage-one/product-img/product-img-1.webp') }}" alt="img">
+                                                    <img src="{{ asset('assets/website/images/homepage-one/product-img/product-img-1.webp') }}" alt="img">
                                                 </div>
                                                 <div class="wrapper-content">
                                                     <h5 class="heading">Classic Design Skart</h5>
@@ -819,7 +819,7 @@
                                         <td class="table-wrapper wrapper-product">
                                             <div class="wrapper">
                                                 <div class="wrapper-img">
-                                                    <img src="{{ asset('website/assets/images/homepage-one/product-img/product-img-2.webp') }}" alt="img">
+                                                    <img src="{{ asset('assets/website/images/homepage-one/product-img/product-img-2.webp') }}" alt="img">
                                                 </div>
                                                 <div class="wrapper-content">
                                                     <h5 class="heading">Classic Black Suit</h5>
@@ -847,7 +847,7 @@
                                         <td class="table-wrapper wrapper-product">
                                             <div class="wrapper">
                                                 <div class="wrapper-img">
-                                                    <img src="{{ asset('website/assets/images/homepage-one/product-img/product-img-3.webp') }}" alt="img">
+                                                    <img src="{{ asset('assets/website/images/homepage-one/product-img/product-img-3.webp') }}" alt="img">
                                                 </div>
                                                 <div class="wrapper-content">
                                                     <h5 class="heading">Blue Party Dress</h5>
@@ -875,7 +875,7 @@
                                         <td class="table-wrapper wrapper-product">
                                             <div class="wrapper">
                                                 <div class="wrapper-img">
-                                                    <img src="{{ asset('website/assets/images/homepage-one/product-img/product-img-4.webp') }}" alt="img">
+                                                    <img src="{{ asset('assets/website/images/homepage-one/product-img/product-img-4.webp') }}" alt="img">
                                                 </div>
                                                 <div class="wrapper-content">
                                                     <h5 class="heading">Classic Party Dress</h5>
@@ -967,7 +967,7 @@
                                                 <div class="review-content">
                                                     <h5 class="comment-title">Add Your Address</h5>
                                                     <div class="close-btn">
-                                                        <img src="{{ asset('website/assets/images/homepage-one/close-btn.png') }}" onclick="modalAction('.submit')" alt="close-btn">
+                                                        <img src="{{ asset('assets/website/images/homepage-one/close-btn.png') }}" onclick="modalAction('.submit')" alt="close-btn">
                                                     </div>
                                                 </div>
                                                 <div class=" account-inner-form">
@@ -1029,7 +1029,7 @@
                                 <div class="col-md-6">
                                     <div class="product-wrapper">
                                         <div class="product-img">
-                                            <img src="{{ asset('website/assets/images/homepage-one/product-img/product-img-5.webp') }}" alt="product-img">
+                                            <img src="{{ asset('assets/website/images/homepage-one/product-img/product-img-5.webp') }}" alt="product-img">
                                         </div>
                                         <div class="product-info">
                                             <div class="review-date">
@@ -1072,7 +1072,7 @@
                                 <div class="col-md-6">
                                     <div class="product-wrapper">
                                         <div class="product-img">
-                                            <img src="{{ asset('website/assets/images/homepage-one/product-img/product-img-6.webp') }}" alt="product-img">
+                                            <img src="{{ asset('assets/website/images/homepage-one/product-img/product-img-6.webp') }}" alt="product-img">
                                         </div>
                                         <div class="product-info">
                                             <div class="review-date">
@@ -1115,7 +1115,7 @@
                                 <div class="col-md-6">
                                     <div class="product-wrapper">
                                         <div class="product-img">
-                                            <img src="{{ asset('website/assets/images/homepage-one/product-img/product-img-7.webp') }}" alt="product-img">
+                                            <img src="{{ asset('assets/website/images/homepage-one/product-img/product-img-7.webp') }}" alt="product-img">
                                         </div>
                                         <div class="product-info">
                                             <div class="review-date">
@@ -1158,7 +1158,7 @@
                                 <div class="col-md-6">
                                     <div class="product-wrapper">
                                         <div class="product-img">
-                                            <img src="{{ asset('website/assets/images/homepage-one/product-img/product-img-8.webp') }}" alt="product-img">
+                                            <img src="{{ asset('assets/website/images/homepage-one/product-img/product-img-8.webp') }}" alt="product-img">
                                         </div>
                                         <div class="product-info">
                                             <div class="review-date">
@@ -1227,7 +1227,7 @@
                             </div>
                             <div class="col-lg-6">
                                 <div class="reset-img text-end">
-                                    <img src="{{ asset('website/assets/images/homepage-one/reset.webp') }}" alt="reset">
+                                    <img src="{{ asset('assets/website/images/homepage-one/reset.webp') }}" alt="reset">
                                 </div>
                             </div>
                         </div>
@@ -1244,7 +1244,7 @@
                                         <div class="review-content">
                                             <h5 class="comment-title">Add New Ticket</h5>
                                             <div class="close-btn">
-                                                <img src="{{ asset('website/assets/images/homepage-one/close-btn.png') }}" onclick="modalAction('.ticket')" alt="close-btn">
+                                                <img src="{{ asset('assets/website/images/homepage-one/close-btn.png') }}" onclick="modalAction('.ticket')" alt="close-btn">
                                             </div>
                                         </div>
                                         <div class="review-form-name address-form">

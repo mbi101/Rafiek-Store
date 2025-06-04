@@ -1,5 +1,5 @@
 <div class="about-promotion">
-    <a href="{{ asset('website/assets/images/homepage-one/about/advertrisement-vedio.mp4') }}" target="_blank" class="about-btn">
+    <a href="{{ asset('assets/website/images/homepage-one/about/advertrisement-vedio.mp4') }}" target="_blank" class="about-btn">
         <span>
             <svg width="34" height="38" viewBox="0 0 34 38" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
@@ -8,5 +8,5 @@
             </svg>
         </span>
     </a>
-    <video src="{{ asset('website/assets/images/homepage-one/about/advertrisement-vedio.mp4') }}" autoplay loop muted></video>
+    <video src="{{ asset('assets/website/images/homepage-one/about/advertrisement-vedio.mp4') }}" autoplay loop muted></video>
 </div>

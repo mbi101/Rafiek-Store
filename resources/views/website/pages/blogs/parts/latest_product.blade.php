@@ -5,7 +5,7 @@
                 <div class="col-lg-4 col-sm-6">
                     <div class="blogs-wrapper product-wrapper" data-aos="fade-up">
                         <div class="wrapper-img">
-                            <img src="{{ asset('website/assets/images/homepage-one/about/blog-img-1.webp') }}" alt="img">
+                            <img src="{{ asset('assets/website/images/homepage-one/about/blog-img-1.webp') }}" alt="img">
                         </div>
                         <div class="wrapper-info">
                             <div class="wrapper-data">
@@ -60,7 +60,7 @@
                 <div class="col-lg-4 col-sm-6">
                     <div class="blogs-wrapper product-wrapper" data-aos="fade-up">
                         <div class="wrapper-img">
-                            <img src="{{ asset('website/assets/images/homepage-one/about/blog-img-2.webp') }}" alt="img">
+                            <img src="{{ asset('assets/website/images/homepage-one/about/blog-img-2.webp') }}" alt="img">
                         </div>
                         <div class="wrapper-info">
                             <div class="wrapper-data">
@@ -115,7 +115,7 @@
                 <div class="col-lg-4 col-sm-6">
                     <div class="blogs-wrapper product-wrapper" data-aos="fade-up">
                         <div class="wrapper-img">
-                            <img src="{{ asset('website/assets/images/homepage-one/about/blog-img-3.webp') }}" alt>
+                            <img src="{{ asset('assets/website/images/homepage-one/about/blog-img-3.webp') }}" alt>
                         </div>
                         <div class="wrapper-info">
                             <div class="wrapper-data">
@@ -170,7 +170,7 @@
                 <div class="col-lg-4 col-sm-6">
                     <div class="blogs-wrapper product-wrapper" data-aos="fade-up">
                         <div class="wrapper-img">
-                            <img src="{{ asset('website/assets/images/homepage-one/about/blog-img-2.webp') }}" alt="img">
+                            <img src="{{ asset('assets/website/images/homepage-one/about/blog-img-2.webp') }}" alt="img">
                         </div>
                         <div class="wrapper-info">
                             <div class="wrapper-data">
@@ -225,7 +225,7 @@
                 <div class="col-lg-4 col-sm-6">
                     <div class="blogs-wrapper product-wrapper" data-aos="fade-up">
                         <div class="wrapper-img">
-                            <img src="{{ asset('website/assets/images/homepage-one/about/blog-img-3.webp') }}" alt>
+                            <img src="{{ asset('assets/website/images/homepage-one/about/blog-img-3.webp') }}" alt>
                         </div>
                         <div class="wrapper-info">
                             <div class="wrapper-data">
@@ -279,7 +279,7 @@
                 <div class="col-lg-4 col-sm-6">
                     <div class="blogs-wrapper product-wrapper" data-aos="fade-up">
                         <div class="wrapper-img">
-                            <img src="{{ asset('website/assets/images/homepage-one/about/blog-img-1.webp') }}" alt>
+                            <img src="{{ asset('assets/website/images/homepage-one/about/blog-img-1.webp') }}" alt>
                         </div>
                         <div class="wrapper-info">
                             <div class="wrapper-data">

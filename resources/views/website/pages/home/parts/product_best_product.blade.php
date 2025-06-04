@@ -9,7 +9,7 @@
                 <div class="col-xl-2 col-md-4">
                     <div class="product-wrapper" data-aos="fade-up">
                         <div class="product-img">
-                            <img src="{{ asset('website/assets/images/homepage-one/product-img/product-img-9.webp') }}" alt="product-img">
+                            <img src="{{ asset('assets/website/images/homepage-one/product-img/product-img-9.webp') }}" alt="product-img">
                         </div>
                         <div class="product-info">
                             <div class="ratings">
@@ -47,7 +47,7 @@
                 <div class="col-xl-2 col-md-4">
                     <div class="product-wrapper" data-aos="fade-up">
                         <div class="product-img">
-                            <img src="{{ asset('website/assets/images/homepage-one/product-img/product-img-10.webp') }}" alt="product-img">
+                            <img src="{{ asset('assets/website/images/homepage-one/product-img/product-img-10.webp') }}" alt="product-img">
                         </div>
                         <div class="product-info">
                             <div class="ratings">
@@ -85,7 +85,7 @@
                 <div class="col-xl-2 col-md-4">
                     <div class="product-wrapper" data-aos="fade-up">
                         <div class="product-img">
-                            <img src="{{ asset('website/assets/images/homepage-one/product-img/product-img-2.webp') }}" alt="product-img">
+                            <img src="{{ asset('assets/website/images/homepage-one/product-img/product-img-2.webp') }}" alt="product-img">
                         </div>
                         <div class="product-info">
                             <div class="ratings">
@@ -123,7 +123,7 @@
                 <div class="col-xl-2 col-md-4">
                     <div class="product-wrapper" data-aos="fade-up">
                         <div class="product-img">
-                            <img src="{{ asset('website/assets/images/homepage-one/product-img/product-img-4.webp') }}" alt="product-img">
+                            <img src="{{ asset('assets/website/images/homepage-one/product-img/product-img-4.webp') }}" alt="product-img">
                         </div>
                         <div class="product-info">
                             <div class="ratings">
@@ -161,7 +161,7 @@
                 <div class="col-xl-2 col-md-4">
                     <div class="product-wrapper" data-aos="fade-up">
                         <div class="product-img">
-                            <img src="{{ asset('website/assets/images/homepage-one/product-img/product-img-1.webp') }}" alt="product-img">
+                            <img src="{{ asset('assets/website/images/homepage-one/product-img/product-img-1.webp') }}" alt="product-img">
                         </div>
                         <div class="product-info">
                             <div class="ratings">
@@ -199,7 +199,7 @@
                 <div class="col-xl-2 col-md-4">
                     <div class="product-wrapper" data-aos="fade-up">
                         <div class="product-img">
-                            <img src="{{ asset('website/assets/images/homepage-one/product-img/product-img-11.webp') }}" alt="product-img">
+                            <img src="{{ asset('assets/website/images/homepage-one/product-img/product-img-11.webp') }}" alt="product-img">
                         </div>
                         <div class="product-info">
                             <div class="ratings">
@@ -237,7 +237,7 @@
                 <div class="col-xl-2 col-md-4">
                     <div class="product-wrapper" data-aos="fade-up">
                         <div class="product-img">
-                            <img src="{{ asset('website/assets/images/homepage-one/product-img/product-img-13.webp') }}" alt="product-img">
+                            <img src="{{ asset('assets/website/images/homepage-one/product-img/product-img-13.webp') }}" alt="product-img">
                         </div>
                         <div class="product-info">
                             <div class="ratings">
@@ -275,7 +275,7 @@
                 <div class="col-xl-2 col-md-4">
                     <div class="product-wrapper" data-aos="fade-up">
                         <div class="product-img">
-                            <img src="{{ asset('website/assets/images/homepage-one/product-img/product-img-1.webp') }}" alt="product-img">
+                            <img src="{{ asset('assets/website/images/homepage-one/product-img/product-img-1.webp') }}" alt="product-img">
                         </div>
                         <div class="product-info">
                             <div class="ratings">
@@ -313,7 +313,7 @@
                 <div class="col-xl-2 col-md-4">
                     <div class="product-wrapper" data-aos="fade-up">
                         <div class="product-img">
-                            <img src="{{ asset('website/assets/images/homepage-one/product-img/product-img-12.webp') }}" alt="product-img">
+                            <img src="{{ asset('assets/website/images/homepage-one/product-img/product-img-12.webp') }}" alt="product-img">
                         </div>
                         <div class="product-info">
                             <div class="ratings">
@@ -351,7 +351,7 @@
                 <div class="col-xl-2 col-md-4">
                     <div class="product-wrapper" data-aos="fade-up">
                         <div class="product-img">
-                            <img src="{{ asset('website/assets/images/homepage-one/product-img/product-img-3.webp') }}" alt="product-img">
+                            <img src="{{ asset('assets/website/images/homepage-one/product-img/product-img-3.webp') }}" alt="product-img">
                         </div>
                         <div class="product-info">
                             <div class="ratings">
@@ -389,7 +389,7 @@
                 <div class="col-xl-2 col-md-4">
                     <div class="product-wrapper" data-aos="fade-up">
                         <div class="product-img">
-                            <img src="{{ asset('website/assets/images/homepage-one/product-img/product-img-6.webp') }}" alt="product-img">
+                            <img src="{{ asset('assets/website/images/homepage-one/product-img/product-img-6.webp') }}" alt="product-img">
                         </div>
                         <div class="product-info">
                             <div class="ratings">
@@ -427,7 +427,7 @@
                 <div class="col-xl-2 col-md-4">
                     <div class="product-wrapper" data-aos="fade-up">
                         <div class="product-img">
-                            <img src="{{ asset('website/assets/images/homepage-one/product-img/product-img-5.webp') }}" alt="product-img">
+                            <img src="{{ asset('assets/website/images/homepage-one/product-img/product-img-5.webp') }}" alt="product-img">
                         </div>
                         <div class="product-info">
                             <div class="ratings">

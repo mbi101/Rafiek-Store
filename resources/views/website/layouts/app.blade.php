@@ -10,11 +10,11 @@
 
     <title>{{ config('app.name') . ' |' }} @yield('title')</title>
 
-    <link rel="stylesheet" href="{{ asset('website/assets/css/swiper10-bundle.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('website/assets/css/bootstrap-5.3.2.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('website/assets/css/nouislider.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('website/assets/css/aos-3.0.0.css') }}">
-    <link rel="stylesheet" href="{{ asset('website/assets/css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/website/css/swiper10-bundle.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/website/css/bootstrap-5.3.2.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/website/css/nouislider.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/website/css/aos-3.0.0.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/website/css/style.css') }}">
     @stack('style')
 </head>
 
@@ -25,12 +25,12 @@
 
     @include('website.includes.footer')
 
-    <script src="{{ asset('website/assets/js/jquery_3.7.1.min.js') }}"></script>
-    <script src="{{ asset('website/assets/js/bootstrap_5.3.2.bundle.min.js') }}"></script>
-    <script src="{{ asset('website/assets/js/nouislider.min.js') }}"></script>
-    <script src="{{ asset('website/assets/js/aos-3.0.0.js') }}"></script>
-    <script src="{{ asset('website/assets/js/swiper10-bundle.min.js') }}"></script>
-    <script src="{{ asset('website/assets/js/shopus.js') }}"></script>
+    <script src="{{ asset('assets/website/js/jquery_3.7.1.min.js') }}"></script>
+    <script src="{{ asset('assets/website/js/bootstrap_5.3.2.bundle.min.js') }}"></script>
+    <script src="{{ asset('assets/website/js/nouislider.min.js') }}"></script>
+    <script src="{{ asset('assets/website/js/aos-3.0.0.js') }}"></script>
+    <script src="{{ asset('assets/website/js/swiper10-bundle.min.js') }}"></script>
+    <script src="{{ asset('assets/website/js/shopus.js') }}"></script>
     @stack('script')
 </body>
 

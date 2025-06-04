@@ -74,7 +74,7 @@
                         </div>
                         <div class="seller-details">
                             <div class="seller-img">
-                                <img src="{{ asset('website/assets/images/homepage-one/seller-img/seller-img-1.png') }}" alt="img">
+                                <img src="{{ asset('assets/website/images/homepage-one/seller-img/seller-img-1.png') }}" alt="img">
                             </div>
                             <div class="aurthor">
                                 <h5>mexuvo</h5>
@@ -154,7 +154,7 @@
                         </div>
                         <div class="seller-details">
                             <div class="seller-img">
-                                <img src="{{ asset('website/assets/images/homepage-one/seller-img/seller-img-6.png') }}" alt="img">
+                                <img src="{{ asset('assets/website/images/homepage-one/seller-img/seller-img-6.png') }}" alt="img">
                             </div>
                             <div class="aurthor">
                                 <h5>Rayhans</h5>
@@ -234,7 +234,7 @@
                         </div>
                         <div class="seller-details">
                             <div class="seller-img">
-                                <img src="{{ asset('website/assets/images/homepage-one/seller-img/seller-img-5.png') }}" alt="img">
+                                <img src="{{ asset('assets/website/images/homepage-one/seller-img/seller-img-5.png') }}" alt="img">
                             </div>
                             <div class="aurthor">
                                 <h5>Habbriyi</h5>
@@ -314,7 +314,7 @@
                         </div>
                         <div class="seller-details">
                             <div class="seller-img">
-                                <img src="{{ asset('website/assets/images/homepage-one/seller-img/seller-img-4.png') }}" alt="img">
+                                <img src="{{ asset('assets/website/images/homepage-one/seller-img/seller-img-4.png') }}" alt="img">
                             </div>
                             <div class="aurthor">
                                 <h5>Rikayi Rox</h5>
@@ -394,7 +394,7 @@
                         </div>
                         <div class="seller-details">
                             <div class="seller-img">
-                                <img src="{{ asset('website/assets/images/homepage-one/seller-img/seller-img-3.png') }}" alt="img">
+                                <img src="{{ asset('assets/website/images/homepage-one/seller-img/seller-img-3.png') }}" alt="img">
                             </div>
                             <div class="aurthor">
                                 <h5>Fusion X</h5>
@@ -474,7 +474,7 @@
                         </div>
                         <div class="seller-details">
                             <div class="seller-img">
-                                <img src="{{ asset('website/assets/images/homepage-one/seller-img/seller-img-2.png') }}" alt="img">
+                                <img src="{{ asset('assets/website/images/homepage-one/seller-img/seller-img-2.png') }}" alt="img">
                             </div>
                             <div class="aurthor">
                                 <h5>Eecoms Shop</h5>

@@ -9,7 +9,7 @@
                 <div class="col-lg-3 col-md-6">
                     <div class="product-wrapper" data-aos="fade-up">
                         <div class="product-img">
-                            <img src="{{ asset('website/assets/images/homepage-one/product-img/product-img-5.webp') }}" alt="product-img">
+                            <img src="{{ asset('assets/website/images/homepage-one/product-img/product-img-5.webp') }}" alt="product-img">
                             <div class="product-cart-items">
                                 <a href="#" class="cart cart-item">
                                     <span>
@@ -112,7 +112,7 @@
                 <div class="col-lg-3 col-md-6">
                     <div class="product-wrapper" data-aos="fade-up">
                         <div class="product-img">
-                            <img src="{{ asset('website/assets/images/homepage-one/product-img/product-img-3.webp') }}" alt="product-img">
+                            <img src="{{ asset('assets/website/images/homepage-one/product-img/product-img-3.webp') }}" alt="product-img">
                             <div class="product-cart-items">
                                 <a href="#" class="cart cart-item">
                                     <span>
@@ -215,7 +215,7 @@
                 <div class="col-lg-3 col-md-6">
                     <div class="product-wrapper" data-aos="fade-up">
                         <div class="product-img">
-                            <img src="{{ asset('website/assets/images/homepage-one/product-img/product-img-6.webp') }}" alt="product-img">
+                            <img src="{{ asset('assets/website/images/homepage-one/product-img/product-img-6.webp') }}" alt="product-img">
                             <div class="product-cart-items">
                                 <a href="#" class="cart cart-item">
                                     <span>
@@ -318,7 +318,7 @@
                 <div class="col-lg-3 col-md-6">
                     <div class="product-wrapper" data-aos="fade-up">
                         <div class="product-img">
-                            <img src="{{ asset('website/assets/images/homepage-one/product-img/product-img-9.webp') }}" alt="product-img">
+                            <img src="{{ asset('assets/website/images/homepage-one/product-img/product-img-9.webp') }}" alt="product-img">
                             <div class="product-cart-items">
                                 <a href="#" class="cart cart-item">
                                     <span>

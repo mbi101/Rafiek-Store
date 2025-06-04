@@ -11,47 +11,47 @@
                             </div>
                             <div class="swiper-wrapper">
                                 <div class="swiper-slide slider-top-img">
-                                    <img src="{{ asset('website/assets/images/homepage-one/product-img/product-img-14.webp') }}" alt="img">
+                                    <img src="{{ asset('assets/website/images/homepage-one/product-img/product-img-14.webp') }}" alt="img">
                                 </div>
                                 <div class="swiper-slide slider-top-img">
-                                    <img src="{{ asset('website/assets/images/homepage-one/product-img/product-slider-img-1.webp') }}" alt="img">
+                                    <img src="{{ asset('assets/website/images/homepage-one/product-img/product-slider-img-1.webp') }}" alt="img">
                                 </div>
                                 <div class="swiper-slide slider-top-img">
-                                    <img src="{{ asset('website/assets/images/homepage-one/product-img/product-slider-img-2.webp') }}" alt="img">
+                                    <img src="{{ asset('assets/website/images/homepage-one/product-img/product-slider-img-2.webp') }}" alt="img">
                                 </div>
                                 <div class="swiper-slide slider-top-img">
-                                    <img src="{{ asset('website/assets/images/homepage-one/product-img/product-slider-img-3.webp') }}" alt="img">
+                                    <img src="{{ asset('assets/website/images/homepage-one/product-img/product-slider-img-3.webp') }}" alt="img">
                                 </div>
                                 <div class="swiper-slide slider-top-img">
-                                    <img src="{{ asset('website/assets/images/homepage-one/product-img/product-slider-img-1.webp') }}" alt="img">
+                                    <img src="{{ asset('assets/website/images/homepage-one/product-img/product-slider-img-1.webp') }}" alt="img">
                                 </div>
                                 <div class="swiper-slide slider-top-img">
-                                    <img src="{{ asset('website/assets/images/homepage-one/product-img/product-slider-img-2.webp') }}" alt="img">
+                                    <img src="{{ asset('assets/website/images/homepage-one/product-img/product-slider-img-2.webp') }}" alt="img">
                                 </div>
                                 <div class="swiper-slide slider-top-img">
-                                    <img src="{{ asset('website/assets/images/homepage-one/product-img/product-slider-img-3.webp') }}" alt="img">
+                                    <img src="{{ asset('assets/website/images/homepage-one/product-img/product-slider-img-3.webp') }}" alt="img">
                                 </div>
                                 <div class="swiper-slide slider-top-img">
-                                    <img src="{{ asset('website/assets/images/homepage-one/product-img/product-slider-img-1.webp') }}" alt="img">
+                                    <img src="{{ asset('assets/website/images/homepage-one/product-img/product-slider-img-1.webp') }}" alt="img">
                                 </div>
                                 <div class="swiper-slide slider-top-img">
-                                    <img src="{{ asset('website/assets/images/homepage-one/product-img/product-slider-img-2.webp') }}" alt="img">
+                                    <img src="{{ asset('assets/website/images/homepage-one/product-img/product-slider-img-2.webp') }}" alt="img">
                                 </div>
                                 <div class="swiper-slide slider-top-img">
-                                    <img src="{{ asset('website/assets/images/homepage-one/product-img/product-slider-img-3.webp') }}" alt="img">
+                                    <img src="{{ asset('assets/website/images/homepage-one/product-img/product-slider-img-3.webp') }}" alt="img">
                                 </div>
                             </div>
                         </div>
                         <div class="swiper product-bottom">
                             <div class="swiper-wrapper">
                                 <div class="swiper-slide slider-bottom-img">
-                                    <img src="{{ asset('website/assets/images/homepage-one/product-img/product-img-16.png') }}" alt="img">
+                                    <img src="{{ asset('assets/website/images/homepage-one/product-img/product-img-16.png') }}" alt="img">
                                 </div>
                                 <div class="swiper-slide slider-bottom-img">
-                                    <img src="{{ asset('website/assets/images/homepage-one/product-img/product-img-17.png') }}" alt="img">
+                                    <img src="{{ asset('assets/website/images/homepage-one/product-img/product-img-17.png') }}" alt="img">
                                 </div>
                                 <div class="swiper-slide slider-bottom-img">
-                                    <img src="{{ asset('website/assets/images/homepage-one/product-img/product-slider-img-2.webp') }}" alt="img">
+                                    <img src="{{ asset('assets/website/images/homepage-one/product-img/product-slider-img-2.webp') }}" alt="img">
                                 </div>
                             </div>
                         </div>
@@ -189,7 +189,7 @@
                                         <div class="review-content">
                                             <h5 class="comment-title">Report Products</h5>
                                             <div class="close-btn">
-                                                <img src="{{ asset('website/assets/images/homepage-one/close-btn.png') }}" onclick="modalAction('.action')" alt="close-btn">
+                                                <img src="{{ asset('assets/website/images/homepage-one/close-btn.png') }}" onclick="modalAction('.action')" alt="close-btn">
                                             </div>
                                         </div>
                                         <div class="review-form-name address-form">

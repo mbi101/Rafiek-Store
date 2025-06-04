@@ -46,7 +46,7 @@
                         <div class="divider"></div>
                         <div class="testimonial-info">
                             <div class="testimonial-img">
-                                <img src="{{ asset('website/assets/images/homepage-one/about/testimonial-img-1.webp') }}" alt="img">
+                                <img src="{{ asset('assets/website/images/homepage-one/about/testimonial-img-1.webp') }}" alt="img">
                             </div>
                             <div class="testimonial-info-details">
                                 <h5 class="testimonial-name">Md Abdur Rahman</h5>
@@ -95,7 +95,7 @@
                         <div class="divider"></div>
                         <div class="testimonial-info">
                             <div class="testimonial-img">
-                                <img src="{{ asset('website/assets/images/homepage-one/about/testimonial-img-2.webp') }}" alt="img">
+                                <img src="{{ asset('assets/website/images/homepage-one/about/testimonial-img-2.webp') }}" alt="img">
                             </div>
                             <div class="testimonial-info-details">
                                 <h5 class="testimonial-name">Mohammad Sajjad Hossain</h5>
@@ -144,7 +144,7 @@
                         <div class="divider"></div>
                         <div class="testimonial-info">
                             <div class="testimonial-img">
-                                <img src="{{ asset('website/assets/images/homepage-one/about/testimonial-img-3.webp') }}" alt="img">
+                                <img src="{{ asset('assets/website/images/homepage-one/about/testimonial-img-3.webp') }}" alt="img">
                             </div>
                             <div class="testimonial-info-details">
                                 <h5 class="testimonial-name">Stefhen Hoking</h5>
@@ -194,7 +194,7 @@
                         <div class="divider"></div>
                         <div class="testimonial-info">
                             <div class="testimonial-img">
-                                <img src="{{ asset('website/assets/images/homepage-one/about/testimonial-img-1.webp') }}" alt="img">
+                                <img src="{{ asset('assets/website/images/homepage-one/about/testimonial-img-1.webp') }}" alt="img">
                             </div>
                             <div class="testimonial-info-details">
                                 <h5 class="testimonial-name">Abdullah Al Mamun</h5>
@@ -243,7 +243,7 @@
                         <div class="divider"></div>
                         <div class="testimonial-info">
                             <div class="testimonial-img">
-                                <img src="{{ asset('website/assets/images/homepage-one/about/testimonial-img-1.webp') }}" alt="img">
+                                <img src="{{ asset('assets/website/images/homepage-one/about/testimonial-img-1.webp') }}" alt="img">
                             </div>
                             <div class="testimonial-info-details">
                                 <h5 class="testimonial-name">Mohammad Rashed Khan</h5>
@@ -292,7 +292,7 @@
                         <div class="divider"></div>
                         <div class="testimonial-info">
                             <div class="testimonial-img">
-                                <img src="{{ asset('website/assets/images/homepage-one/about/testimonial-img-1.webp') }}" alt="img">
+                                <img src="{{ asset('assets/website/images/homepage-one/about/testimonial-img-1.webp') }}" alt="img">
                             </div>
                             <div class="testimonial-info-details">
                                 <h5 class="testimonial-name">Shuvo Raihan</h5>
