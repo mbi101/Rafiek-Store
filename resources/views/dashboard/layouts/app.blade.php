@@ -5,7 +5,7 @@
     <title>{{ config('app.name') }} | @yield('title', __('dashboard.dashboard'))</title>
     @include('dashboard.partials._head')
 
-    @stack('css')
+    @stack('style')
 </head>
 
 <body class="vertical-layout vertical-menu-modern 2-columns   menu-expanded fixed-navbar" data-open="click"
@@ -20,7 +20,6 @@
 <!-- ////////////////////////////////////////////////////////////////////////////-->
 @include('dashboard.partials._footer')
 @include('dashboard.partials._scripts')
-@stack('js')
+@stack('script')
 </body>
-
 </html>

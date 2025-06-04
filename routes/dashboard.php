@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Dashboard\Auth\AuthController;
 use Illuminate\Support\Facades\Route;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
@@ -11,7 +12,12 @@ Route::group(
     ],
     function () {
         Route::get('/', fn() => view('dashboard.pages.index'))->name('home');
-        Route::get('login', fn() => view('dashboard.pages.auth.login'))->name('login');
+
+        //Auth Routes
+        Route::get('login', [AuthController::class, 'login'])->name('login');
+        Route::post('login', [AuthController::class, 'storeLogin'])->name('login.store');
+        Route::get('register', [AuthController::class, 'register'])->name('register');
+        Route::post('register', [AuthController::class, 'storeRegister'])->name('register.store');
 
     }
 );
