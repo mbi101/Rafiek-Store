@@ -3,11 +3,11 @@
 {{-- seo keywords --}}
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
 <meta name="description"
-      content="Modern admin is super flexible, powerful, clean &amp; modern responsive bootstrap 4 admin template with unlimited possibilities with bitcoin dashboard.">
+      content="{{ __('website.site_head_content') }}">
 
 <meta name="keywords"
-      content="admin template, modern admin template, dashboard template, flat admin template, responsive admin template, web app, crypto dashboard, bitcoin dashboard">
-<meta name="author" content="PIXINVENT">
+      content="Rafiek, Rafiek Group, رفيق, رفيق جروب, mattresses, Medical mattresses, Rolling Mattresses, Connected spring mattresses, Separate spring mattresses, مراتب, مراتب طبية, مراتب رولينج, مراتب سوست متصلة, مراتب سوست منفصلة">
+<meta name="author" content="Pharao101">
 
 <!-- icons-->
 <link rel="apple-touch-icon" href="{{ asset('./favicon.ico') }}">

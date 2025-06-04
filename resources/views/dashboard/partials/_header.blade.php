@@ -7,7 +7,7 @@
                         class="nav-link nav-menu-main menu-toggle hidden-xs" href="#"><i
                             class="ft-menu font-large-1"></i></a></li>
                 <li class="nav-item mr-auto">
-                    <a class="navbar-brand" href="{{ route('website.dash.home') }}">
+                    <a class="navbar-brand" href="{{ route('dashboard.home') }}">
                         <img class="brand-logo" alt="modern admin logo" src="{{ asset('./favicon.ico') }}">
                         <h3 class="brand-text">Rafiek Group</h3>
                     </a>
