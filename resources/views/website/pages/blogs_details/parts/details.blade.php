@@ -5,7 +5,7 @@
                 <div class="col-lg-8">
                     <div class="blogs-wrapper">
                         <div class="wrapper-img">
-                            <img src="{{ asset('website/assets/images/homepage-one/about/blog-img-2.webp') }}" alt="img">
+                            <img src="{{ asset('assets/website/images/homepage-one/about/blog-img-2.webp') }}" alt="img">
                         </div>
                         <div class="wrapper-info">
                             <div class="wrapper-data">
@@ -137,7 +137,7 @@
                                     <hr>
                                     <div class="blogs-wrapper product-wrapper">
                                         <div class="wrapper-img">
-                                            <img src="{{ asset('website/assets/images/homepage-one/about/blog-img-1.webp') }}" alt="img">
+                                            <img src="{{ asset('assets/website/images/homepage-one/about/blog-img-1.webp') }}" alt="img">
                                         </div>
                                         <div class="wrapper-info">
                                             <h5 class="about-details wrapper-details">Business-to-consumer that
@@ -191,7 +191,7 @@
                                     </div>
                                     <div class="blogs-wrapper product-wrapper">
                                         <div class="wrapper-img">
-                                            <img src="{{ asset('website/assets/images/homepage-one/about/blog-img-2.webp') }}" alt="img">
+                                            <img src="{{ asset('assets/website/images/homepage-one/about/blog-img-2.webp') }}" alt="img">
                                         </div>
                                         <div class="wrapper-info">
                                             <h5 class="about-details wrapper-details">15 Best WordPress Newspaper Themes to Look Out for in 2022
@@ -244,7 +244,7 @@
                                     </div>
                                     <div class="blogs-wrapper product-wrapper">
                                         <div class="wrapper-img">
-                                            <img src="{{ asset('website/assets/images/homepage-one/about/blog-img-3.webp') }}" alt="img">
+                                            <img src="{{ asset('assets/website/images/homepage-one/about/blog-img-3.webp') }}" alt="img">
                                         </div>
                                         <div class="wrapper-info">
                                             <h5 class="about-details wrapper-details">6 Best WordPress E-commerce Plugins for Online Stores in 2022

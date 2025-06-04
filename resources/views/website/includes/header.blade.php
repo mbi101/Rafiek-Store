@@ -21,7 +21,7 @@
             <div class="header-center">
                 <div class="logo">
                     <a href="{{ route('website.home') }}">
-                        <img src="{{ asset('website/assets/images/logos/logo.webp') }}" alt="logo">
+                        <img src="{{ asset('assets/website/images/logos/logo.webp') }}" alt="logo">
                     </a>
                 </div>
                 <div class="header-cart-items">
@@ -128,7 +128,7 @@
                                 <div class="wrapper">
                                     <div class="wrapper-item">
                                         <div class="wrapper-img">
-                                            <img src="{{ asset('website/assets/images/homepage-one/product-img/product-img-1.webp') }}" alt="img">
+                                            <img src="{{ asset('assets/website/images/homepage-one/product-img/product-img-1.webp') }}" alt="img">
                                         </div>
                                         <div class="wrapper-content">
                                             <h5 class="wrapper-title">Classic Design Skart</h5>
@@ -148,7 +148,7 @@
                                 <div class="wrapper">
                                     <div class="wrapper-item">
                                         <div class="wrapper-img">
-                                            <img src="{{ asset('website/assets/images/homepage-one/product-img/product-img-2.webp') }}" alt="img">
+                                            <img src="{{ asset('assets/website/images/homepage-one/product-img/product-img-2.webp') }}" alt="img">
                                         </div>
                                         <div class="wrapper-content">
                                             <h5 class="wrapper-title">Black Suit</h5>
@@ -168,7 +168,7 @@
                                 <div class="wrapper">
                                     <div class="wrapper-item">
                                         <div class="wrapper-img">
-                                            <img src="{{ asset('website/assets/images/homepage-one/product-img/product-img-3.webp') }}" alt="img">
+                                            <img src="{{ asset('assets/website/images/homepage-one/product-img/product-img-3.webp') }}" alt="img">
                                         </div>
                                         <div class="wrapper-content">
                                             <h5 class="wrapper-title">Blue Party Dress</h5>
@@ -188,7 +188,7 @@
                                 <div class="wrapper">
                                     <div class="wrapper-item">
                                         <div class="wrapper-img">
-                                            <img src="{{ asset('website/assets/images/homepage-one/product-img/product-img-4.webp') }}" alt="img">
+                                            <img src="{{ asset('assets/website/images/homepage-one/product-img/product-img-4.webp') }}" alt="img">
                                         </div>
                                         <div class="wrapper-content">
                                             <h5 class="wrapper-title">Classic Red Dress</h5>
@@ -246,7 +246,7 @@
                 </span>
             </button>
             <a href="{{ route('website.home') }}" class="mobile-header-logo">
-                <img src="{{ asset('website/assets/images/logos/logo.webp') }}" alt="logo">
+                <img src="{{ asset('assets/website/images/logos/logo.webp') }}" alt="logo">
             </a>
             <a href="{{ route('website.cart') }}" class="header-cart cart-item">
                 <span>
@@ -331,7 +331,7 @@
                                 <div class="dropdown-item d-flex justify-content-between align-items-center">
                                     <div class="dropdown-list-item d-flex">
                                         <span class="dropdown-img">
-                                            <img src="{{ asset('website/assets/images/homepage-one/category-img/dresses.webp') }}" alt="dress">
+                                            <img src="{{ asset('assets/website/images/homepage-one/category-img/dresses.webp') }}" alt="dress">
                                         </span>
                                         <span class="dropdown-text">
                                             Dresses
@@ -353,7 +353,7 @@
                                 <div class="dropdown-item d-flex justify-content-between align-items-center">
                                     <div class="dropdown-list-item d-flex">
                                         <span class="dropdown-img">
-                                            <img src="{{ asset('website/assets/images/homepage-one/category-img/bags.webp') }}" alt="Bags">
+                                            <img src="{{ asset('assets/website/images/homepage-one/category-img/bags.webp') }}" alt="Bags">
                                         </span>
                                         <span class="dropdown-text">
                                             Bags
@@ -375,7 +375,7 @@
                                 <div class="dropdown-item d-flex justify-content-between align-items-center">
                                     <div class="dropdown-list-item d-flex">
                                         <span class="dropdown-img">
-                                            <img src="{{ asset('website/assets/images/homepage-one/category-img/sweaters.webp') }}" alt="sweaters">
+                                            <img src="{{ asset('assets/website/images/homepage-one/category-img/sweaters.webp') }}" alt="sweaters">
                                         </span>
                                         <span class="dropdown-text">
                                             Sweaters
@@ -397,7 +397,7 @@
                                 <div class="dropdown-item d-flex justify-content-between align-items-center">
                                     <div class="dropdown-list-item d-flex">
                                         <span class="dropdown-img">
-                                            <img src="{{ asset('website/assets/images/homepage-one/category-img/shoes.webp') }}" alt="sweaters">
+                                            <img src="{{ asset('assets/website/images/homepage-one/category-img/shoes.webp') }}" alt="sweaters">
                                         </span>
                                         <span class="dropdown-text">
                                             Boots
@@ -419,7 +419,7 @@
                                 <div class="dropdown-item d-flex justify-content-between align-items-center">
                                     <div class="dropdown-list-item d-flex">
                                         <span class="dropdown-img">
-                                            <img src="{{ asset('website/assets/images/homepage-one/category-img/gift.webp') }}" alt="gift">
+                                            <img src="{{ asset('assets/website/images/homepage-one/category-img/gift.webp') }}" alt="gift">
                                         </span>
                                         <span class="dropdown-text">
                                             Gifts
@@ -441,7 +441,7 @@
                                 <div class="dropdown-item d-flex justify-content-between align-items-center">
                                     <div class="dropdown-list-item d-flex">
                                         <span class="dropdown-img">
-                                            <img src="{{ asset('website/assets/images/homepage-one/category-img/sneakers.webp') }}" alt="sneakers">
+                                            <img src="{{ asset('assets/website/images/homepage-one/category-img/sneakers.webp') }}" alt="sneakers">
                                         </span>
                                         <span class="dropdown-text">
                                             Sneakers
@@ -463,7 +463,7 @@
                                 <div class="dropdown-item d-flex justify-content-between align-items-center">
                                     <div class="dropdown-list-item d-flex">
                                         <span class="dropdown-img">
-                                            <img src="{{ asset('website/assets/images/homepage-one/category-img/watch.webp') }}" alt="watch">
+                                            <img src="{{ asset('assets/website/images/homepage-one/category-img/watch.webp') }}" alt="watch">
                                         </span>
                                         <span class="dropdown-text">
                                             Watches
@@ -485,7 +485,7 @@
                                 <div class="dropdown-item d-flex justify-content-between align-items-center">
                                     <div class="dropdown-list-item d-flex">
                                         <span class="dropdown-img">
-                                            <img src="{{ asset('website/assets/images/homepage-one/category-img/ring.webp') }}" alt="ring">
+                                            <img src="{{ asset('assets/website/images/homepage-one/category-img/ring.webp') }}" alt="ring">
                                         </span>
                                         <span class="dropdown-text">
                                             Gold Ring
@@ -507,7 +507,7 @@
                                 <div class="dropdown-item d-flex justify-content-between align-items-center">
                                     <div class="dropdown-list-item d-flex">
                                         <span class="dropdown-img">
-                                            <img src="{{ asset('website/assets/images/homepage-one/category-img/cap.webp') }}" alt="cap">
+                                            <img src="{{ asset('assets/website/images/homepage-one/category-img/cap.webp') }}" alt="cap">
                                         </span>
                                         <span class="dropdown-text">
                                             Cap
@@ -529,7 +529,7 @@
                                 <div class="dropdown-item d-flex justify-content-between align-items-center">
                                     <div class="dropdown-list-item d-flex">
                                         <span class="dropdown-img">
-                                            <img src="{{ asset('website/assets/images/homepage-one/category-img/glass.webp') }}" alt="glass">
+                                            <img src="{{ asset('assets/website/images/homepage-one/category-img/glass.webp') }}" alt="glass">
                                         </span>
                                         <span class="dropdown-text">
                                             Sunglasses
@@ -551,7 +551,7 @@
                                 <div class="dropdown-item d-flex justify-content-between align-items-center">
                                     <div class="dropdown-list-item d-flex">
                                         <span class="dropdown-img">
-                                            <img src="{{ asset('website/assets/images/homepage-one/category-img/baby.webp') }}" alt="baby">
+                                            <img src="{{ asset('assets/website/images/homepage-one/category-img/baby.webp') }}" alt="baby">
                                         </span>
                                         <span class="dropdown-text">
                                             Baby Shop
@@ -597,7 +597,7 @@
                                     <div class="dropdown-item">
                                         <div class="dropdown-list-item">
                                             <span class="dropdown-img">
-                                                <img src="{{ asset('website/assets/images/homepage-one/category-img/dresses.webp') }}" alt="dress">
+                                                <img src="{{ asset('assets/website/images/homepage-one/category-img/dresses.webp') }}" alt="dress">
                                             </span>
                                             <span class="dropdown-text">
                                                 Dresses
@@ -619,7 +619,7 @@
                                     <div class="dropdown-item d-flex justify-content-between align-items-center">
                                         <div class="dropdown-list-item d-flex">
                                             <span class="dropdown-img">
-                                                <img src="{{ asset('website/assets/images/homepage-one/category-img/bags.webp') }}" alt="Bags">
+                                                <img src="{{ asset('assets/website/images/homepage-one/category-img/bags.webp') }}" alt="Bags">
                                             </span>
                                             <span class="dropdown-text">
                                                 Bags
@@ -641,7 +641,7 @@
                                     <div class="dropdown-item d-flex justify-content-between align-items-center">
                                         <div class="dropdown-list-item d-flex">
                                             <span class="dropdown-img">
-                                                <img src="{{ asset('website/assets/images/homepage-one/category-img/sweaters.webp') }}" alt="sweaters">
+                                                <img src="{{ asset('assets/website/images/homepage-one/category-img/sweaters.webp') }}" alt="sweaters">
                                             </span>
                                             <span class="dropdown-text">
                                                 Sweaters
@@ -663,7 +663,7 @@
                                     <div class="dropdown-item d-flex justify-content-between align-items-center">
                                         <div class="dropdown-list-item d-flex">
                                             <span class="dropdown-img">
-                                                <img src="{{ asset('website/assets/images/homepage-one/category-img/shoes.webp') }}" alt="sweaters">
+                                                <img src="{{ asset('assets/website/images/homepage-one/category-img/shoes.webp') }}" alt="sweaters">
                                             </span>
                                             <span class="dropdown-text">
                                                 Boots
@@ -685,7 +685,7 @@
                                     <div class="dropdown-item d-flex justify-content-between align-items-center">
                                         <div class="dropdown-list-item d-flex">
                                             <span class="dropdown-img">
-                                                <img src="{{ asset('website/assets/images/homepage-one/category-img/gift.webp') }}" alt="gift">
+                                                <img src="{{ asset('assets/website/images/homepage-one/category-img/gift.webp') }}" alt="gift">
                                             </span>
                                             <span class="dropdown-text">
                                                 Gifts
@@ -707,7 +707,7 @@
                                     <div class="dropdown-item d-flex justify-content-between align-items-center">
                                         <div class="dropdown-list-item d-flex">
                                             <span class="dropdown-img">
-                                                <img src="{{ asset('website/assets/images/homepage-one/category-img/sneakers.webp') }}" alt="sneakers">
+                                                <img src="{{ asset('assets/website/images/homepage-one/category-img/sneakers.webp') }}" alt="sneakers">
                                             </span>
                                             <span class="dropdown-text">
                                                 Sneakers
@@ -729,7 +729,7 @@
                                     <div class="dropdown-item d-flex justify-content-between align-items-center">
                                         <div class="dropdown-list-item d-flex">
                                             <span class="dropdown-img">
-                                                <img src="{{ asset('website/assets/images/homepage-one/category-img/watch.webp') }}" alt="watch">
+                                                <img src="{{ asset('assets/website/images/homepage-one/category-img/watch.webp') }}" alt="watch">
                                             </span>
                                             <span class="dropdown-text">
                                                 Watches
@@ -751,7 +751,7 @@
                                     <div class="dropdown-item d-flex justify-content-between align-items-center">
                                         <div class="dropdown-list-item d-flex">
                                             <span class="dropdown-img">
-                                                <img src="{{ asset('website/assets/images/homepage-one/category-img/ring.webp') }}" alt="ring">
+                                                <img src="{{ asset('assets/website/images/homepage-one/category-img/ring.webp') }}" alt="ring">
                                             </span>
                                             <span class="dropdown-text">
                                                 Gold Ring
@@ -773,7 +773,7 @@
                                     <div class="dropdown-item d-flex justify-content-between align-items-center">
                                         <div class="dropdown-list-item d-flex">
                                             <span class="dropdown-img">
-                                                <img src="{{ asset('website/assets/images/homepage-one/category-img/cap.webp') }}" alt="cap">
+                                                <img src="{{ asset('assets/website/images/homepage-one/category-img/cap.webp') }}" alt="cap">
                                             </span>
                                             <span class="dropdown-text">
                                                 Cap
@@ -795,7 +795,7 @@
                                     <div class="dropdown-item d-flex justify-content-between align-items-center">
                                         <div class="dropdown-list-item d-flex">
                                             <span class="dropdown-img">
-                                                <img src="{{ asset('website/assets/images/homepage-one/category-img/glass.webp') }}" alt="glass">
+                                                <img src="{{ asset('assets/website/images/homepage-one/category-img/glass.webp') }}" alt="glass">
                                             </span>
                                             <span class="dropdown-text">
                                                 Sunglasses
@@ -817,7 +817,7 @@
                                     <div class="dropdown-item d-flex justify-content-between align-items-center">
                                         <div class="dropdown-list-item d-flex">
                                             <span class="dropdown-img">
-                                                <img src="{{ asset('website/assets/images/homepage-one/category-img/baby.webp') }}" alt="baby">
+                                                <img src="{{ asset('assets/website/images/homepage-one/category-img/baby.webp') }}" alt="baby">
                                             </span>
                                             <span class="dropdown-text">
                                                 Baby Shop
@@ -890,7 +890,7 @@
                                     </div>
                                 </div>
                                 <div class="shop-menu-img">
-                                    <img src="{{ asset('website/assets/images/homepage-one/empty-wishlist.webp') }}" alt="img">
+                                    <img src="{{ asset('assets/website/images/homepage-one/empty-wishlist.webp') }}" alt="img">
                                 </div>
                             </div>
                         </li>

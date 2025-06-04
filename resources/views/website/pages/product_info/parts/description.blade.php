@@ -57,7 +57,7 @@
                                 <div class="wrapper-aurthor">
                                     <div class="wrapper-info">
                                         <div class="aurthor-img">
-                                            <img src="{{ asset('website/assets/images/homepage-one/aurthor-img-1.webp') }}" alt="aurthor-img">
+                                            <img src="{{ asset('assets/website/images/homepage-one/aurthor-img-1.webp') }}" alt="aurthor-img">
                                         </div>
                                         <div class="author-details">
                                             <h5>Sajjad Hossain</h5>

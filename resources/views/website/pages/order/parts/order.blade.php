@@ -24,7 +24,7 @@
                     </div>
                     <div class="col-lg-4">
                         <div class="order-img text-center" data-aos="fade-right" data-aos-duration="1000">
-                            <img src="{{ asset('website/assets/images/homepage-one/order.png') }}" alt="order">
+                            <img src="{{ asset('assets/website/images/homepage-one/order.png') }}" alt="order">
                         </div>
                     </div>
                 </div>

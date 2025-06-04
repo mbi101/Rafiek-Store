@@ -23,7 +23,7 @@
                         <div class="wrapper">
                             <div class="wrapper-img">
                                 <img
-                                    src="{{ asset('website/assets/images/homepage-one/product-img/product-img-1.webp') }}"
+                                    src="{{ asset('assets/website/images/homepage-one/product-img/product-img-1.webp') }}"
                                     alt="img"
                                 />
                             </div>
@@ -61,7 +61,7 @@
                         <div class="wrapper">
                             <div class="wrapper-img">
                                 <img
-                                    src="{{ asset('website/assets/images/homepage-one/product-img/product-img-2.webp') }}"
+                                    src="{{ asset('assets/website/images/homepage-one/product-img/product-img-2.webp') }}"
                                     alt="img"
                                 />
                             </div>
@@ -99,7 +99,7 @@
                         <div class="wrapper">
                             <div class="wrapper-img">
                                 <img
-                                    src="{{ asset('website/assets/images/homepage-one/product-img/product-img-3.webp') }}"
+                                    src="{{ asset('assets/website/images/homepage-one/product-img/product-img-3.webp') }}"
                                     alt="img"
                                 />
                             </div>
@@ -137,7 +137,7 @@
                         <div class="wrapper">
                             <div class="wrapper-img">
                                 <img
-                                    src="{{ asset('website/assets/images/homepage-one/product-img/product-img-4.webp') }}"
+                                    src="{{ asset('assets/website/images/homepage-one/product-img/product-img-4.webp') }}"
                                     alt="img"
                                 />
                             </div>
