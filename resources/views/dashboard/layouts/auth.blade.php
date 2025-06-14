@@ -17,7 +17,7 @@
     @if(app()->getLocale() == 'ar')
         <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap" rel="stylesheet">
         <style>
-            html, body, h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+            html, body, h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, button {
                 font-family: "Cairo", sans-serif !important;
             }
         </style>
@@ -73,6 +73,7 @@
 <!-- BEGIN PAGE LEVEL JS-->
 <script src="{{ asset('assets/dashboard/js/scripts/forms/form-login-register.js') }}" type="text/javascript"></script>
 <!-- END PAGE LEVEL JS-->
+{!! NoCaptcha::renderJs(app()->getLocale()) !!}
 @stack('script')
 </body>
 

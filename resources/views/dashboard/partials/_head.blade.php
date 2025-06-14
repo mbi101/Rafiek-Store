@@ -13,9 +13,22 @@
 <link rel="shortcut icon" type="image/x-icon" href="{{ asset('./favicon.ico') }}">
 
 <!-- Google fonts-->
-<link
-    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Quicksand:300,400,500,700"
-    rel="stylesheet">
+@if(app()->getLocale() == 'ar')
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap" rel="stylesheet">
+    <style>
+        html, body, h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, button {
+            font-family: "Cairo", sans-serif !important;
+        }
+    </style>
+@else
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <style>
+        html, body, h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+            font-family: "Inter", sans-serif !important;
+        }
+    </style>
+@endif
+
 <link href="https://maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome.min.css" rel="stylesheet">
 <!-- BEGIN VENDOR CSS-->
 

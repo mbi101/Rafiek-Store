@@ -49,7 +49,7 @@
                                                 @enderror
                                             </fieldset>
                                             <fieldset class="form-group position-relative has-icon-left">
-                                                <input type="password" class="form-control @error('password') is-invalid @enderror"
+                                                <input type="password" class="form-control @error('password') is-invalid @enderror" name="password"
                                                        placeholder="{{ __('dashboard.enter_password') }}">
                                                 <div class="form-control-position">
                                                     <i class="la la-key"></i>
@@ -68,6 +68,12 @@
                                                 <div class="col-md-6 col-12 float-sm-left text-center text-sm-right"><a href="recover-password.html"
                                                                                                                         class="card-link">{{ __('dashboard.forget_password') }}</a>
                                                 </div>
+                                                <DIV class="form-group position-relative d-flex align-items-center flex-column w-100 mt-2 mb-0">
+                                                    {!! NoCaptcha::display() !!}
+                                                    @error('g-recaptcha-response')
+                                                    <div class="text-danger">{{ $message }}</div>
+                                                    @enderror
+                                                </DIV>
                                             </div>
                                             <button type="submit" class="btn btn-outline-info btn-block"><i class="ft-unlock"></i> {{ __('dashboard.login') }}</button>
                                         </form>
