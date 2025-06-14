@@ -7,10 +7,12 @@
     "license": "MIT",
     "require": {
         "php": "^8.2",
+        "anhskohbo/no-captcha": "^3.7",
         "codezero/laravel-unique-translation": "^4.3",
         "laravel/framework": "^11.31",
         "laravel/tinker": "^2.9",
         "mcamara/laravel-localization": "^2.3",
+        "rawilk/laravel-settings": "^3.4",
         "spatie/laravel-translatable": "^6.11"
     },
     "require-dev": {

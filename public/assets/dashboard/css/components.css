@@ -4669,9 +4669,7 @@ body:after {
 }
 
 #codemirror-tabs + .CodeMirror .cm-tab {
-    background: url(../images/icons/img.png);
-    background-position: right;
-    background-repeat: no-repeat;
+    background: url(../images/icons/img.png) no-repeat right;
 }
 
 iframe#preview {

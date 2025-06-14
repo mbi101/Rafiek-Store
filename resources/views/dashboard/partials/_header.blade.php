@@ -225,8 +225,12 @@
                             <a class="dropdown-item" href="#"><i class="ft-check-square"></i> Task</a>
                             <a class="dropdown-item" href="#"><i class="ft-message-square"></i> Chats</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#"><i
-                                    class="ft-power"></i> Logout</a>
+                            <form action="{{ route('dashboard.logout') }}" method="POST">
+                                @csrf
+                                <button type="submit" class="btn dropdown-item" href="#"><i class="ft-power"></i>{{ __('dashboard.logout') }}</button>
+                            </form>
+                            {{--                            <a class="dropdown-item" href="#"><i--}}
+                            {{--                                    class="ft-power"></i> Logout</a>--}}
                         </div>
                     </li>
                     <li class="dropdown dropdown-language nav-item">

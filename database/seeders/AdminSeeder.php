@@ -6,6 +6,7 @@ use App\Models\Admin;
 use App\Models\Role;
 use DB;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Hash;
 
 class AdminSeeder extends Seeder
 {
@@ -20,15 +21,15 @@ class AdminSeeder extends Seeder
 
         $first_role_id = Role::query()->first()->id;
         Admin::query()->create([
-            'name' => 'admin',
-            'email' => 'admin@gmail.com',
-            'password' => bcrypt('password'),
+            'name' => 'Super Admin',
+            'email' => 'admin@admin.com',
+            'password' => Hash::make('admin'),
             'role_id' => $first_role_id,
         ]);
         Admin::query()->create([
-            'name' => 'ali',
-            'email' => 'ali@gmail.com',
-            'password' => bcrypt('password'),
+            'name' => 'manager',
+            'email' => 'manager@admin.com',
+            'password' => Hash::make('admin'),
             'role_id' => $first_role_id,
         ]);
 

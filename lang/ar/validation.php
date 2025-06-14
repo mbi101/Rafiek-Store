@@ -178,6 +178,10 @@ return [
         'attribute-name' => [
             'rule-name' => 'رسالة-مخصصة',
         ],
+        'g-recaptcha-response' => [
+            'required' => 'يرجى التحقق من أنك لست روبوت.',
+            'captcha' => 'خطأ حاول مرة أخرى لاحقًا.',
+        ],
     ],
 
     /*
