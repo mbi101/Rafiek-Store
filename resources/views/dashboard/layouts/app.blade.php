@@ -2,7 +2,7 @@
 <html class="loading" lang="{{ LaravelLocalization::getCurrentLocale() }}" data-textdirection="{{ LaravelLocalization::getCurrentLocaleDirection() }}">
 
 <head>
-    <title>{{ config('app.name') }} | @yield('title', __('dashboard.dashboard'))</title>
+    <title>{{ $general_settings->{'site_name_' . app()->getLocale()} }} | @yield('title', __('dashboard.dashboard'))</title>
     @include('dashboard.partials._head')
 
     @stack('style')

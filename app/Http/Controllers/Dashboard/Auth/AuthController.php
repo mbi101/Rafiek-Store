@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Dashboard\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Dashboard\Auth\LoginRequest;
-use App\Http\Requests\Dashboard\Auth\RegisterRequest;
 use App\Services\Auth\AuthService;
 use Illuminate\Routing\Controllers\HasMiddleware;
 use Illuminate\Routing\Controllers\Middleware;
@@ -40,19 +39,15 @@ class AuthController extends Controller implements HasMiddleware
         return redirect()->back()->withErrors(['email' => __('dashboard.not_match')]);
     }
 
-    public function register()
-    {
-        return view('dashboard.pages.auth.register');
-    }
-
-    public function storeRegister(RegisterRequest $request)
-    {
-        return $request;
-    }
 
     public function logout()
     {
         $this->authService->logout('admin');
         return redirect()->route('dashboard.login');
+    }
+
+    public function forgetPassword()
+    {
+
     }
 }

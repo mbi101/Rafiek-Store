@@ -2,15 +2,14 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 {{-- seo keywords --}}
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
-<meta name="description"
-      content="{{ __('website.site_head_content') }}">
+<meta name="description" content="{{ $general_settings->{'site_head_content_' . app()->getLocale()} }}">
 
-<meta name="keywords" content="{{ config('app.website_keywords') }}">
+<meta name="keywords" content="{{ $general_settings->site_keywords }}">
 <meta name="author" content="{{ config('app.author_name') }}">
 
 <!-- icons-->
-<link rel="apple-touch-icon" href="{{ asset('./favicon.ico') }}">
-<link rel="shortcut icon" type="image/x-icon" href="{{ asset('./favicon.ico') }}">
+<link rel="apple-touch-icon" href="{{ asset($general_settings->site_favicon) }}">
+<link rel="shortcut icon" type="image/x-icon" href="{{ asset($general_settings->site_favicon) }}">
 
 <!-- Google fonts-->
 @if(app()->getLocale() == 'ar')
@@ -23,7 +22,7 @@
 @else
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
     <style>
-        html, body, h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+        html, body, h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, button {
             font-family: "Inter", sans-serif !important;
         }
     </style>
