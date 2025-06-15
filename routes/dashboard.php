@@ -18,8 +18,9 @@ Route::group(
         //Auth Routes
         Route::get('login', [AuthController::class, 'login'])->name('login');
         Route::post('login', [AuthController::class, 'storeLogin'])->name('login.store');
-        Route::get('register', [AuthController::class, 'register'])->name('register');
-        Route::post('register', [AuthController::class, 'storeRegister'])->name('register.store');
+        Route::get('forget-password', [AuthController::class, 'forgetPassword'])->name('forget_password');
+        Route::post('forget-password', [AuthController::class, 'storeLogin'])->name('forget_password.store');
+
         Route::post('logout', [AuthController::class, 'logout'])->middleware('auth:admin')->name('logout');
     }
 );

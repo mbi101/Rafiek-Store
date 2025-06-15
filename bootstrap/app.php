@@ -15,6 +15,20 @@ return Application::configure(basePath: dirname(__DIR__))
         },
     )
     ->withMiddleware(function (Middleware $middleware) {
+        $middleware->redirectGuestsTo(function () {
+            if (request()->is('*/dashboard', '*/dashboard/*')) {
+                return route('dashboard.login');
+            }
+            return route('login');
+        });
+
+        $middleware->redirectUsersTo(function () {
+            if (Auth::guard('admin')->check()) {
+                return route('dashboard.home');
+            }
+            return route('website.home');
+        });
+
         $middleware->alias([
             /**** Mcamara MIDDLEWARE ALIASES ****/
             'localize' => \Mcamara\LaravelLocalization\Middleware\LaravelLocalizationRoutes::class,

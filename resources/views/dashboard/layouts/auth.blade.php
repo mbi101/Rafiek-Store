@@ -4,13 +4,13 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
-    <meta name="description" content="{{ __('website.site_head_content') }}">
+    <meta name="description" content="{{ $general_settings->{'site_head_content_' . app()->getLocale()} }}">
 
-    <meta name="keywords" content="{{ config('app.website_keywords') }}">
+    <meta name="keywords" content="{{ $general_settings->site_keywords }}">
     <meta name="author" content="{{ config('app.author_name') }}">
-    <title>{{ config('app.name') }} | @yield('title', __('dashboard.login'))</title>
-    <link rel="apple-touch-icon" href="{{ asset('assets/dashboard/images/ico/apple-icon-120.png') }}">
-    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('assets/dashboard/images/ico/favicon.ico') }}">
+    <title>{{ $general_settings->{'site_name_' . app()->getLocale()} }} | @yield('title', __('dashboard.login'))</title>
+    <link rel="apple-touch-icon" href="{{ asset($general_settings->site_favicon) }}">
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset($general_settings->site_favicon) }}">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -73,7 +73,12 @@
 <!-- BEGIN PAGE LEVEL JS-->
 <script src="{{ asset('assets/dashboard/js/scripts/forms/form-login-register.js') }}" type="text/javascript"></script>
 <!-- END PAGE LEVEL JS-->
-{!! NoCaptcha::renderJs(app()->getLocale()) !!}
+<!-- BEGIN RECAPTCHA JS-->
+@if($auth_settings->recaptcha_enable)
+    {!! NoCaptcha::renderJs(app()->getLocale()) !!}
+@endif
+<!-- END RECAPTCHA JS-->
+
 @stack('script')
 </body>
 
