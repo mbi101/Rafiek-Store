@@ -45,9 +45,4 @@ class AuthController extends Controller implements HasMiddleware
         $this->authService->logout('admin');
         return redirect()->route('dashboard.login');
     }
-
-    public function forgetPassword()
-    {
-
-    }
 }

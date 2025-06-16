@@ -212,4 +212,6 @@ return [
     'dont_have_account' => 'Don\'t have an account?',
     'enter_email' => 'Enter Email',
     'enter_password' => 'Enter Password',
+    'enter_code' => 'Enter Code',
+    'recover_password' => 'Recover Password',
 ];

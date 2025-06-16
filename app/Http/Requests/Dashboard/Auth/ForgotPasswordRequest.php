@@ -4,7 +4,7 @@ namespace App\Http\Requests\Dashboard\Auth;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class RegisterRequest extends FormRequest
+class ForgotPasswordRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -23,7 +23,8 @@ class RegisterRequest extends FormRequest
     {
         return [
             'email' => ['required', 'email'],
-            'password' => ['required', 'string', 'min:8', 'max:30'],
+            'code' => ['required', 'digits:5'],
+            'g-recaptcha-response' => ['required', 'captcha'],
         ];
     }
 }

@@ -1,5 +1,5 @@
 @extends('dashboard.layouts.auth')
-@section('title', __('dashboard.login'))
+@section('title', __('dashboard.confirm_password'))
 
 @section('content')
     <div class="app-content content">
@@ -14,44 +14,27 @@
                                         <img src="{{ asset($general_settings->site_dark_logo) }}" height="75" alt="branding logo">
                                     </div>
                                     <h6 class="card-subtitle line-on-side text-muted text-center font-small-3 pt-2">
-                                        <span>{{ __('dashboard.login') }}</span>
+                                        <span>{{ __('dashboard.confirm_password') }}</span>
                                     </h6>
                                 </div>
                                 <div class="card-content">
                                     <div class="card-body">
-                                        <form class="form-horizontal" action="{{ route('dashboard.login') }}" method="post">
+                                        <form class="form-horizontal" action="{{ route('dashboard.confirm_password.verify') }}" method="post">
                                             @csrf
+                                            <input type="hidden" name="email" value="{{ $email }}">
+
+
                                             <fieldset class="form-group position-relative has-icon-left">
-                                                <input type="text" class="form-control @error('email') is-invalid @enderror" name="email"
-                                                       placeholder="{{ __('dashboard.enter_email') }}">
+                                                <input type="text" class="form-control @error('code') is-invalid @enderror" name="code"
+                                                       placeholder="{{ __('dashboard.enter_code') }}">
                                                 <div class="form-control-position">
-                                                    <i class="ft-user"></i>
+                                                    <i class="ft-lock"></i>
                                                 </div>
-                                                @error('email')
-                                                <div class="text-danger">{{ $message }}</div>
-                                                @enderror
-                                            </fieldset>
-                                            <fieldset class="form-group position-relative has-icon-left">
-                                                <input type="password" class="form-control @error('password') is-invalid @enderror" name="password"
-                                                       placeholder="{{ __('dashboard.enter_password') }}">
-                                                <div class="form-control-position">
-                                                    <i class="la la-key"></i>
-                                                </div>
-                                                @error('password')
+                                                @error('code')
                                                 <div class="text-danger">{{ $message }}</div>
                                                 @enderror
                                             </fieldset>
                                             <div class="form-group row">
-                                                <div class="col-md-6 col-12 text-center text-sm-left">
-                                                    <fieldset>
-                                                        <input type="checkbox" id="remember-me" name="remember_me" class="chk-remember">
-                                                        <label for="remember-me"> {{ __('dashboard.remember_me') }}</label>
-                                                    </fieldset>
-                                                </div>
-                                                <div class="col-md-6 col-12 float-sm-left text-center text-sm-right">
-                                                    <a href="{{ route('dashboard.recover_password') }}"
-                                                       class="card-link">{{ __('dashboard.forget_password') }}</a>
-                                                </div>
                                                 @if($auth_settings->recaptcha_enable)
                                                     <div class="form-group position-relative d-flex align-items-center flex-column w-100 mt-2 mb-0">
                                                         {!! NoCaptcha::display() !!}

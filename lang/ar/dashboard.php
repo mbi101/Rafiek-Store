@@ -178,5 +178,7 @@ return [
     'dont_have_account' => 'ليس لديك حساب؟',
     'enter_email' => 'ادخل البريد الإلكتروني',
     'enter_password' => 'ادخل كلمة المرور',
+    'enter_code' => 'ادخل الكود',
+    'recover_password' => 'استعادة كلمة المرور',
 
 ];
