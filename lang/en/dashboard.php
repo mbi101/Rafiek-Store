@@ -214,4 +214,10 @@ return [
     'enter_password' => 'Enter Password',
     'enter_code' => 'Enter Code',
     'recover_password' => 'Recover Password',
+    'send' => 'Send',
+    'code_is_invalid' => 'Code is invalid',
+    'change_password' => 'Change Password',
+    'try_again_later' => 'Try Again Latter!',
+    'enter_password_confirmation' => 'Enter Password Confirmation',
+    'password_changed_successfully' => 'Your Password Updated Successfully!',
 ];
