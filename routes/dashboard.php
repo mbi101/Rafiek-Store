@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Dashboard\Auth\AuthController;
 use App\Http\Controllers\Dashboard\Auth\ForgotPasswordController;
+use App\Http\Controllers\Dashboard\RoleController;
 use Illuminate\Support\Facades\Route;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
@@ -14,6 +15,9 @@ Route::group(
     function () {
         Route::middleware('auth:admin')->group(function () {
             Route::get('/', fn() => view('dashboard.pages.index'))->name('home');
+
+            //Role Routes
+            Route::resource('roles', RoleController::class);
         });
 
         //Auth Routes
@@ -25,6 +29,7 @@ Route::group(
         Route::post('recover-password', [ForgotPasswordController::class, 'sendOtp'])->name('recover_password.send_otp');
         Route::get('confirm-password/{email}', [ForgotPasswordController::class, 'confirmPassword'])->name('confirm_password');
         Route::post('confirm-password', [ForgotPasswordController::class, 'verifyOtp'])->name('confirm_password.verify');
+
 
     }
 );

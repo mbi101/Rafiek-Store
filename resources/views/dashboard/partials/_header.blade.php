@@ -8,8 +8,8 @@
                             class="ft-menu font-large-1"></i></a></li>
                 <li class="nav-item mr-auto">
                     <a class="navbar-brand" href="{{ route('dashboard.home') }}">
-                        <img class="brand-logo" alt="modern admin logo" src="{{ asset('./favicon.ico') }}">
-                        <h3 class="brand-text">Rafiek Group</h3>
+                        <img class="brand-logo" alt="modern admin logo" src="{{ asset($general_settings->site_light_logo) }}">
+                        {{--                        <h3 class="brand-text">Rafiek Group</h3>--}}
                     </a>
                 </li>
                 <li class="nav-item d-none d-md-block float-right"><a class="nav-link modern-nav-toggle pr-0"
@@ -212,11 +212,11 @@
                     <li class="dropdown dropdown-user nav-item">
                         <a class="dropdown-toggle nav-link dropdown-user-link" href="#"
                            data-toggle="dropdown">
-                            <span class="mr-1">Hello,
-                                <span class="user-name text-bold-700">John Doe</span>
+                            <span class="mr-1">
+                                <span class="user-name text-bold-700">{{ auth()->user()->name }}</span>
                             </span>
                             <span class="avatar avatar-online">
-                                <img src="{{ asset('assets/dashboard') }}/images/portrait/small/avatar-s-19.png"
+                                <img src="{{ asset('assets/dashboard/images/default_user.png') }}"
                                      alt="avatar"><i></i></span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right"><a class="dropdown-item" href="#"><i
