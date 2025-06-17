@@ -16,7 +16,7 @@ class ForgotPasswordController extends Controller
         $this->passwordService = $passwordService;
     }
 
-    public function recoverPassword()
+    public function showEmailForm()
     {
         return view('dashboard.pages.auth.password.email');
     }
@@ -27,10 +27,10 @@ class ForgotPasswordController extends Controller
         if (!$admin) {
             return redirect()->back()->withErrors(['email' => __('passwords.email_is_not_registered')]);
         }
-        return redirect()->route('dashboard.confirm_password', ['email' => $admin->email]);
+        return redirect()->route('dashboard.password.verify', ['email' => $admin->email]);
     }
 
-    public function confirmPassword($email)
+    public function showOtpForm($email)
     {
         return view('dashboard.pages.auth.password.confirm', ['email' => $email]);
     }
@@ -40,8 +40,8 @@ class ForgotPasswordController extends Controller
         $data = $request->only('email', 'code');
 
         if (!$this->passwordService->verifyOtp($data)) {
-            return redirect()->back()->withErrors(['error' => 'Code is invalid!']);
+            return redirect()->back()->withErrors(['code' => __('dashboard.code_is_invalid')]);
         }
-        return redirect()->route('dashboard.password.reset', ['email' => $request->email]);
+        return redirect()->route('dashboard.password.reset', ['email' => $request->email, 'code' => $request->code]);
     }
 }

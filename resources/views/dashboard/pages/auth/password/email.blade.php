@@ -19,10 +19,10 @@
                                 </div>
                                 <div class="card-content">
                                     <div class="card-body">
-                                        <form class="form-horizontal" action="{{ route('dashboard.recover_password.send_otp') }}" method="post">
+                                        <form class="form-horizontal" action="{{ route('dashboard.password.email.post') }}" method="post">
                                             @csrf
                                             <fieldset class="form-group position-relative has-icon-left">
-                                                <input type="text" class="form-control @error('email') is-invalid @enderror" name="email"
+                                                <input type="email" class="form-control @error('email') is-invalid @enderror" name="email"
                                                        placeholder="{{ __('dashboard.enter_email') }}">
                                                 <div class="form-control-position">
                                                     <i class="ft-user"></i>
@@ -41,7 +41,7 @@
                                                     </div>
                                                 @endif
                                             </div>
-                                            <button type="submit" class="btn btn-outline-info btn-block"><i class="ft-unlock"></i> {{ __('dashboard.login') }}</button>
+                                            <button type="submit" class="btn btn-outline-info btn-block"><i class="ft-unlock"></i> {{ __('dashboard.send') }}</button>
                                         </form>
                                     </div>
                                 </div>

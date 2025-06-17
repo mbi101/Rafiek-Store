@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Dashboard\Auth\AuthController;
 use App\Http\Controllers\Dashboard\Auth\ForgotPasswordController;
+use App\Http\Controllers\Dashboard\Auth\ResetPasswordController;
 use Illuminate\Support\Facades\Route;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
@@ -17,14 +18,25 @@ Route::group(
         });
 
         //Auth Routes
-        Route::get('login', [AuthController::class, 'login'])->name('login');
-        Route::post('login', [AuthController::class, 'storeLogin'])->name('login.store');
-        Route::post('logout', [AuthController::class, 'logout'])->middleware('auth:admin')->name('logout');
-        //Recover Password Routes
-        Route::get('recover-password', [ForgotPasswordController::class, 'recoverPassword'])->name('recover_password');
-        Route::post('recover-password', [ForgotPasswordController::class, 'sendOtp'])->name('recover_password.send_otp');
-        Route::get('confirm-password/{email}', [ForgotPasswordController::class, 'confirmPassword'])->name('confirm_password');
-        Route::post('confirm-password', [ForgotPasswordController::class, 'verifyOtp'])->name('confirm_password.verify');
+        Route::controller(AuthController::class)->group(function () {
+            Route::get('login', 'login')->name('login');
+            Route::post('login', 'storeLogin')->name('login.store');
+            Route::post('logout', 'logout')->middleware('auth:admin')->name('logout');
+        });
 
+        //Recover Password Routes
+        Route::group(['prefix' => 'password', 'as' => 'password.'], function () {
+            Route::controller(ForgotPasswordController::class)->group(function () {
+                Route::get('email', 'showEmailForm')->name('email');
+                Route::post('email', 'sendOtp')->name('email.post');
+                Route::get('verify/{email}', 'showOtpForm')->name('verify');
+                Route::post('verify/', 'verifyOtp')->name('verify.post');
+            });
+
+            Route::controller(ResetPasswordController::class)->group(function () {
+                Route::get('reset/{email}/{code}', 'showResetForm')->name('reset');
+                Route::post('reset', 'resetPassword')->name('reset.post');
+            });
+        });
     }
 );

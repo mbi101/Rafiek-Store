@@ -22,7 +22,7 @@
                                         <form class="form-horizontal" action="{{ route('dashboard.login') }}" method="post">
                                             @csrf
                                             <fieldset class="form-group position-relative has-icon-left">
-                                                <input type="text" class="form-control @error('email') is-invalid @enderror" name="email"
+                                                <input type="email" class="form-control @error('email') is-invalid @enderror" name="email"
                                                        placeholder="{{ __('dashboard.enter_email') }}">
                                                 <div class="form-control-position">
                                                     <i class="ft-user"></i>
@@ -49,7 +49,7 @@
                                                     </fieldset>
                                                 </div>
                                                 <div class="col-md-6 col-12 float-sm-left text-center text-sm-right">
-                                                    <a href="{{ route('dashboard.recover_password') }}"
+                                                    <a href="{{ route('dashboard.password.email') }}"
                                                        class="card-link">{{ __('dashboard.forget_password') }}</a>
                                                 </div>
                                                 @if($auth_settings->recaptcha_enable)
