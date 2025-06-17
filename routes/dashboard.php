@@ -3,6 +3,7 @@
 use App\Http\Controllers\Dashboard\Auth\AuthController;
 use App\Http\Controllers\Dashboard\Auth\ForgotPasswordController;
 use App\Http\Controllers\Dashboard\Auth\ResetPasswordController;
+use App\Http\Controllers\Dashboard\RoleController;
 use Illuminate\Support\Facades\Route;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
@@ -15,6 +16,9 @@ Route::group(
     function () {
         Route::middleware('auth:admin')->group(function () {
             Route::get('/', fn() => view('dashboard.pages.index'))->name('home');
+
+            //Role Routes
+            Route::resource('roles', RoleController::class);
         });
 
         //Auth Routes
@@ -23,6 +27,7 @@ Route::group(
             Route::post('login', 'storeLogin')->name('login.store');
             Route::post('logout', 'logout')->middleware('auth:admin')->name('logout');
         });
+
 
         //Recover Password Routes
         Route::group(['prefix' => 'password', 'as' => 'password.'], function () {
