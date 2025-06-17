@@ -180,5 +180,10 @@ return [
     'enter_password' => 'ادخل كلمة المرور',
     'enter_code' => 'ادخل الكود',
     'recover_password' => 'استعادة كلمة المرور',
-
+    'send' => 'إرسال',
+    'code_is_invalid' => 'الكود غير صحيح',
+    'change_password' => 'تغيير كلمة المرور',
+    'try_again_later' => 'حاول مرة أخرى لاحقًا!',
+    'enter_password_confirmation' => 'أدخل تأكيد كلمة المرور',
+    'password_changed_successfully' => 'تم تحديث كلمة المرور الخاصة بك بنجاح!',
 ];

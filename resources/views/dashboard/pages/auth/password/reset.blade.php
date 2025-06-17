@@ -1,5 +1,5 @@
 @extends('dashboard.layouts.auth')
-@section('title', __('dashboard.confirm_password'))
+@section('title', __('dashboard.change_password'))
 
 @section('content')
     <div class="app-content content">
@@ -14,22 +14,45 @@
                                         <img src="{{ asset($general_settings->site_dark_logo) }}" height="75" alt="branding logo">
                                     </div>
                                     <h6 class="card-subtitle line-on-side text-muted text-center font-small-3 pt-2">
-                                        <span>{{ __('dashboard.confirm_password') }}</span>
+                                        <span>{{ __('dashboard.change_password') }}</span>
                                     </h6>
                                 </div>
                                 <div class="card-content">
                                     <div class="card-body">
-                                        <form class="form-horizontal" action="{{ route('dashboard.password.verify.post') }}" method="post">
+                                        <form class="form-horizontal" action="{{ route('dashboard.password.reset.post') }}" method="post">
                                             @csrf
-                                            <input type="hidden" name="email" value="{{ $email }}">
+
+                                            <input type="hidden" name="code" value="{{ $code }}">
 
                                             <fieldset class="form-group position-relative has-icon-left">
-                                                <input type="text" maxlength="6" class="form-control @error('code') is-invalid @enderror" name="code"
-                                                       placeholder="{{ __('dashboard.enter_code') }}">
+                                                <input type="email" class="form-control @error('email') is-invalid @enderror" name="email"
+                                                       placeholder="{{ __('dashboard.enter_email') }}" value="{{ $email }}" readonly>
+                                                <div class="form-control-position">
+                                                    <i class="ft-user"></i>
+                                                </div>
+                                                @error('email')
+                                                <div class="text-danger">{{ $message }}</div>
+                                                @enderror
+                                            </fieldset>
+
+                                            <fieldset class="form-group position-relative has-icon-left">
+                                                <input type="password" class="form-control @error('password') is-invalid @enderror" name="password"
+                                                       placeholder="{{ __('dashboard.enter_password') }}">
                                                 <div class="form-control-position">
                                                     <i class="ft-lock"></i>
                                                 </div>
-                                                @error('code')
+                                                @error('password')
+                                                <div class="text-danger">{{ $message }}</div>
+                                                @enderror
+                                            </fieldset>
+
+                                            <fieldset class="form-group position-relative has-icon-left">
+                                                <input type="password" class="form-control @error('password_confirmation') is-invalid @enderror" name="password_confirmation"
+                                                       placeholder="{{ __('dashboard.enter_password_confirmation') }}">
+                                                <div class="form-control-position">
+                                                    <i class="ft-lock"></i>
+                                                </div>
+                                                @error('password_confirmation')
                                                 <div class="text-danger">{{ $message }}</div>
                                                 @enderror
                                             </fieldset>
@@ -43,7 +66,7 @@
                                                     </div>
                                                 @endif
                                             </div>
-                                            <button type="submit" class="btn btn-outline-info btn-block"><i class="ft-unlock"></i> {{ __('dashboard.send') }}</button>
+                                            <button type="submit" class="btn btn-outline-info btn-block"><i class="ft-unlock"></i> {{ __('dashboard.change_password') }}</button>
                                         </form>
                                     </div>
                                 </div>
