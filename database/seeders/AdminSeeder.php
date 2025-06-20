@@ -19,18 +19,26 @@ class AdminSeeder extends Seeder
         Admin::query()->truncate();
         DB::statement('SET FOREIGN_KEY_CHECKS=1;');
 
-        $first_role_id = Role::query()->first()->id;
+        $admin_role_id = Role::query()->where('key', 'admin')->first()->id;
+        $manager_role_id = Role::query()->where('key', 'manager')->first()->id;
+        $supervisor_role_id = Role::query()->where('key', 'sales_supervisor')->first()->id;
         Admin::query()->create([
             'name' => 'Super Admin',
             'email' => 'admin@admin.com',
             'password' => Hash::make('admin'),
-            'role_id' => $first_role_id,
+            'role_id' => $admin_role_id,
         ]);
         Admin::query()->create([
             'name' => 'manager',
             'email' => 'manager@admin.com',
             'password' => Hash::make('admin'),
-            'role_id' => $first_role_id,
+            'role_id' => $manager_role_id,
+        ]);
+        Admin::query()->create([
+            'name' => 'Supervisor',
+            'email' => 'supervisor@admin.com',
+            'password' => Hash::make('admin'),
+            'role_id' => $supervisor_role_id,
         ]);
 
     }

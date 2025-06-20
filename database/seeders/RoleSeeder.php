@@ -2,9 +2,11 @@
 
 namespace Database\Seeders;
 
+use App\Models\Permission;
 use App\Models\Role;
-use DB;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Config;
+
 
 class RoleSeeder extends Seeder
 {
@@ -13,22 +15,52 @@ class RoleSeeder extends Seeder
      */
     public function run(): void
     {
-        DB::statement('SET FOREIGN_KEY_CHECKS=0;');
-        Role::truncate();
-        DB::statement('SET FOREIGN_KEY_CHECKS=1;');
+        $roles = Config::get('roles');
 
-        $permissions = [];
-        foreach (config('permissions_en') as $permission => $value) {
-            $permissions[] = $permission;
+        $availablePermissions = Config::get('permissions_list');
+
+        // 1. Create Permissions
+        foreach ($availablePermissions as $key => $data) {
+            Permission::firstOrCreate(
+                ['key' => $key],
+                [
+                    'name' => [
+                        'en' => $data['en'],
+                        'ar' => $data['ar']
+                    ],
+                    'options' => $data['options']
+                ]
+            );
         }
 
-        Role::query()->create([
-            'name' => [
-                'ar' => 'المشرف الرئيسي',
-                'en' => 'Super Admin',
-            ],
-            'permissions' => json_encode($permissions),
-        ]);
+        // 2. Create Roles + Attach Permissions
+        foreach ($roles as $key => $data) {
+            $role = Role::firstOrCreate(['key' => $key], [
+                'name' => [
+                    'en' => $data['en'],
+                    'ar' => $data['ar']
+                ]
+            ]);
 
+            $permissions = Permission::all();
+
+            if (in_array('*', $data['permissions'])) {
+                foreach ($permissions as $permission) {
+                    $role->permissions()->syncWithoutDetaching([
+                        $permission->id => ['allowed_options' => json_encode($permission->options)]
+                    ]);
+                }
+            } else {
+                foreach ($data['permissions'] as $permName) {
+                    $perm = $permissions->firstWhere('key', $permName);
+                    if ($perm) {
+                        $role->permissions()->syncWithoutDetaching([
+                            $perm->id => ['allowed_options' => json_encode($perm->options)]
+                        ]);
+                    }
+                }
+            }
+        }
     }
+
 }

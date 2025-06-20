@@ -15,7 +15,7 @@
 @if(app()->getLocale() == 'ar')
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap" rel="stylesheet">
     <style>
-        html, body, h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, button {
+        html, body, h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, button, li, .badge {
             font-family: "Cairo", sans-serif !important;
         }
     </style>
@@ -64,5 +64,5 @@
       href="{{ asset('assets/dashboard') }}/{{ $page_dir }}/pages/dashboard-ecommerce.css">
 <!-- END Page Level CSS-->
 <!-- BEGIN Custom CSS-->
-<link rel="stylesheet" type="text/css" href="{{ asset('assets/dashboard') }}/{{ $page_dir }}/custom/style.css">
+<link rel="stylesheet" type="text/css" href="{{ asset("assets/dashboard/$page_dir/custom/style.css") }}">
 <!-- END Custom CSS -->

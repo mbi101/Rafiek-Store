@@ -28,7 +28,7 @@ class RoleRepository
 
     public function getRoles()
     {
-        return Role::query()->select('id', 'name', 'permissions')->paginate(6);
+        return Role::query()->select('id', 'name')->withCount('admins')->paginate(6);
     }
 
     public function updateRole($request, $role)
