@@ -44,6 +44,17 @@ class Admin extends Authenticatable
 
     public function role(): BelongsTo
     {
-        return $this->belongsTo(Role::class, 'role_id');
+        return $this->belongsTo(Role::class);
+    }
+
+    public function hasPermission($permissionName): bool
+    {
+        return $this->role?->permissions->contains('name', $permissionName);
+    }
+
+    public function hasPermissionOption($permissionName, $option): bool
+    {
+        $permission = $this->role?->permissions->firstWhere('name', $permissionName);
+        return $permission && in_array($option, $permission->pivot->allowed_options ?? []);
     }
 }
