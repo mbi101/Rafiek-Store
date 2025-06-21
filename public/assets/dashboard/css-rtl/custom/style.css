@@ -257,6 +257,11 @@
     padding: 10px 15px;
     text-align: center;
     vertical-align: middle;
+    border-bottom: 2px solid #dee2e6;
+}
+
+.table td {
+    border-top: 0;
 }
 
 .table thead tr th:first-child {
@@ -294,3 +299,31 @@
     font-weight: 700;
 }
 
+.btn i {
+    vertical-align: middle;
+}
+
+form .form-check-input {
+    width: 20px;
+    height: 20px;
+    position: relative;
+    margin: 0;
+    vertical-align: middle;
+}
+
+
+form .form-actions {
+    border: none;
+}
+
+form .form-control {
+    border-radius: 10px;
+}
+
+form .form-actions .btn {
+    min-width: 110px;
+}
+
+form .form-check-input {
+    accent-color: #535BE2;
+}

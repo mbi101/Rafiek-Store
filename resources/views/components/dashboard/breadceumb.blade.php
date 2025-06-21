@@ -7,9 +7,10 @@
                 <li class="breadcrumb-item">
                     <a href="{{ $first_link_url }}" class="text-primary">{{ __('dashboard.dashboard') }}</a>
                 </li>
+
                 @if($second_link_title != '')
                     <li class="breadcrumb-item">
-                        <a href="{{ $second_link_url }}" class="text-primary">{{ $second_link_title }}</a>
+                        <a href="{{ $second_link_url }}" class="text-primary">{!! $second_link_title !!}</a>
                     </li>
                 @endif
 

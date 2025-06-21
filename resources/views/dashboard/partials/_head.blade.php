@@ -43,6 +43,8 @@
 <link rel="stylesheet" type="text/css" href="{{ asset('assets/dashboard') }}/vendors/css/charts/chartist.css">
 <link rel="stylesheet" type="text/css"
       href="{{ asset('assets/dashboard') }}/vendors/css/charts/chartist-plugin-tooltip.css">
+<link rel="stylesheet" type="text/css" href="{{ asset('assets/dashboard/vendors/css/forms/icheck/icheck.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ asset('assets/dashboard/vendors/css/forms/icheck/custom.css') }}">
 <!-- END VENDOR CSS-->
 <!-- BEGIN MODERN CSS-->
 <link rel="stylesheet" type="text/css" href="{{ asset('assets/dashboard') }}/{{ $page_dir }}/app.css">

@@ -53,7 +53,6 @@
                                             </td>
                                         </tr>
 
-
                                         {{-- delete form  --}}
                                         <form id="delete-form-{{ $role->id }}"
                                               action="{{ route('dashboard.roles.destroy', $role->id) }}" method="post">
@@ -62,7 +61,7 @@
                                         </form>
 
                                     @empty
-                                        <td colspan="4"> No Data</td>
+                                        <td colspan="4">{{ __('dashboard.no_data_found') }}</td>
                                     @endforelse
                                     </tbody>
                                 </table>
