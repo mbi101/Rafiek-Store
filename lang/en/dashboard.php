@@ -38,6 +38,8 @@ return [
     'status' => 'Status',
     'edit' => 'Edit',
     'delete' => 'Delete',
+    'read' => 'Read',
+    'create' => 'Create',
     'active' => 'Active',
     'inactive' => 'Inactive',
     'show' => 'Show',
@@ -81,8 +83,10 @@ return [
     'table_yajra_paragraph' => 'A dynamic table that displays data from the database with features like search, sorting, column visibility toggle, and options to export to Excel, print, or copy data.',
 
     'are_you_sure' => ' Are You Sure ?',
-    'name_ar' => 'Name Arabic',
-    'name_en' => 'Name English',
+    'name_ar' => 'Name ( Arabic )',
+    'name_en' => 'Name ( English )',
+    'role_ar' => 'Role ( Arabic )',
+    'role_en' => 'Role ( English )',
     'image' => 'Image',
     'select_Parent' => 'Select Parent Category',
     'form_edit' => 'Edit Form',
@@ -94,7 +98,7 @@ return [
 
     'admins' => 'Admins ',
     'orders' => 'Orders ',
-    'roles_permissions' => 'Roles&Permissions',
+    'roles_permissions' => 'Roles & Permissions',
     'create_brand' => 'Create Brand',
 
     'coupons' => 'Coupons ',
@@ -222,4 +226,5 @@ return [
     'try_again_later' => 'Try Again Latter!',
     'enter_password_confirmation' => 'Enter Password Confirmation',
     'password_changed_successfully' => 'Your Password Updated Successfully!',
+    'no_data_found' => 'There is no data currently',
 ];
