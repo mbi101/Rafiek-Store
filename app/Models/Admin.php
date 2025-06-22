@@ -57,4 +57,24 @@ class Admin extends Authenticatable
         $permission = $this->role?->permissions->firstWhere('name', $permissionName);
         return $permission && in_array($option, $permission->pivot->allowed_options ?? []);
     }
+
+    public function getStatusAttribute($value)
+    {
+        return $value == 1 ? 'Active' : 'Inactive';
+    }
+
+    public function hasAccess($config_permission)
+    {
+        $role = $this->role;
+        
+        if (!$role) {
+            return false;
+        }
+
+        foreach ($role->permissions as $permission) {
+            if ($config_permission == $permission->key ?? false) {
+                return true;
+            }
+        }
+    }
 }

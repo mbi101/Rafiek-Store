@@ -788,6 +788,7 @@ footer.footer-dark {
 .main-menu .main-menu-content {
     height: 100%;
     position: relative;
+    background: #16224a;
 }
 
 .main-menu ul {

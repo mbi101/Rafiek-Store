@@ -2,11 +2,8 @@
 
 namespace App\Providers;
 
-use App\Settings\AuthSettings;
-use App\Settings\GeneralSettings;
-use Illuminate\Support\Facades\Config;
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Support\Facades\View;
+use Illuminate\Pagination\Paginator;
+use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\ServiceProvider;
 
 
@@ -25,28 +22,11 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        if (Schema::hasTable('settings')) {
-
-            $general_settings = null;
-            $auth_settings = null;
-
-            try {
-                $general_settings = app(GeneralSettings::class);
-                $auth_settings = app(AuthSettings::class);
-
-                if (isset($auth_settings->recaptcha_secret) && isset($auth_settings->recaptcha_key)) {
-                    Config::set('captcha.secret', $auth_settings->recaptcha_secret);
-                    Config::set('captcha.sitekey', $auth_settings->recaptcha_key);
-                }
-
-            } catch (\Spatie\LaravelSettings\Exceptions\MissingSettings $e) {
-                \Log::warning('Missing settings: ' . $e->getMessage());
-            }
-
-            View::share([
-                'general_settings' => $general_settings,
-                'auth_settings' => $auth_settings,
-            ]);
+        Paginator::useBootstrap();
+        foreach (config('permissions_list') as $config_permission => $value) {
+            Gate::define($config_permission, function ($auth) use ($config_permission) {
+                return $auth->hasAccess($config_permission);
+            });
         }
 
     }
