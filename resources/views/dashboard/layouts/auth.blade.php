@@ -52,7 +52,6 @@
 </head>
 <body class="vertical-layout vertical-menu-modern 1-column  bg-full-screen-image menu-expanded blank-page blank-page"
       data-open="click" data-menu="vertical-menu-modern" data-col="1-column">
-
 <!-- ////////////////////////////////////////////////////////////////////////////-->
 
 @yield('content')

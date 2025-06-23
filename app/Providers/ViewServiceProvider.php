@@ -10,6 +10,7 @@ use App\Models\Coupon;
 use App\Models\Faq;
 use App\Settings\AuthSettings;
 use App\Settings\GeneralSettings;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\View;
@@ -31,59 +32,76 @@ class ViewServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        if (Schema::hasTable('categories')) {
-            View::share([
-                'categories_count' => Category::query()->count(),
-            ]);
-        }
-        if (Schema::hasTable('brands')) {
-            View::share([
-                'brands_count' => Brand::query()->count(),
-            ]);
-        }
-        if (Schema::hasTable('admins')) {
-            View::share([
-                'admins_count' => Admin::query()->count(),
-            ]);
-        }
-        if (Schema::hasTable('coupons')) {
-            View::share([
-                'coupons_count' => Coupon::query()->count(),
-            ]);
-        }
-        if (Schema::hasTable('contacts')) {
-            View::share([
-                'contacts_count' => Contact::query()->where('is_read', 0)->count(),
-            ]);
-        }
-        if (Schema::hasTable('faqs')) {
-            View::share([
-                'faqs_count' => Faq::query()->count(),
-            ]);
-        }
+        View::composer('dashboard.*', function () {
+            if (!Cache::has('categories_count')) {
+                Cache::remember('categories_count', now()->addMinutes(60), function () {
+                    return Category::query()->count();
+                });
+            }
 
-        if (Schema::hasTable('settings')) {
+            if (!Cache::has('brands_count')) {
+                Cache::remember('brands_count', now()->addMinutes(60), function () {
+                    return Brand::query()->count();
+                });
+            }
+
+            if (!Cache::has('admins_count')) {
+                Cache::remember('admins_count', now()->addMinutes(60), function () {
+                    return Admin::query()->count();
+                });
+            }
+
+            if (!Cache::has('coupons_count')) {
+                Cache::remember('coupons_count', now()->addMinutes(60), function () {
+                    return Coupon::query()->count();
+                });
+            }
+
+            if (!Cache::has('contacts_count')) {
+                Cache::remember('contacts_count', now()->addMinutes(60), function () {
+                    return Contact::query()->where('is_read', 0)->count();
+                });
+            }
+
+            if (!Cache::has('faqs_count')) {
+                Cache::remember('faqs_count', now()->addMinutes(60), function () {
+                    return Faq::query()->count();
+                });
+            }
+
             $general_settings = null;
             $auth_settings = null;
 
-            try {
+            if (Schema::hasTable('settings')) {
                 $general_settings = app(GeneralSettings::class);
                 $auth_settings = app(AuthSettings::class);
-
-                if (isset($auth_settings->recaptcha_secret) && isset($auth_settings->recaptcha_key)) {
-                    Config::set('captcha.secret', $auth_settings->recaptcha_secret);
-                    Config::set('captcha.sitekey', $auth_settings->recaptcha_key);
-                }
-
-            } catch (\Spatie\LaravelSettings\Exceptions\MissingSettings $e) {
-                \Log::warning('Missing settings: ' . $e->getMessage());
             }
 
-            View::share([
-                'general_settings' => $general_settings,
-                'auth_settings' => $auth_settings,
-            ]);
-        }
+            if (!Cache::has('general_settings')) {
+                Cache::remember('general_settings', now()->addMinutes(60), function () use ($general_settings) {
+                    return $general_settings;
+                });
+            }
 
+            if (!Cache::has('auth_settings')) {
+                Cache::remember('auth_settings', now()->addMinutes(60), function () use ($auth_settings) {
+                    return $auth_settings;
+                });
+            }
+
+            Config::set('captcha.secret', Cache::get('auth_settings')->recaptcha_secret);
+            Config::set('captcha.sitekey', Cache::get('auth_settings')->recaptcha_key);
+        });
+
+        View::share([
+            'categories_count' => Cache::get('categories_count'),
+            'brands_count' => Cache::get('brands_count'),
+            'admins_count' => Cache::get('admins_count'),
+            'coupons_count' => Cache::get('coupons_count'),
+            'contacts_count' => Cache::get('contacts_count'),
+            'faqs_count' => Cache::get('faqs_count'),
+            'general_settings' => Cache::get('general_settings'),
+            'auth_settings' => Cache::get('auth_settings'),
+        ]);
     }
 }
