@@ -32,6 +32,7 @@ class ViewServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
+
         View::composer('dashboard.*', function () {
             if (!Cache::has('categories_count')) {
                 Cache::remember('categories_count', now()->addMinutes(60), function () {
@@ -69,39 +70,30 @@ class ViewServiceProvider extends ServiceProvider
                 });
             }
 
-            $general_settings = null;
-            $auth_settings = null;
 
-            if (Schema::hasTable('settings')) {
-                $general_settings = app(GeneralSettings::class);
-                $auth_settings = app(AuthSettings::class);
-            }
-
-            if (!Cache::has('general_settings')) {
-                Cache::remember('general_settings', now()->addMinutes(60), function () use ($general_settings) {
-                    return $general_settings;
-                });
-            }
-
-            if (!Cache::has('auth_settings')) {
-                Cache::remember('auth_settings', now()->addMinutes(60), function () use ($auth_settings) {
-                    return $auth_settings;
-                });
-            }
-
-            Config::set('captcha.secret', Cache::get('auth_settings')->recaptcha_secret);
-            Config::set('captcha.sitekey', Cache::get('auth_settings')->recaptcha_key);
+            View::share([
+                'categories_count' => Cache::get('categories_count'),
+                'brands_count' => Cache::get('brands_count'),
+                'admins_count' => Cache::get('admins_count'),
+                'coupons_count' => Cache::get('coupons_count'),
+                'contacts_count' => Cache::get('contacts_count'),
+                'faqs_count' => Cache::get('faqs_count'),
+            ]);
         });
 
+        $general_settings = null;
+        $auth_settings = null;
+
+        if (Schema::hasTable('settings')) {
+            $general_settings = app(GeneralSettings::class);
+            $auth_settings = app(AuthSettings::class);
+        }
+        Config::set('captcha.secret', $auth_settings->recaptcha_secret);
+        Config::set('captcha.sitekey', $auth_settings->recaptcha_key);
+
         View::share([
-            'categories_count' => Cache::get('categories_count'),
-            'brands_count' => Cache::get('brands_count'),
-            'admins_count' => Cache::get('admins_count'),
-            'coupons_count' => Cache::get('coupons_count'),
-            'contacts_count' => Cache::get('contacts_count'),
-            'faqs_count' => Cache::get('faqs_count'),
-            'general_settings' => Cache::get('general_settings'),
-            'auth_settings' => Cache::get('auth_settings'),
+            'general_settings' => $general_settings,
+            'auth_settings' => $auth_settings,
         ]);
     }
 }
