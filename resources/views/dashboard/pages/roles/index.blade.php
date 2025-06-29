@@ -1,5 +1,5 @@
 @extends('dashboard.layouts.app')
-@section('title', __('dashboard.dashboard'))
+@section('title', __('dashboard.roles_permissions'))
 @section('content')
     <div class="app-content content">
         <div class="content-wrapper">
@@ -34,11 +34,11 @@
                                             <td>{{ $loop->iteration }}</td>
                                             <td>{{ $role->name }} </td>
                                             <td>
-                                                @if(count($role->permissions) == count(\App\Models\Permission::all()))
+                                                @if(count($role->permissions) == count($permissions))
                                                     <h5 class="text-primary font-weight-bold mb-0">{{ __('dashboard.all_permissions') }}</h5>
                                                 @else
                                                     @foreach ($role->permissions as $perm)
-                                                        <div class="badge badge-primary b-p-2 b-me-1 b-mb-2">{{ $perm['name'] }}</div>
+                                                        <div class="badge badge-primary b-px-3 b-py-2 b-me-1 b-mb-2 round">{{ $perm['name'] }}</div>
                                                     @endforeach
                                                 @endif
                                             </td>

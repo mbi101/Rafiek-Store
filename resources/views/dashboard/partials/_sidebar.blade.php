@@ -8,7 +8,7 @@
                         <span class="menu-title"
                               data-i18n="nav.dash.main">{{ __('dashboard.categories') }}</span>
                         <span
-                            class="badge badge badge-info badge-pill float-right mr-2">{{ $categories_count }}</span>
+                            class="badge badge badge-info badge-pill float-right mr-2">{{ $categories_count ?? 0 }}</span>
                     </a>
                 </li>
             @endcan
@@ -20,7 +20,7 @@
                         <span class="menu-title"
                               data-i18n="nav.dash.main">{{ __('dashboard.brands') }}</span>
                         <span
-                            class="badge badge badge-info badge-pill float-right mr-2">{{ $brands_count }}</span>
+                            class="badge badge badge-info badge-pill float-right mr-2">{{ $brands_count ?? 0 }}</span>
                     </a>
                 </li>
             @endcan
@@ -28,7 +28,7 @@
             @can('roles')
                 <li class=" nav-item">
                     <a href="{{ route('dashboard.roles.index') }}"><i class="la la-unlock-alt"></i>
-                        <span class="menu-title" data-i18n="nav.templates.main">{{ __('dashboard.roles') }}</span>
+                        <span class="menu-title" data-i18n="nav.templates.main">{{ __('dashboard.roles_permissions') }}</span>
                     </a>
                 </li>
             @endcan
@@ -39,7 +39,7 @@
                         <i class="la la-user-secret"></i>
                         <span class="menu-title" data-i18n="nav.templates.main">{{ __('dashboard.admins') }}</span>
                         <span
-                            class="badge badge badge-info badge-pill float-right mr-2">{{ $admins_count }}</span>
+                            class="badge badge badge-info badge-pill float-right mr-2">{{ $admins_count ?? 0 }}</span>
                     </a>
                 </li>
             @endcan
@@ -50,7 +50,7 @@
                         <i class="la la-users"></i>
                         <span class="menu-title" data-i18n="nav.templates.main">{{ __('dashboard.users') }}</span>
                         <span
-                            class="badge badge badge-info badge-pill float-right mr-2">{{ $admins_count }}</span>
+                            class="badge badge badge-info badge-pill float-right mr-2">{{ $users_count ?? 0 }}</span>
                     </a>
                 </li>
             @endcan
@@ -70,7 +70,7 @@
                         <i class="la la-500px"></i>
                         <span class="menu-title" data-i18n="nav.dash.main">{{ __('dashboard.coupons') }}</span>
                         <span
-                            class="badge badge badge-info badge-pill float-right mr-2">{{ $coupons_count }}</span>
+                            class="badge badge badge-info badge-pill float-right mr-2">{{ $coupons_count ?? 0 }}</span>
                     </a>
 
                 </li>
@@ -110,7 +110,7 @@
                         <i class="la la-phone"></i>
                         <span class="menu-title" data-i18n="nav.dash.main">{{ __('dashboard.contacts') }}</span>
                         <span
-                            class="badge badge badge-info badge-pill float-right mr-2">{{ $contacts_count }}</span>
+                            class="badge badge badge-info badge-pill float-right mr-2">{{ $contacts_count ?? 0 }}</span>
                     </a>
                 </li>
             @endcan
@@ -120,7 +120,7 @@
                         <i class="la la-info"></i>
                         <span class="menu-title" data-i18n="nav.dash.main">{{ __('dashboard.faqs') }}</span>
                         <span
-                            class="badge badge badge-info badge-pill float-right mr-2">{{ $faqs_count }}</span>
+                            class="badge badge badge-info badge-pill float-right mr-2">{{ $faqs_count ?? 0 }}</span>
                     </a>
                 </li>
             @endcan
