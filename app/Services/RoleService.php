@@ -15,12 +15,17 @@ class RoleService
 
     public function createRole($request)
     {
-        return $this->roleRepository->createRole($request);
+        return $this->roleRepository->saveRole($request, 'create');
     }
 
     public function getRoles()
     {
         return $this->roleRepository->getRoles();
+    }
+
+    public function getPermissions()
+    {
+        return $this->roleRepository->getPermissions();
     }
 
     public function getRole($id)
@@ -35,7 +40,7 @@ class RoleService
         if (!$role) {
             return false;
         }
-        return $this->roleRepository->updateRole($request, $role);
+        return $this->roleRepository->saveRole($request, 'update', $role);
     }
 
     public function destroy($id)

@@ -12,7 +12,7 @@ class Role extends Model
     protected $table = 'roles';
     public $timestamps = true;
     public array $translatable = ['name'];
-    protected $fillable = array('key');
+    protected $fillable = array('key', 'name');
     protected $casts = [
         'allowed_options' => 'array',
     ];

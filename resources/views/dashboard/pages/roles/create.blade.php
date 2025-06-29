@@ -1,5 +1,5 @@
 @extends('dashboard.layouts.app')
-@section('title', __('dashboard.dashboard'))
+@section('title', __('dashboard.roles_permissions'))
 @section('content')
     <div class="app-content content">
         <div class="content-wrapper">
@@ -26,17 +26,18 @@
                                             <div class="form-group">
                                                 <label for="roleNameAr" class="font-weight-bold">{{ __('dashboard.role_ar') }}</label>
                                                 <input type="text" id="roleNameAr" class="form-control"
-                                                       placeholder="{{ __('dashboard.name_ar') }}" name="role[ar]">
+                                                       placeholder="{{ __('dashboard.name_ar') }}" name="name[ar]">
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label for="roleNameEn" class="font-weight-bold">{{ __('dashboard.role_en') }}</label>
                                                 <input type="text" id="roleNameEn" class="form-control"
-                                                       placeholder="{{ __('dashboard.name_en') }}" name="role[en]">
+                                                       placeholder="{{ __('dashboard.name_en') }}" name="name[en]">
                                             </div>
                                         </div>
                                     </div>
+
                                     <table class="table custom-rounded-table">
                                         <thead>
                                         <tr>
@@ -51,40 +52,38 @@
                                         </thead>
                                         <tbody>
 
-                                        @forelse (config('permissions_list') as $key => $value)
+                                        @forelse ($permissions as $permission)
                                             <tr>
                                                 <td>
-                                                    <input value="{{ $key }}" type="checkbox" name="permissions[]" class="form-check-input item-checkbox main-item-checkbox">
-                                                </td>
-                                                <td>{{ $value[app()->getLocale()] }}</td>
-                                                <td>
-                                                    @if(in_array('create', $value['options']))
-                                                        <input value="{{ $key }}" type="checkbox" name="permissions[]"
-                                                               class="form-check-input item-checkbox sub-main-item-checkbox" disabled>
-                                                    @else
-                                                        ---
-                                                    @endif
-                                                </td>
-                                                <td>
-                                                    @if(in_array('update', $value['options']))
-                                                        <input value="{{ $key }}" type="checkbox" name="permissions[]"
-                                                               class="form-check-input item-checkbox sub-main-item-checkbox" disabled>
-                                                    @else
-                                                        ---
-                                                    @endif
-                                                </td>
-                                                <td>
-                                                    @if(in_array('delete', $value['options']))
-                                                        <input value="{{ $key }}" type="checkbox" name="permissions[]"
-                                                               class="form-check-input item-checkbox sub-main-item-checkbox" disabled>
-                                                    @else
-                                                        ---
-                                                    @endif
+                                                    <input type="checkbox"
+                                                           class="form-check-input main-item-checkbox item-checkbox"
+                                                           data-entity="{{ $permission->key }}">
+                                                    <input type="checkbox" name="permissions[{{ $permission->key }}][id]"
+                                                           value="{{ $permission->id }}"
+                                                           class="form-check-input item-checkbox sub-main-item-checkbox permission-{{ $permission->key }} d-none" disabled>
                                                 </td>
 
+                                                <td>{{ $permission->getTranslation('name', app()->getLocale()) }}</td>
+
+                                                @foreach(['create', 'update', 'delete'] as $action)
+                                                    <td class="text-center">
+                                                        @if(in_array($action, $permission->options))
+                                                            <input
+                                                                type="checkbox"
+                                                                name="permissions[{{ $permission->key }}][options][]"
+                                                                value="{{ $action }}"
+                                                                class="form-check-input item-checkbox sub-main-item-checkbox permission-{{ $permission->key }}" disabled>
+                                                        @else
+                                                            ---
+                                                        @endif
+
+                                                    </td>
+                                                @endforeach
                                             </tr>
                                         @empty
-                                            <td colspan="4">{{ __('dashboard.no_data_found') }}</td>
+                                            <tr>
+                                                <td colspan="5">{{ __('dashboard.no_data_found') }}</td>
+                                            </tr>
                                         @endforelse
                                         </tbody>
                                     </table>

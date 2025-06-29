@@ -3,7 +3,9 @@
 namespace App\Repositories;
 
 
+use App\Models\Permission;
 use App\Models\Role;
+use Illuminate\Support\Str;
 
 class RoleRepository
 {
@@ -12,23 +14,65 @@ class RoleRepository
         return Role::find($id);
     }
 
-    public function createRole($request)
+    public function saveRole($request, $type, $role = null)
     {
-        $role = Role::create([
-            'role' => [
-                'ar' => $request->role['ar'],
-                'en' => $request->role['en'],
-            ],
-            'permission' => json_encode($request->permessions),
-        ]);
+        $key = $this->generateUniqueRoleKey($request->name['en']);
+
+        if ($type == 'create') {
+            $role = Role::query()->create([
+                'key' => $key,
+                'name' => [
+                    'ar' => $request->name['ar'],
+                    'en' => $request->name['en'],
+                ],
+            ]);
+        } else {
+            $role->update([
+                'key' => $key,
+                'name' => [
+                    'ar' => $request->name['ar'],
+                    'en' => $request->name['en'],
+                ],
+            ]);
+        }
+
+        $permissionIds = collect($request->permissions ?? [])
+            ->pluck('id')
+            ->unique()
+            ->toArray();
+
+        $permissions = Permission::query()->whereIn('id', $permissionIds)->get()->keyBy('id');
+
+        $syncData = [];
+
+        foreach ($request->permissions ?? [] as $item) {
+            $permission = $permissions[$item['id']] ?? null;
+
+            if ($permission) {
+                $options = $item['options'] ?? [];
+                $syncData[$permission->id] = [
+                    'allowed_options' => json_encode($options),
+                ];
+            }
+        }
+
+        if ($type == 'create') {
+            $role->permissions()->syncWithoutDetaching($syncData);
+        } else {
+            $role->permissions()->sync($syncData);
+        }
 
         return $role;
-
     }
 
     public function getRoles()
     {
-        return Role::query()->select('id', 'name')->withCount('admins')->paginate(6);
+        return Role::query()->select('id', 'name')->with('permissions')->withCount('admins')->paginate(6);
+    }
+
+    public function getPermissions()
+    {
+        return Permission::query()->select('id', 'key', 'name', 'options')->get();
     }
 
     public function updateRole($request, $role)
@@ -43,6 +87,20 @@ class RoleRepository
     public function destroy($role)
     {
         return $role->delete();
+    }
+
+    function generateUniqueRoleKey($name): string
+    {
+        $baseKey = Str::slug($name, '_');
+        $key = $baseKey;
+
+        $i = 2;
+        while (Role::query()->where('key', $key)->exists()) {
+            $key = $baseKey . $i;
+            $i++;
+        }
+
+        return $key;
     }
 
 }

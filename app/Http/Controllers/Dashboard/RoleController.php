@@ -18,12 +18,14 @@ class RoleController extends Controller
     public function index()
     {
         $roles = $this->roleService->getRoles();
-        return view('dashboard.pages.roles.index', compact('roles'));
+        $permissions = $this->roleService->getPermissions();
+        return view('dashboard.pages.roles.index', compact(['roles', 'permissions']));
     }
 
     public function create()
     {
-        return view('dashboard.pages.roles.create');
+        $permissions = $this->roleService->getPermissions();
+        return view('dashboard.pages.roles.create', compact('permissions'));
     }
 
     /**
@@ -35,7 +37,7 @@ class RoleController extends Controller
         if (!$role) {
             return back()->with('error', __('dashboard.error_msg'));
         }
-        return redirect()->back()->with('success', __('dashboard.success_msg'));
+        return redirect()->route('dashboard.roles.index')->with('success', __('dashboard.success_msg'));
 
     }
 
@@ -52,11 +54,18 @@ class RoleController extends Controller
      */
     public function edit($id)
     {
+        $permissions = $this->roleService->getPermissions();
         $role = $this->roleService->getRole($id);
         if (!$role) {
             return back()->with('error', __('dashboard.error_msg'));
         }
-        return view('dashboard.pages.roles.edit', compact('role'));
+        $existingPermissions = $role->permissions->mapWithKeys(function ($permission) {
+            return [$permission->key => [
+                'id' => $permission->id,
+                'options' => json_decode($permission->pivot->allowed_options ?? '[]', true),
+            ]];
+        })->toArray();
+        return view('dashboard.pages.roles.edit', compact(['role', 'permissions', 'existingPermissions']));
     }
 
     /**
@@ -68,7 +77,9 @@ class RoleController extends Controller
         if (!$role) {
             return back()->with('error', __('dashboard.error_msg'));
         }
-        return redirect()->back()->with('success', __('dashboard.success_msg'));
+
+        flash()->success('Product created successfully!');
+        return redirect()->route('dashboard.roles.index')->with('success', __('dashboard.success_msg'));
 
     }
 
