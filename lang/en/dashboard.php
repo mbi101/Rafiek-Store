@@ -227,4 +227,8 @@ return [
     'enter_password_confirmation' => 'Enter Password Confirmation',
     'password_changed_successfully' => 'Your Password Updated Successfully!',
     'no_data_found' => 'There is no data currently',
+    'page_not_found' => 'Page Not Found',
+    'back_to_previous_page' => 'Return to the previous page',
+    'all_rights_reserved' => 'All rights reserved',
+    'copyright' => 'Copyright',
 ];
