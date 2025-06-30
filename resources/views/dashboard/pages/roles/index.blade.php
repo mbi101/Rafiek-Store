@@ -43,25 +43,31 @@
                                                 @endif
                                             </td>
                                             <td>
-                                                <a href="{{ route('dashboard.roles.edit', $role->id) }}" class="btn btn-icon btn-success mr-1 btn-sm d-inline-block">
-                                                    <i class="la la-edit"></i>
-                                                </a>
-                                                <a class="btn btn-icon btn-danger btn-sm d-inline-block" href="javascript:void(0)"
-                                                   onclick="if(confirm('Are you sure you want to delete this role?')){document.getElementById('delete-form-{{ $role->id }}').submit();} return false">
-                                                    <i class="la la-trash"></i>
-                                                </a>
+                                                @if($role->key == 'admin')
+                                                    -----
+                                                @else
+                                                    <a href="{{ route('dashboard.roles.edit', $role->id) }}" class="btn btn-icon btn-success mr-1 btn-sm d-inline-block">
+                                                        <i class="la la-edit"></i>
+                                                    </a>
+                                                    <a class="btn btn-icon btn-danger btn-sm d-inline-block" href="javascript:void(0)"
+                                                       onclick="if(confirm('Are you sure you want to delete this role?')){document.getElementById('delete-form-{{ $role->id }}').submit();} return false">
+                                                        <i class="la la-trash"></i>
+                                                    </a>
+                                                @endif
+
                                             </td>
                                         </tr>
-
-                                        {{-- delete form  --}}
-                                        <form id="delete-form-{{ $role->id }}"
-                                              action="{{ route('dashboard.roles.destroy', $role->id) }}" method="post">
-                                            @csrf
-                                            @method('DELETE')
-                                        </form>
+                                        @if($role->key != 'admin')
+                                            {{-- delete form  --}}
+                                            <form id="delete-form-{{ $role->id }}"
+                                                  action="{{ route('dashboard.roles.destroy', $role->id) }}" method="post">
+                                                @csrf
+                                                @method('DELETE')
+                                            </form>
+                                        @endif
 
                                     @empty
-                                        <td colspan="4">{{ __('dashboard.no_data_found') }}</td>
+                                        <td colspan="4" class="py-1 font-weight-bold">{{ __('dashboard.no_data_found') }}</td>
                                     @endforelse
                                     </tbody>
                                 </table>

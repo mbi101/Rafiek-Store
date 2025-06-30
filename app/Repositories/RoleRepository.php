@@ -27,13 +27,15 @@ class RoleRepository
                 ],
             ]);
         } else {
-            $role->update([
-                'key' => $key,
-                'name' => [
-                    'ar' => $request->name['ar'],
-                    'en' => $request->name['en'],
-                ],
-            ]);
+            if ($role->key != 'admin') {
+                $role->update([
+                    'key' => $key,
+                    'name' => [
+                        'ar' => $request->name['ar'],
+                        'en' => $request->name['en'],
+                    ],
+                ]);
+            }
         }
 
         $permissionIds = collect($request->permissions ?? [])
@@ -59,7 +61,9 @@ class RoleRepository
         if ($type == 'create') {
             $role->permissions()->syncWithoutDetaching($syncData);
         } else {
-            $role->permissions()->sync($syncData);
+            if ($role->key != 'admin') {
+                $role->permissions()->sync($syncData);
+            }
         }
 
         return $role;
@@ -67,7 +71,7 @@ class RoleRepository
 
     public function getRoles()
     {
-        return Role::query()->select('id', 'name')->with('permissions')->withCount('admins')->paginate(6);
+        return Role::query()->select('id', 'name', 'key')->with('permissions')->withCount('admins')->paginate(10);
     }
 
     public function getPermissions()

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Dashboard;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Dashboard\RoleRequest;
+use App\Models\Role;
 use App\Services\RoleService;
 
 class RoleController extends Controller
@@ -39,14 +40,6 @@ class RoleController extends Controller
         }
         return redirect()->route('dashboard.roles.index')->with('success', __('dashboard.success_msg'));
 
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
     }
 
     /**
@@ -86,13 +79,9 @@ class RoleController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Role $role)
     {
-        $role = $this->roleService->destroy($id);
-        if (!$role) {
-            return back()->with('error', __('dashboard.error_msg'));
-        }
+        $this->roleService->destroy($role);
         return redirect()->back()->with('success', __('dashboard.success_msg'));
-
     }
 }

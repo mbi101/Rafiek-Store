@@ -192,4 +192,8 @@ return [
     'enter_password_confirmation' => 'أدخل تأكيد كلمة المرور',
     'password_changed_successfully' => 'تم تحديث كلمة المرور الخاصة بك بنجاح!',
     'no_data_found' => 'لا توجد بيانات حاليا',
+    'page_not_found' => 'الصفحة غير موجودة',
+    'back_to_previous_page' => 'الرجوع الي الصفحة السابقة',
+    'all_rights_reserved' => 'جميع الحقوق محفوظة',
+    'copyright' => 'حقوق الطبع والنشر',
 ];

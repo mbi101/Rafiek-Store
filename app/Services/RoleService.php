@@ -43,10 +43,8 @@ class RoleService
         return $this->roleRepository->saveRole($request, 'update', $role);
     }
 
-    public function destroy($id)
+    public function destroy($role)
     {
-        $role = $this->roleRepository->getRole($id);
-
         if ($role->admins->count() > 0 || !$role) {
             return false;
         }
