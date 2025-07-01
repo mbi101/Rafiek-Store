@@ -6,14 +6,26 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Dashboard\RoleRequest;
 use App\Models\Role;
 use App\Services\RoleService;
+use Illuminate\Routing\Controllers\HasMiddleware;
+use Illuminate\Routing\Controllers\Middleware;
 
-class RoleController extends Controller
+class RoleController extends Controller implements HasMiddleware
 {
     protected $roleService;
 
     public function __construct(RoleService $roleService)
     {
         $this->roleService = $roleService;
+    }
+
+    public static function middleware(): array
+    {
+        return [
+            new Middleware(middleware: 'check_permission:roles', only: ['index']),
+            new Middleware(middleware: 'check_permission:roles.create', only: ['create', 'store']),
+            new Middleware(middleware: 'check_permission:roles.update', only: ['edit', 'update']),
+            new Middleware(middleware: 'check_permission:roles.delete', only: ['destroy']),
+        ];
     }
 
     public function index()
@@ -45,28 +57,24 @@ class RoleController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit($id)
+    public function edit(Role $role)
     {
+
+        $this->roleService->checkAdmin($role);
+
         $permissions = $this->roleService->getPermissions();
-        $role = $this->roleService->getRole($id);
-        if (!$role) {
-            return back()->with('error', __('dashboard.error_msg'));
-        }
-        $existingPermissions = $role->permissions->mapWithKeys(function ($permission) {
-            return [$permission->key => [
-                'id' => $permission->id,
-                'options' => json_decode($permission->pivot->allowed_options ?? '[]', true),
-            ]];
-        })->toArray();
+
+        $existingPermissions = $this->roleService->existingPermissions($role);
+
         return view('dashboard.pages.roles.edit', compact(['role', 'permissions', 'existingPermissions']));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(RoleRequest $request, string $id)
+    public function update(RoleRequest $request, Role $role)
     {
-        $role = $this->roleService->updateRole($request, $id);
+        $role = $this->roleService->updateRole($request, $role);
         if (!$role) {
             return back()->with('error', __('dashboard.error_msg'));
         }

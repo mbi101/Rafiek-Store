@@ -1,5 +1,8 @@
 @extends('dashboard.layouts.app')
 @section('title', __('dashboard.roles_permissions'))
+@push('modal')
+    <x-dashboard.delete-modal/>
+@endpush
 @section('content')
     <div class="app-content content">
         <div class="content-wrapper">
@@ -12,7 +15,11 @@
                 <div class="card">
                     <div class="card-header d-flex align-items-center justify-content-between">
                         <h3 class="card-title" id="basic-layout-colored-form-control">{{ __('dashboard.roles_permissions') }} </h3>
-                        <a href="{{ route('dashboard.roles.create') }}" class="btn btn-outline-primary ms-3 round px-2">{{ __('dashboard.create_role') }}</a>
+                        @can('roles.create')
+                            <a href="{{ route('dashboard.roles.create') }}" class="btn btn-outline-primary ms-3 round px-2">{{ __('dashboard.create_role') }}</a>
+                        @else
+                            <a href="javascript:void(0);" class="btn btn-outline-primary ms-3 round px-2" disabled>{{ __('dashboard.create_role') }}</a>
+                        @endcan
                     </div>
 
                     <div class="card-content">
@@ -46,26 +53,31 @@
                                                 @if($role->key == 'admin')
                                                     -----
                                                 @else
-                                                    <a href="{{ route('dashboard.roles.edit', $role->id) }}" class="btn btn-icon btn-success mr-1 btn-sm d-inline-block">
-                                                        <i class="la la-edit"></i>
-                                                    </a>
-                                                    <a class="btn btn-icon btn-danger btn-sm d-inline-block" href="javascript:void(0)"
-                                                       onclick="if(confirm('Are you sure you want to delete this role?')){document.getElementById('delete-form-{{ $role->id }}').submit();} return false">
-                                                        <i class="la la-trash"></i>
-                                                    </a>
+                                                    @can('roles.update')
+                                                        <a href="{{ route('dashboard.roles.edit', $role->id) }}" class="btn btn-icon btn-success mr-1 btn-sm d-inline-block">
+                                                            <i class="la la-edit"></i>
+                                                        </a>
+                                                    @else
+                                                        <a href="javascript:void(0);" class="btn btn-icon btn-success mr-1 btn-sm d-inline-block" disabled>
+                                                            <i class="la la-edit"></i>
+                                                        </a>
+                                                    @endcan
+                                                    @can('roles.delete')
+                                                        <button type="button"
+                                                                class="btn btn-icon btn-danger btn-sm d-inline-block btn-delete"
+                                                                data-toggle="modal" data-target="#confirmDeleteModal"
+                                                                data-url="{{ route('dashboard.roles.destroy', $role->id) }}">
+                                                            <i class="la la-trash"></i>
+                                                        </button>
+                                                    @else
+                                                        <button type="button"
+                                                                class="btn btn-icon btn-danger btn-sm d-inline-block btn-delete" disabled>
+                                                            <i class="la la-trash"></i>
+                                                        </button>
+                                                    @endcan
                                                 @endif
-
                                             </td>
                                         </tr>
-                                        @if($role->key != 'admin')
-                                            {{-- delete form  --}}
-                                            <form id="delete-form-{{ $role->id }}"
-                                                  action="{{ route('dashboard.roles.destroy', $role->id) }}" method="post">
-                                                @csrf
-                                                @method('DELETE')
-                                            </form>
-                                        @endif
-
                                     @empty
                                         <td colspan="4" class="py-1 font-weight-bold">{{ __('dashboard.no_data_found') }}</td>
                                     @endforelse

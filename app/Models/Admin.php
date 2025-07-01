@@ -58,23 +58,24 @@ class Admin extends Authenticatable
         return $permission && in_array($option, $permission->pivot->allowed_options ?? []);
     }
 
-    public function getStatusAttribute($value)
+    public function getStatusAttribute($value): string
     {
         return $value == 1 ? 'Active' : 'Inactive';
     }
 
-    public function hasAccess($config_permission)
+    public function hasAccess($entity, $action = null)
     {
         $role = $this->role;
-        
-        if (!$role) {
-            return false;
-        }
+        if (!$role) return false;
 
         foreach ($role->permissions as $permission) {
-            if ($config_permission == $permission->key ?? false) {
-                return true;
+            if ($permission->key === $entity) {
+                $allowedOptions = json_decode($permission->pivot->allowed_options ?? '[]', true);
+                if (is_null($action)) return true;
+                return in_array($action, $allowedOptions);
             }
         }
+
+        return false;
     }
 }

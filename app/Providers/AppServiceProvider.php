@@ -23,11 +23,12 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
         Paginator::useBootstrap();
-        foreach (config('permissions_list') as $config_permission => $value) {
-            Gate::define($config_permission, function ($auth) use ($config_permission) {
-                return $auth->hasAccess($config_permission);
-            });
+        
+        foreach (config('permissions_list') as $entity => $permissionData) {
+            Gate::define($entity, fn($user) => $user->hasAccess($entity));
+            foreach ($permissionData['options'] as $action) {
+                Gate::define("{$entity}.{$action}", fn($user) => $user->hasAccess($entity, $action));
+            }
         }
-
     }
 }

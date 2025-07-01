@@ -447,9 +447,20 @@ form .form-check-input {
     color: #ffffff;
 }
 
-
 .pagination .page-item:hover .page-link {
     background-color: #1e9ff2;
     color: #ffffff;
     border: 2px solid #1e9ff2 !important;
+}
+
+.modal .modal-header {
+    border-bottom: 1px solid #dee2e6;
+}
+
+.modal .modal-footer {
+    border-top: 1px solid #dee2e6;
+}
+
+button:focus-visible {
+    outline: none;
 }
