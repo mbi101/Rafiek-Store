@@ -196,4 +196,10 @@ return [
     'back_to_previous_page' => 'الرجوع الي الصفحة السابقة',
     'all_rights_reserved' => 'جميع الحقوق محفوظة',
     'copyright' => 'حقوق الطبع والنشر',
+    'access_denied' => 'ليس لديك صلاحيه الوصول الي هذه الصفحة',
+    'bad_request' => 'طلب غير صالح',
+    'internal_server_error' => 'خطأ داخلي في الخادم, يرجى المحاولة لاحقًا',
+    'unauthorized_access' => 'خطأ 401 - وصول غير مصرح به',
+    'delete_confirmation_title' => 'تأكيد الحذف',
+    'delete_confirmation_content' => 'هل أنت متأكد أنك تريد حذف هذا العنصر؟',
 ];

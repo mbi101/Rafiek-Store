@@ -231,4 +231,10 @@ return [
     'back_to_previous_page' => 'Return to the previous page',
     'all_rights_reserved' => 'All rights reserved',
     'copyright' => 'Copyright',
+    'access_denied' => 'You do not have permission to access this page',
+    'bad_request' => 'Bad Request',
+    'internal_server_error' => 'Internal Server Error, Please try again later',
+    'unauthorized_access' => 'Error 401 - Unauthorized Access',
+    'delete_confirmation_title' => 'Confirm Deletion',
+    'delete_confirmation_content' => 'Are you sure you want to delete this item?',
 ];

@@ -1,13 +1,13 @@
 @extends('errors.layout')
-@section('title', 'Not Found')
+@section('title', 'Error 500')
 @section('content')
     <section class="flexbox-container error-page">
         <div class="overlay"></div>
         <div class="col-12 d-flex align-items-center justify-content-center">
             <div class="col-md-4 col-10 p-0">
                 <div class="card-header bg-transparent border-0">
-                    <h2 class="error-code text-center mb-2">404</h2>
-                    <h3 class="text-uppercase text-center error-description">{{ __('dashboard.page_not_found') }}</h3>
+                    <h2 class="error-code text-center mb-2">500</h2>
+                    <h3 class="text-uppercase text-center error-description">{{ __('dashboard.internal_server_error') }}</h3>
                 </div>
                 <div class="card-content">
                     <div class="row justify-content-center py-2">
