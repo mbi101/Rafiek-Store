@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Collection;
 
 class Admin extends Authenticatable
 {
@@ -17,6 +18,7 @@ class Admin extends Authenticatable
     protected $table = 'admins';
     public $timestamps = true;
     protected $fillable = array('name', 'email', 'password', 'role_id');
+    protected ?Collection $cachedPermissions = null;
 
     /**
      * The attributes that should be hidden for serialization.
@@ -65,17 +67,20 @@ class Admin extends Authenticatable
 
     public function hasAccess($entity, $action = null)
     {
-        $role = $this->role;
-        if (!$role) return false;
+        if ($this->cachedPermissions === null) {
+            $this->cachedPermissions = $this->role?->permissions ?? collect();
+        }
+        
+        $permission = $this->cachedPermissions->firstWhere('key', $entity);
 
-        foreach ($role->permissions as $permission) {
-            if ($permission->key === $entity) {
-                $allowedOptions = json_decode($permission->pivot->allowed_options ?? '[]', true);
-                if (is_null($action)) return true;
-                return in_array($action, $allowedOptions);
-            }
+        if (!$permission) return false;
+
+        if ($action) {
+            $options = json_decode($permission->pivot->allowed_options ?? '[]', true);
+            return in_array($action, $options);
         }
 
-        return false;
+        return true;
     }
+
 }

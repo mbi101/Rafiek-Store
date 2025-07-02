@@ -79,7 +79,6 @@ class RoleController extends Controller implements HasMiddleware
             return back()->with('error', __('dashboard.error_msg'));
         }
 
-        flash()->success('Product created successfully!');
         return redirect()->route('dashboard.roles.index')->with('success', __('dashboard.success_msg'));
 
     }
