@@ -17,7 +17,6 @@
 
                     <div class="card-content">
                         <div class="card-body">
-                            {{--                            @include('dashboard.includes.validations-errors')--}}
                             <form class="form" action="{{ route('dashboard.roles.store') }}" method="POST">
                                 @csrf
                                 <div class="form-body">
@@ -25,20 +24,27 @@
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label for="roleNameAr" class="font-weight-bold">{{ __('dashboard.role_ar') }}</label>
-                                                <input type="text" id="roleNameAr" class="form-control"
+                                                <input type="text" id="roleNameAr" class="form-control @error('name.ar') is-invalid @enderror"
                                                        placeholder="{{ __('dashboard.name_ar') }}" name="name[ar]">
+
+                                                @error('name.ar')
+                                                <div class="text-danger">{{ $message }}</div>
+                                                @enderror
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label for="roleNameEn" class="font-weight-bold">{{ __('dashboard.role_en') }}</label>
-                                                <input type="text" id="roleNameEn" class="form-control"
+                                                <input type="text" id="roleNameEn" class="form-control @error('name.en') is-invalid @enderror"
                                                        placeholder="{{ __('dashboard.name_en') }}" name="name[en]">
+                                                @error('name.en')
+                                                <div class="text-danger">{{ $message }}</div>
+                                                @enderror
                                             </div>
                                         </div>
                                     </div>
 
-                                    <table class="table custom-rounded-table">
+                                    <table class="table custom-rounded-table @error('permissions') border-danger @enderror">
                                         <thead>
                                         <tr>
                                             <th>
@@ -87,6 +93,9 @@
                                         @endforelse
                                         </tbody>
                                     </table>
+                                    @error('permissions')
+                                    <div class="text-danger">{{ $message }}</div>
+                                    @enderror
                                 </div>
                                 <div class="form-actions right">
                                     <a href="{{ route('dashboard.roles.create') }}" class="btn btn-primary ms-3 round px-2 mr-1">

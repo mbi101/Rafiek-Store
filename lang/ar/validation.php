@@ -156,7 +156,7 @@ return [
     'starts_with' => 'يجب أن يبدأ حقل :attribute بأحد القيم التالية: :values.',
     'string' => 'يجب أن يكون حقل :attribute سلسلة نصية.',
     'timezone' => 'يجب أن يكون حقل :attribute منطقة زمنية صالحة.',
-    'unique' => 'الـ :attribute تم استخدامه مسبقًا.',
+    'unique' => ' :attribute تم استخدامه مسبقًا.',
     'uploaded' => 'فشل رفع حقل :attribute.',
     'uppercase' => 'يجب أن يكون حقل :attribute بأحرف كبيرة.',
     'url' => 'يجب أن يكون حقل :attribute عنوان URL صالحًا.',
@@ -199,6 +199,9 @@ return [
         'email' => 'البريد الإلكتروني',
         'password' => 'كلمة المرور',
         'code' => 'الكود',
+        'name.ar' => 'الاسم (عربي)',
+        'name.en' => 'الاسم (انجليزي)',
+        'permissions' => 'الصلاحيات',
     ],
 
 ];
