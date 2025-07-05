@@ -3,8 +3,8 @@
 namespace Database\Seeders;
 
 use App\Models\Country;
-use DB;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class CountrySeeder extends Seeder
 {
@@ -16,56 +16,27 @@ class CountrySeeder extends Seeder
         DB::statement('SET FOREIGN_KEY_CHECKS=0;');
         Country::truncate();
         DB::statement('SET FOREIGN_KEY_CHECKS=1;');
-        // Define countries
-        $countries = [
-            [
-                'id' => 1,
-                'phone_code' => '20',
-                'name' => ['en' => 'Egypt', 'ar' => 'مصر'],
-                'flag_code' => 'eg',
-            ],
-            [
-                'id' => 2,
-                'phone_code' => '966',
-                'name' => ['en' => 'Saudi Arabia', 'ar' => 'السعودية'],
-                'flag_code' => 'sa',
-            ],
-            [
-                'id' => 3,
-                'phone_code' => '249',
-                'name' => ['en' => 'Sudan', 'ar' => 'السودان'],
-                'flag_code' => 'sd',
-            ],
-            [
-                'id' => 4,
-                'phone_code' => '971',
-                'name' => ['en' => 'United Arab Emirates', 'ar' => 'الإمارات العربية المتحدة'],
-                'flag_code' => 'ae',
-            ],
-            [
-                'id' => 5,
-                'phone_code' => '212',
-                'name' => ['en' => 'Morocco', 'ar' => 'المغرب'],
-                'flag_code' => 'ma',
-            ],
-            // [
-            //     'id' => 6,
-            //     'phone_code' => '962',
-            //     'name' => ['en' => 'Jordan', 'ar' => 'الأردن'],
-            //     'flag_code' => 'jo',
-            // ],
-            // [
-            //     'id' => 7,
-            //     'phone_code' => '961',
-            //     'name' => ['en' => 'Lebanon', 'ar' => 'لبنان'],
-            //     'flag_code' => 'lb',
-            // ],
-        ];
 
-        // Seed countries
+        // Define countries
+        $countries = include database_path('data/countries.php');
+        $finalData = [];
+
         foreach ($countries as $country) {
-            Country::create($country);
+            $finalData[] = [
+                'id' => $country['id'],
+                'name' => json_encode([
+                    'en' => $country['name_en'],
+                    'ar' => $country['name_ar'],
+                ], JSON_UNESCAPED_UNICODE),
+                'code' => $country['code'],
+                'status' => in_array((int)$country['id'], [2, 59, 112, 178]) ? 1 : 0,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ];
         }
 
+        foreach (array_chunk($finalData, 500) as $chunk) {
+            DB::table('countries')->insert($chunk);
+        }
     }
 }

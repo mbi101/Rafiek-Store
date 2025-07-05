@@ -50,11 +50,11 @@ Route::group(
 
                     Route::prefix('countries')->name('countries.')->group(function () {
                         Route::get('/', 'getAllCountries')->name('index');
-                        Route::get('/{country_id}/governorates', 'getGovsByCountry')->name('governorates.index');
+                        Route::get('/{country_id}/cities', 'getCitiesByCountry')->name('cities.index');
                         Route::get('/change-status/{country_id}', 'changeStatus')->name('status');
                     });
 
-                    Route::prefix('governorates')->name('governorates.')->group(function () {
+                    Route::prefix('cities')->name('cities.')->group(function () {
                         Route::get('/change-status/{gov_id}', 'changeGovStatus')->name('status');
                         Route::put('/shipping-price', 'changeShippingPrice')->name('shipping-price');
                     });
