@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Dashboard;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\shippingPriceRequest;
-use App\Services\Dashboard\WorldService;
+use App\Services\WorldService;
 
 class WorldController extends Controller
 {
@@ -19,19 +19,19 @@ class WorldController extends Controller
     public function getAllCountries()
     {
         $countries = $this->worldService->getAllCountries();
-        return view('dashboard.world.countries', compact('countries'));
+        return view('dashboard.pages.world.countries', compact('countries'));
     }
 
-    public function getGovsByCountry($id)
-    {
-        $governorates = $this->worldService->getAllGovernorates($id);
-        return view('dashboard.world.governorates', compact('governorates'));
-    }
+//    public function getCitiesByCountry($id)
+//    {
+//        $governorates = $this->worldService->getAllCities($id);
+//        return view('dashboard.pages.world.governorates', compact('governorates'));
+//    }
 
-    public function getCitiesByGovId($id)
+    public function getCitiesByCountry($id)
     {
         $cities = $this->worldService->getAllCities($id);
-        return view('dashboard.world.cities', compact('cities'));
+        return view('dashboard.pages.world.cities', compact('cities'));
     }
 
 
@@ -41,7 +41,7 @@ class WorldController extends Controller
         if (!$country) {
             return response()->json([
                 'status' => false,
-                'message' => __('dashboard.error_msg')
+                'message' => __('dashboard.no_data_found')
             ], 404);
         }
         $country = $this->worldService->getCountryById($country_id);
@@ -53,9 +53,9 @@ class WorldController extends Controller
     }
 
 
-    public function changeGovStatus($gov_id)
+    public function changeCityStatus($gov_id)
     {
-        $gov = $this->worldService->changeGovStatus($gov_id);
+        $gov = $this->worldService->changeCityStatus($gov_id);
         if (!$gov) {
             return response()->json([
                 'status' => false,
@@ -63,7 +63,7 @@ class WorldController extends Controller
             ], 404);
         }
 
-        $gov = $this->worldService->getGovernorateById($gov_id);
+        $gov = $this->worldService->getCityById($gov_id);
         return response()->json([
             'status' => 'success',
             'message' => __('dashboard.success_msg'),
@@ -80,7 +80,7 @@ class WorldController extends Controller
             ], 404);
         }
 
-        $gov = $this->worldService->getGovernorateById($request->gov_id);
+        $gov = $this->worldService->getCityById($request->gov_id);
 
         $gov->load('shippingPrice');
         return response()->json([
