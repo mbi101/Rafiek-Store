@@ -1,10 +1,7 @@
 @extends('dashboard.layouts.app')
-@section('title', __('dashboard.countries'))
+@section('title', __('dashboard.countries_cities'))
 @push('style')
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/dashboard/vendors/css/forms/toggle/switchery.min.css') }}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
-
-
     <style>
         .switchery {
             height: 25px;
@@ -25,7 +22,7 @@
         <div class="content-wrapper">
             <div class="content-header">
                 <x-dashboard.breadceumb
-                    :title="__('dashboard.countries')" :first_link_url="route('dashboard.home')" :active="__('dashboard.countries')"
+                    :title="__('dashboard.countries_cities')" :first_link_url="route('dashboard.home')" :active="__('dashboard.countries_cities')"
                 />
             </div>
             <div class="content-body">
@@ -33,7 +30,7 @@
                     <div class="card-header d-flex align-items-center justify-content-between">
                         <h3 class="card-title" id="basic-layout-colored-form-control">{{ __('dashboard.countries') }} </h3>
                         @can('roles.create')
-                            <a href="{{ route('dashboard.roles.create') }}" class="btn btn-outline-primary ms-3 round px-2">{{ __('dashboard.create_role') }}</a>
+                            <a href="{{ route('dashboard.countries.create') }}" class="btn btn-outline-primary ms-3 round px-2">{{ __('dashboard.create_country') }}</a>
                         @else
                             <a href="javascript:void(0);" class="btn btn-outline-primary ms-3 round px-2" disabled>{{ __('dashboard.create_role') }}</a>
                         @endcan
@@ -75,16 +72,6 @@
                                             <td>
                                                 <input type="checkbox" id="switchery{{$loop->iteration}}" data-url="{{ route('dashboard.countries.status', $country->id) }}"
                                                        class="switchery change_status" {{ $country->status == 1 ? 'checked' : '' }}/>
-                                                {{--                                                <fieldset>--}}
-                                                {{--                                                    <div class="float-left">--}}
-                                                {{--                                                        <input type="checkbox" class="switchBootstrap" id="switchBootstrap18" data-on-color="success"--}}
-                                                {{--                                                               data-off-color="danger" data-off-text="غير نشط" data-on-text="نشط" {{ $country->status == 1 ? 'checked' : '' }}/>--}}
-                                                {{--                                                    </div>--}}
-                                                {{--                                                </fieldset>--}}
-                                                {{--                                                <input type="checkbox" class="switch change_status"--}}
-                                                {{--                                                       country-id={{ $country->id }} id="switch5"--}}
-                                                {{--                                                       @if ($country->is_active == 'Active' || $country->is_active == 'مفعل') checked @endif--}}
-                                                {{--                                                       data-group-cls="btn-group-sm"/>--}}
                                             </td>
                                         </tr>
                                     @empty
@@ -103,8 +90,6 @@
 @endsection
 
 @push('script')
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
-
     <script src="{{ asset('assets/dashboard/vendors/js/forms/toggle/switchery.min.js') }}" type="text/javascript"></script>
     <script>
         var elems = Array.prototype.slice.call(document.querySelectorAll('.switchery'));
@@ -115,7 +100,6 @@
 
         $(function () {
             $(document).on('change', '.change_status', function () {
-
                 let $url = $(this).data('url');
                 $.ajax({
                     url: $url,
@@ -123,26 +107,11 @@
 
                     success: function (response) {
                         if (response.status == 'success') {
-                            // alert(response.message)
-                            toastr.success(response.message)
-                            $('.tostar_success').text();
-                            $('.tostar_success').show();
-
-                            // change status
-                            // $('#status_' + response.data.id).empty();
-                            // $('#status_' + response.data.id).text(response.data.status);
-
+                            flasher.success(response.message, "{{ __('dashboard.success') }}");
                         } else {
-                            alert(response.message)
-                            // $('#tostar_error').show();
-                            // $('#tostar_error').text(data.message);
+                            flasher.error(response.message, "{{ __('dashboard.error') }}");
                         }
-                        // setTimeout(function () {
-                        //     $('.tostar_success').hide();
-                        // }, 5000);
-
                     }
-
                 });
             });
         });

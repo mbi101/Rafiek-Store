@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\Dashboard;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Dashboard\CountryRequest;
 use App\Http\Requests\shippingPriceRequest;
+use App\Models\Country;
 use App\Services\WorldService;
 
 class WorldController extends Controller
@@ -19,7 +21,32 @@ class WorldController extends Controller
     public function getAllCountries()
     {
         $countries = $this->worldService->getAllCountries();
-        return view('dashboard.pages.world.countries', compact('countries'));
+        return view('dashboard.pages.world.countries.index', compact('countries'));
+    }
+
+
+    public function createCountry()
+    {
+        return view('dashboard.pages.world.countries.create');
+    }
+
+    public function storeCountry(CountryRequest $request)
+    {
+        $data = $request->only(['name', 'code']);
+        $this->worldService->storeCountry($data);
+        return redirect()->route('dashboard.countries.index')->with('success', __('dashboard.created_successfully'));
+    }
+
+    public function editCountry(Country $country)
+    {
+        return view('dashboard.pages.world.countries.edit', compact('country'));
+    }
+
+    public function updateCountry(CountryRequest $request, Country $country)
+    {
+        $data = $request->only(['name', 'code']);
+        $this->worldService->updateCountry($country, $data);
+        return redirect()->route('dashboard.countries.index')->with('success', __('dashboard.updated_successfully'));
     }
 
 //    public function getCitiesByCountry($id)
@@ -40,16 +67,16 @@ class WorldController extends Controller
         $country = $this->worldService->changeStatus($country_id);
         if (!$country) {
             return response()->json([
-                'status' => false,
+                'status' => 'error',
                 'message' => __('dashboard.no_data_found')
-            ], 404);
+            ]);
         }
         $country = $this->worldService->getCountryById($country_id);
         return response()->json([
             'status' => 'success',
             'message' => __('dashboard.success_msg'),
             'data' => $country
-        ], 200);
+        ]);
     }
 
 
@@ -58,9 +85,9 @@ class WorldController extends Controller
         $gov = $this->worldService->changeCityStatus($gov_id);
         if (!$gov) {
             return response()->json([
-                'status' => false,
+                'status' => 'error',
                 'message' => __('dashboard.error_msg')
-            ], 404);
+            ]);
         }
 
         $gov = $this->worldService->getCityById($gov_id);
@@ -68,16 +95,16 @@ class WorldController extends Controller
             'status' => 'success',
             'message' => __('dashboard.success_msg'),
             'data' => $gov
-        ], 200);
+        ]);
     }
 
     public function changeShippingPrice(shippingPriceRequest $request)
     {
         if (!$this->worldService->changeShippingPrice($request)) {
             return response()->json([
-                'status' => false,
+                'status' => 'error',
                 'message' => __('dashboard.error_msg')
-            ], 404);
+            ]);
         }
 
         $gov = $this->worldService->getCityById($request->gov_id);
@@ -87,6 +114,6 @@ class WorldController extends Controller
             'status' => 'success',
             'message' => __('dashboard.success_msg'),
             'data' => $gov
-        ], 200);
+        ]);
     }
 }

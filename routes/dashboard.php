@@ -50,6 +50,10 @@ Route::group(
 
                     Route::prefix('countries')->name('countries.')->group(function () {
                         Route::get('/', 'getAllCountries')->name('index');
+                        Route::get('/create', 'createCountry')->name('create');
+                        Route::post('/store', 'storeCountry')->name('store');
+                        Route::get('/{country}/edit', 'editCountry')->name('edit');
+                        Route::put('/{country}/update', 'updateCountry')->name('update');
                         Route::get('/{country_id}/cities', 'getCitiesByCountry')->name('cities.index');
                         Route::get('/change-status/{country_id}', 'changeStatus')->name('status');
                     });

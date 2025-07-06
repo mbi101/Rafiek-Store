@@ -27,7 +27,7 @@ return [
     'role_permissions' => 'صلاحيات الدور',
 
     'success_msg' => 'تمت العملية بنجاح',
-    'error_msg' => 'هناك خطأ ما',
+    'error_msg' => 'هناك خطأ ما يرجي المحاولة لاحقا',
     'add' => 'إضافة',
     'operations' => 'العمليات',
     'created_at' => 'تاريخ الإنشاء ',
@@ -58,6 +58,7 @@ return [
     'status_management' => ' الحالة',
     'country_code' => 'كود الدولة',
     'countries' => 'الدول',
+    'create_country' => 'إضافة دولة',
     'flag' => 'العلم',
     'num_of_users' => 'عدد المستخدمين',
     'shipping_price' => 'سعر الشحن',
@@ -203,4 +204,9 @@ return [
     'unauthorized_access' => 'خطأ 401 - وصول غير مصرح به',
     'delete_confirmation_title' => 'تأكيد الحذف',
     'delete_confirmation_content' => 'هل أنت متأكد أنك تريد حذف هذا العنصر؟',
+    'created_successfully' => 'تمت إضافة البيانات بنجاح',
+    'updated_successfully' => 'تم تحديث البيانات بنجاح',
+    'deleted_successfully' => 'تم حذف البيانات بنجاح',
+    'success' => 'نجاح',
+    'error' => 'خطأ',
 ];
