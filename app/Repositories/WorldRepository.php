@@ -23,6 +23,28 @@ class WorldRepository
     }
 
 
+    public function storeCountry($data)
+    {
+        return Country::query()->create([
+            'name' => [
+                'en' => $data['name']['en'],
+                'ar' => $data['name']['ar'],
+            ],
+            'code' => $data['code'],
+            'status' => 1,
+        ]);
+    }
+
+
+    public function updateCountry($country, $data)
+    {
+        return $country->update([
+            'name' => $data->name,
+            'code' => $data->code,
+        ]);
+    }
+
+
     public function getAllCities($country)
     {
         return $country->cities;

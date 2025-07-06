@@ -28,6 +28,15 @@ class WorldService
         return $this->worldRepository->getAllCountries();
     }
 
+    public function storeCountry($data)
+    {
+        return $this->worldRepository->storeCountry($data);
+    }
+
+    public function updateCountry($country, $data)
+    {
+        return $this->worldRepository->updateCountry($country, $data);
+    }
 
     public function getAllCities($country_id)
     {

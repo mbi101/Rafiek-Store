@@ -31,7 +31,7 @@ return [
     'permission_description' => 'Permission Description',
 
     'success_msg' => 'Operation Done Successfully',
-    'error_msg' => 'Operation Failed',
+    'error_msg' => 'An error occurred, please try again later',
     'add' => 'Add New',
     'operations' => 'Operations',
     'created_at' => 'Created At',
@@ -62,6 +62,7 @@ return [
     'status_management' => 'Manage Status',
     'country_code' => 'Country Code',
     'countries' => 'Countries',
+    'create_country' => 'Create Country',
     'flag' => 'Flag',
     'num_of_users' => 'Number Of Users',
     'shipping_price' => 'Shipping Price',
@@ -238,4 +239,9 @@ return [
     'unauthorized_access' => 'Error 401 - Unauthorized Access',
     'delete_confirmation_title' => 'Confirm Deletion',
     'delete_confirmation_content' => 'Are you sure you want to delete this item?',
+    'created_successfully' => 'The data was successfully added',
+    'updated_successfully' => 'The data has been successfully updated',
+    'deleted_successfully' => 'The data was successfully deleted',
+    'success' => 'Success',
+    'error' => 'Error',
 ];

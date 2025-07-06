@@ -59,6 +59,7 @@
 <link rel="stylesheet" type="text/css"
       href="{{ asset('assets/dashboard') }}/{{ $page_dir }}/pages/dashboard-ecommerce.css">
 <link rel="stylesheet" type="text/css" href="{{ asset('assets/dashboard') }}/css/plugins/animate/animate.css">
+<link rel="stylesheet" href="{{ asset('vendor/flasher/flasher.min.css') }}">
 <!-- END Page Level CSS-->
 <!-- BEGIN Custom CSS-->
 <link rel="stylesheet" type="text/css" href="{{ asset("assets/dashboard/$page_dir/custom/style.css") }}">
