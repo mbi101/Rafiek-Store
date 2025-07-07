@@ -16,12 +16,12 @@ class CitySeeder extends Seeder
         DB::statement('SET FOREIGN_KEY_CHECKS=0;');
         City::truncate();
 
-
         // Define cities
         $cities = include database_path('data/cities.php');
         $finalData = [];
-
         foreach ($cities as $city) {
+            $shippingData = [50, 100, 150, 200];
+            $randShippingData = array_rand($shippingData);
             $finalData[] = [
                 'id' => $city['id'],
                 'country_id' => $city['country_id'],
@@ -29,7 +29,7 @@ class CitySeeder extends Seeder
                     'en' => $city['name_en'],
                     'ar' => $city['name_ar'],
                 ], JSON_UNESCAPED_UNICODE),
-                'code' => $city['code'],
+                'shipping' => $shippingData[$randShippingData],
                 'created_at' => now(),
                 'updated_at' => now(),
             ];

@@ -126,7 +126,7 @@
             @endcan
 
             @can('settings')
-                <li class="nav-item has-sub {{ Route::is('dashboard.countries.index') ? 'open' : '' }}">
+                <li class="nav-item has-sub {{ Route::is('dashboard.countries.*') ? 'open' : '' }}">
                     <a href="javascript:void(0)"><i class="la la-cart-arrow-down"></i>
                         <span class="menu-title"
                               data-i18n="nav.dash.main">{{ __('dashboard.settings') }}</span>

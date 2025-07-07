@@ -468,3 +468,7 @@ button:focus-visible {
 .fl-wrapper {
     z-index: 99999999999 !important;
 }
+
+.tooltip-inner {
+    font-family: 'Cairo', sans-serif;
+}

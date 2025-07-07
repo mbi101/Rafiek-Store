@@ -12,7 +12,8 @@ class CreateCitiesTable extends Migration
             $table->id();
             $table->foreignId('country_id')->constrained('countries')->cascadeOnUpdate()->cascadeOnDelete();
             $table->string('name');
-            $table->string('code');
+            $table->integer('shipping')->default(100);
+            $table->boolean('status')->default(0);
             $table->timestamps();
         });
     }

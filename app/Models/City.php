@@ -13,7 +13,7 @@ class City extends Model
     protected $table = 'cities';
     public $timestamps = true;
     public array $translatable = ['name'];
-    protected $fillable = array('country_id', 'name', 'code');
+    protected $fillable = array('country_id', 'name', 'shipping', 'status');
 
     public function country(): BelongsTo
     {

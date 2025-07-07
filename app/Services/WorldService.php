@@ -38,10 +38,19 @@ class WorldService
         return $this->worldRepository->updateCountry($country, $data);
     }
 
-    public function getAllCities($country_id)
+    public function getAllCities($country)
     {
-        $country = self::getCountryById($country_id);
         return $this->worldRepository->getAllCities($country);
+    }
+
+    public function storeCity($country, $data)
+    {
+        return $this->worldRepository->storeCity($country, $data);
+    }
+
+    public function updateCity($city, $data)
+    {
+        return $this->worldRepository->updateCity($city, $data);
     }
 
     public function getCityById($id)
@@ -74,16 +83,4 @@ class WorldService
         }
         return true;
     }
-
-    public function changeShippingPrice($request): bool
-    {
-        $city = self::getCityById($request->city_id);
-        $city = $this->worldRepository->changeShippingPrice($city, $request->price);
-
-        if (!$city) {
-            return false;
-        }
-        return true;
-    }
-
 }

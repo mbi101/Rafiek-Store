@@ -22,14 +22,16 @@
         <div class="content-wrapper">
             <div class="content-header">
                 <x-dashboard.breadceumb
-                    :title="__('dashboard.countries_cities')" :first_link_url="route('dashboard.home')" :active="__('dashboard.countries_cities')"
+                    :title="__('dashboard.cities')" :first_link_url="route('dashboard.home')" :second_link_url="route('dashboard.countries.index')"
+                    :second_link_title="__('dashboard.countries')" :active="__('dashboard.cities')"
                 />
             </div>
             <div class="content-body">
                 <div class="card">
                     <div class="card-header d-flex align-items-center justify-content-between">
-                        <h3 class="card-title" id="basic-layout-colored-form-control">{{ __('dashboard.countries') }} </h3>
-                        <a href="{{ route('dashboard.countries.create') }}" class="btn btn-outline-primary ms-3 round px-2">{{ __('dashboard.create_country') }}</a>
+                        <h3 class="card-title" id="basic-layout-colored-form-control">{{ __('dashboard.cities') }} </h3>
+                        <a href="{{ route('dashboard.countries.cities.create', $country->id) }}"
+                           class="btn btn-outline-primary ms-3 round px-2">{{ __('dashboard.create_city') }}</a>
                     </div>
 
                     <div class="card-content">
@@ -39,10 +41,8 @@
                                     <thead>
                                     <tr>
                                         <th scope="col">#</th>
-                                        <th scope="col">{{ __('dashboard.flag') }}</th>
                                         <th scope="col">{{ __('dashboard.name') }}</th>
-                                        <th scope="col">{{ __('dashboard.country_code') }} </th>
-                                        <th scope="col">{{ __('dashboard.num_of_cities') }} </th>
+                                        <th scope="col">{{ __('dashboard.shipping_price') }} </th>
                                         <th scope="col">{{ __('dashboard.num_of_users') }} </th>
                                         <th scope="col">{{ __('dashboard.status_management') }} </th>
                                         <th scope="col">{{ __('dashboard.operations') }} </th>
@@ -50,34 +50,19 @@
                                     </thead>
                                     <tbody>
 
-                                    @forelse ($countries as $country)
+                                    @forelse ($cities as $city)
                                         <tr>
                                             <td>{{ $loop->iteration }}</td>
+                                            <td>{{ $city->name }}</td>
+                                            <td>{{ $city->shipping}}</td>
+                                            <td>{{ $city->users_count}}</td>
                                             <td>
-                                                @if($country->code)
-                                                    <i class="flag-icon flag-icon-{{ $country->code }}"></i>
-                                                @else
-                                                    ----
-                                                @endif
-                                            </td>
-                                            <td>
-                                                <a href="{{ route('dashboard.countries.cities.index' , $country->id) }}" class="text-primary">{{ $country->name }}</a>
-                                            </td>
-                                            <td>{{ $country->code }} </td>
-                                            <td> {{ $country->cities_count}} </td>
-                                            <td>{{ $country->users_count}}</td>
-                                            <td>
-                                                <input type="checkbox" id="switchery{{$loop->iteration}}" data-url="{{ route('dashboard.countries.status', $country->id) }}"
-                                                       class="switchery change_status" {{ $country->status == 1 ? 'checked' : '' }}/>
+                                                <input type="checkbox" id="switchery{{$loop->iteration}}" data-url="{{ route('dashboard.countries.cities.status', $city->id) }}"
+                                                       class="switchery change_status" {{ $city->status == 1 ? 'checked' : '' }}/>
                                             </td>
 
                                             <td>
-                                                <a href="{{ route('dashboard.countries.cities.index', $country->id) }}"
-                                                   class="btn btn-icon btn-primary mr-1 btn-sm d-inline-block"
-                                                   data-toggle="tooltip" data-placement="top" title="{{ __('dashboard.show') }}">
-                                                    <i class="la la-eye"></i>
-                                                </a>
-                                                <a href="{{ route('dashboard.countries.edit', $country->id) }}"
+                                                <a href="{{ route('dashboard.countries.cities.edit', $city->id) }}"
                                                    class="btn btn-icon btn-success btn-sm d-inline-block"
                                                    data-toggle="tooltip" data-placement="top" title="{{ __('dashboard.edit') }}">
                                                     <i class="la la-edit"></i>
@@ -90,7 +75,7 @@
                                     </tbody>
                                 </table>
                             </div>
-                            {{ $countries->appends(request()->input())->links() }}
+                            {{ $cities->appends(request()->input())->links() }}
                         </div>
                     </div>
                 </div>
