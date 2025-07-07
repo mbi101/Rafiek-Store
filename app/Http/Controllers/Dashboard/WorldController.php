@@ -4,11 +4,14 @@ namespace App\Http\Controllers\Dashboard;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Dashboard\CountryRequest;
-use App\Http\Requests\shippingPriceRequest;
+use App\Http\Requests\Dashboard\World\CItyRequest;
+use App\Models\City;
 use App\Models\Country;
 use App\Services\WorldService;
+use Illuminate\Routing\Controllers\HasMiddleware;
+use Illuminate\Routing\Controllers\Middleware;
 
-class WorldController extends Controller
+class WorldController extends Controller implements HasMiddleware
 {
     protected $worldService;
 
@@ -17,13 +20,18 @@ class WorldController extends Controller
         $this->worldService = $worldService;
     }
 
+    public static function middleware(): array
+    {
+        return [
+            new Middleware(middleware: 'check_permission:settings'),
+        ];
+    }
 
     public function getAllCountries()
     {
         $countries = $this->worldService->getAllCountries();
         return view('dashboard.pages.world.countries.index', compact('countries'));
     }
-
 
     public function createCountry()
     {
@@ -49,19 +57,6 @@ class WorldController extends Controller
         return redirect()->route('dashboard.countries.index')->with('success', __('dashboard.updated_successfully'));
     }
 
-//    public function getCitiesByCountry($id)
-//    {
-//        $governorates = $this->worldService->getAllCities($id);
-//        return view('dashboard.pages.world.governorates', compact('governorates'));
-//    }
-
-    public function getCitiesByCountry($id)
-    {
-        $cities = $this->worldService->getAllCities($id);
-        return view('dashboard.pages.world.cities', compact('cities'));
-    }
-
-
     public function changeStatus($country_id)
     {
         $country = $this->worldService->changeStatus($country_id);
@@ -79,41 +74,52 @@ class WorldController extends Controller
         ]);
     }
 
-
-    public function changeCityStatus($gov_id)
+    public function getCitiesByCountry(Country $country)
     {
-        $gov = $this->worldService->changeCityStatus($gov_id);
-        if (!$gov) {
-            return response()->json([
-                'status' => 'error',
-                'message' => __('dashboard.error_msg')
-            ]);
-        }
-
-        $gov = $this->worldService->getCityById($gov_id);
-        return response()->json([
-            'status' => 'success',
-            'message' => __('dashboard.success_msg'),
-            'data' => $gov
-        ]);
+        $cities = $this->worldService->getAllCities($country);
+        return view('dashboard.pages.world.cities.index', compact(['cities', 'country']));
     }
 
-    public function changeShippingPrice(shippingPriceRequest $request)
+    public function createCity(Country $country)
     {
-        if (!$this->worldService->changeShippingPrice($request)) {
+        return view('dashboard.pages.world.cities.create', compact('country'));
+    }
+
+    public function storeCity(Country $country, CityRequest $request)
+    {
+
+        $data = $request->only(['name', 'shipping']);
+        $this->worldService->storeCity($country, $data);
+        return redirect()->route('dashboard.countries.cities.index', $country->id)->with('success', __('dashboard.created_successfully'));
+    }
+
+    public function editCity(City $city)
+    {
+        return view('dashboard.pages.world.cities.edit', compact('city'));
+    }
+
+    public function updateCity(CityRequest $request, City $city)
+    {
+        $data = $request->only(['name', 'shipping']);
+        $this->worldService->updateCity($city, $data);
+        return redirect()->route('dashboard.countries.cities.index', $city->country->id)->with('success', __('dashboard.updated_successfully'));
+    }
+
+    public function changeCityStatus($city_id)
+    {
+        $city = $this->worldService->changeCityStatus($city_id);
+        if (!$city) {
             return response()->json([
                 'status' => 'error',
                 'message' => __('dashboard.error_msg')
             ]);
         }
 
-        $gov = $this->worldService->getCityById($request->gov_id);
-
-        $gov->load('shippingPrice');
+        $gov = $this->worldService->getCityById($city_id);
         return response()->json([
             'status' => 'success',
             'message' => __('dashboard.success_msg'),
-            'data' => $gov
+            'data' => $city_id
         ]);
     }
 }

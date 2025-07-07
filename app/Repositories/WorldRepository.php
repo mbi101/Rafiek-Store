@@ -35,19 +35,45 @@ class WorldRepository
         ]);
     }
 
-
     public function updateCountry($country, $data)
     {
         return $country->update([
-            'name' => $data->name,
-            'code' => $data->code,
+            'name' => [
+                'en' => $data['name']['en'],
+                'ar' => $data['name']['ar'],
+            ],
+            'code' => $data['code'],
+        ]);
+    }
+
+    public function getAllCities($country)
+    {
+        return $country->cities()->withCount('users')->paginate(10);
+    }
+
+    public function storeCity($country, $data)
+    {
+        return City::query()->create([
+            'country_id' => $country->id,
+            'name' => [
+                'en' => $data['name']['en'],
+                'ar' => $data['name']['ar'],
+            ],
+            'shipping' => $data['shipping'],
+            'status' => 1,
         ]);
     }
 
 
-    public function getAllCities($country)
+    public function updateCity($city, $data)
     {
-        return $country->cities;
+        return $city->update([
+            'name' => [
+                'en' => $data['name']['en'],
+                'ar' => $data['name']['ar'],
+            ],
+            'shipping' => $data['shipping'],
+        ]);
     }
 
     public function getCityById($id)
@@ -59,13 +85,6 @@ class WorldRepository
     {
         return $model->update([
             'status' => $model->status == 1 ? 0 : 1,
-        ]);
-    }
-
-    public function changeShippingPrice($city, $price)
-    {
-        return $city->shippingPrice->update([
-            'price' => $price,
         ]);
     }
 }

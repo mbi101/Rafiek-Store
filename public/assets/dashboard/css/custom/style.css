@@ -437,9 +437,16 @@ form .form-actions .btn {
     color: #ffffff;
 }
 
-
 .pagination .page-item:hover .page-link {
     background-color: #1e9ff2;
     color: #ffffff;
     border: 2px solid #1e9ff2 !important;
+}
+
+.fl-wrapper {
+    z-index: 99999999999 !important;
+}
+
+.tooltip-inner {
+    font-family: 'Inter', sans-serif;
 }
