@@ -76,6 +76,7 @@ return [
     'select_shipping_price' => 'Select Shipping Price',
     'change_price' => ' Change Price',
 
+    // categories
     'categories' => 'Categories',
     'brands' => 'Brands',
     'category_create' => 'Create Category',
@@ -237,4 +238,13 @@ return [
     'unauthorized_access' => 'Error 401 - Unauthorized Access',
     'delete_confirmation_title' => 'Confirm Deletion',
     'delete_confirmation_content' => 'Are you sure you want to delete this item?',
+    "" => "",
+    "" => "",
+    "" => "",
+    "" => "",
+    "" => "",
+    "" => "",
+    "" => "",
+
+
 ];

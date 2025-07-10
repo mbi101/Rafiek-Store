@@ -12,17 +12,49 @@
 <link rel="shortcut icon" type="image/x-icon" href="{{ asset($general_settings->site_favicon) }}">
 
 <!-- Google fonts-->
-@if(app()->getLocale() == 'ar')
+@if (app()->getLocale() == 'ar')
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap" rel="stylesheet">
     <style>
-        html, body, h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, button, li, .badge {
+        html,
+        body,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        .h1,
+        .h2,
+        .h3,
+        .h4,
+        .h5,
+        .h6,
+        button,
+        li,
+        .badge {
             font-family: "Cairo", sans-serif !important;
         }
     </style>
 @else
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
     <style>
-        html, body, h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, button {
+        html,
+        body,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        .h1,
+        .h2,
+        .h3,
+        .h4,
+        .h5,
+        .h6,
+        button {
             font-family: "Inter", sans-serif !important;
         }
     </style>
@@ -37,27 +69,26 @@
 
 <link rel="stylesheet" type="text/css" href="{{ asset('assets/dashboard/' . $page_dir . '/vendors.css') }}">
 <link rel="stylesheet" type="text/css"
-      href="{{ asset('assets/dashboard') }}/vendors/css/weather-icons/climacons.min.css">
+    href="{{ asset('assets/dashboard') }}/vendors/css/weather-icons/climacons.min.css">
 
 <!-- END VENDOR CSS-->
 <!-- BEGIN MODERN CSS-->
 <link rel="stylesheet" type="text/css" href="{{ asset('assets/dashboard') }}/{{ $page_dir }}/app.css">
-@if(app()->getLocale() == 'ar')
-
-    <link rel="stylesheet" type="text/css" href="{{ asset('assets/dashboard/' . $page_dir . '/custom-rtl.css' ) }}">
+@if (app()->getLocale() == 'ar')
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/dashboard/' . $page_dir . '/custom-rtl.css') }}">
 @endif
 <!-- END MODERN CSS-->
 <!-- BEGIN Page Level CSS-->
 <link rel="stylesheet" type="text/css"
-      href="{{ asset('assets/dashboard') }}/{{ $page_dir }}/core/menu/menu-types/vertical-menu-modern.css">
+    href="{{ asset('assets/dashboard') }}/{{ $page_dir }}/core/menu/menu-types/vertical-menu-modern.css">
 <link rel="stylesheet" type="text/css"
-      href="{{ asset('assets/dashboard') }}/{{ $page_dir }}/core/colors/palette-gradient.css">
+    href="{{ asset('assets/dashboard') }}/{{ $page_dir }}/core/colors/palette-gradient.css">
 <link rel="stylesheet" type="text/css" href="{{ asset('assets/dashboard') }}/fonts/simple-line-icons/style.css">
 <link rel="stylesheet" type="text/css"
-      href="{{ asset('assets/dashboard') }}/{{ $page_dir }}/core/colors/palette-gradient.css">
+    href="{{ asset('assets/dashboard') }}/{{ $page_dir }}/core/colors/palette-gradient.css">
 <link rel="stylesheet" type="text/css" href="{{ asset('assets/dashboard') }}/{{ $page_dir }}/pages/timeline.css">
 <link rel="stylesheet" type="text/css"
-      href="{{ asset('assets/dashboard') }}/{{ $page_dir }}/pages/dashboard-ecommerce.css">
+    href="{{ asset('assets/dashboard') }}/{{ $page_dir }}/pages/dashboard-ecommerce.css">
 <link rel="stylesheet" type="text/css" href="{{ asset('assets/dashboard') }}/css/plugins/animate/animate.css">
 <!-- END Page Level CSS-->
 <!-- BEGIN Custom CSS-->

@@ -504,8 +504,8 @@ select.form-control {
 }
 
 .custom-checkbox
-.custom-control-input:disabled:checked
-~ .custom-control-label::before {
+    .custom-control-input:disabled:checked
+    ~ .custom-control-label::before {
     background-color: rgba(30, 159, 242, 0.5);
 }
 
@@ -1255,6 +1255,7 @@ select.form-control {
 
 .header-navbar .nav-item + .nav-item {
     margin-right: 0rem;
+    overflow: hidden;
 }
 
 @media (max-width: 767.98px) {
@@ -1414,7 +1415,7 @@ select.form-control {
 .navigation-main .mega-dropdown-menu,
 .navbar-nav .mega-dropdown-menu {
     font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI",
-    Roboto, "Helvetica Neue", Arial, sans-serif;
+        Roboto, "Helvetica Neue", Arial, sans-serif;
     width: -webkit-calc(100% - 50px);
     width: -moz-calc(100% - 50px);
     width: calc(100% - 50px);
@@ -2826,8 +2827,8 @@ select.form-control {
 }
 
 .nav.nav-tabs.nav-linetriangle
-.nav-item
-a.nav-link.dropdown-toggle.active:after {
+    .nav-item
+    a.nav-link.dropdown-toggle.active:after {
     margin-top: 0;
 }
 
@@ -3055,9 +3056,9 @@ a.nav-link.dropdown-toggle.active:after {
 }
 
 .nav-vertical
-.nav-right.nav-tabs.nav-border-right
-li.nav-item
-a.nav-link.active {
+    .nav-right.nav-tabs.nav-border-right
+    li.nav-item
+    a.nav-link.active {
     border-left: 3px solid #ff4961;
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;

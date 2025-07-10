@@ -18,59 +18,61 @@ class CategoryController extends Controller
 
     public function index()
     {
-        $edit_categories = $this->categoryService->getCategoriesExceptChildren(1);
-        return view('dashboard.categories.index', compact('edit_categories'));
+
+        $categories = $this->categoryService->getAllCategories();
+        return view('dashboard.pages.categories.index', compact('categories'));
     }
 
-    public function getAll()
-    {
-        return $this->categoryService->getCategoriesForDatatable();
-    }
+
 
     public function create()
     {
-        $categories = $this->categoryService->getParentCategories();
-        return view('dashboard.categories.create', compact('categories'));
+        // $categories = $this->categoryService->getParentCategories();          compact('categories')
+        return view('dashboard.pages.categories.create');
     }
 
-    public function store(CategoryRequest $request)
+    public function store()
     {
-        $data = $request->only(['name', 'parent', 'status']);
-        if (!$this->categoryService->store($data)) {
-            Session::flash('error', __('dashboard.error_msg'));
-            return redirect()->back();
-        }
-        Session::flash('success', __('dashboard.success_msg'));
-        return redirect()->back();
     }
+    // public function store(CategoryRequest $request)
+    // {
+    //     $data = $request->only(['name', 'parent', 'status']);
+    //     if (!$this->categoryService->store($data)) {
+    //         Session::flash('error', __('dashboard.error_msg'));
+    //         return redirect()->back();
+    //     }
+
+    //     Session::flash('success', __('dashboard.success_msg'));
+    //     return redirect()->back();
+    // }
 
 
     public function edit(string $id)
     {
-        $category = $this->categoryService->findById($id);
-        $categories = $this->categoryService->getCategoriesExceptChildren($id);
-        return view('dashboard.categories.edit', compact('categories', 'category'));
+        // $category = $this->categoryService->findById($id);
+        // $categories = $this->categoryService->getCategoriesExceptChildren($id);
+        // return view('dashboard.categories.edit', compact('categories', 'category'));
     }
 
 
-    public function update(CategoryRequest $request, string $id)
-    {
-        $data = $request->only(['name', 'parent', 'status', 'id']);
-        if (!$this->categoryService->update($data)) {
-            Session::flash('error', __('dashboard.error_msg'));
-            return redirect()->back();
-        }
-        Session::flash('success', __('dashboard.success_msg'));
-        return redirect()->back();
-    }
+    // public function update(CategoryRequest $request, string $id)
+    // {
+    //     $data = $request->only(['name', 'parent', 'status', 'id']);
+    //     if (!$this->categoryService->update($data)) {
+    //         Session::flash('error', __('dashboard.error_msg'));
+    //         return redirect()->back();
+    //     }
+    //     Session::flash('success', __('dashboard.success_msg'));
+    //     return redirect()->back();
+    // }
 
-    public function destroy(string $id)
-    {
-        if (!$this->categoryService->delete($id)) {
-            Session::flash('error', __('dashboard.error_msg'));
-            return redirect()->back();
-        }
-        Session::flash('success', __('dashboard.success_msg'));
-        return redirect()->back();
-    }
+    // public function destroy(string $id)
+    // {
+    //     if (!$this->categoryService->delete($id)) {
+    //         Session::flash('error', __('dashboard.error_msg'));
+    //         return redirect()->back();
+    //     }
+    //     Session::flash('success', __('dashboard.success_msg'));
+    //     return redirect()->back();
+    // }
 }

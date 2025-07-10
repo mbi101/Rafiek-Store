@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 
 class CreateCategoriesTable extends Migration
@@ -12,8 +13,9 @@ class CreateCategoriesTable extends Migration
             $table->id();
             $table->string('name')->unique();
             $table->string('slug')->unique();
-            $table->string('parent');
             $table->boolean('status')->default(1);
+            $table->string('parent')->nullable();
+            $table->string('image')->nullable();
             $table->timestamps();
         });
     }

@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Services;
-
 use App\Repositories\RoleRepository;
 
 class RoleService
@@ -42,10 +41,12 @@ class RoleService
     public function existingPermissions($role)
     {
         return $role->permissions->mapWithKeys(function ($permission) {
-            return [$permission->key => [
-                'id' => $permission->id,
-                'options' => json_decode($permission->pivot->allowed_options ?? '[]', true),
-            ]];
+            return [
+                $permission->key => [
+                    'id' => $permission->id,
+                    'options' => json_decode($permission->pivot->allowed_options ?? '[]', true),
+                ]
+            ];
         })->toArray();
     }
 

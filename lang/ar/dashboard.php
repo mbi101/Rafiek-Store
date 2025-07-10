@@ -74,9 +74,7 @@ return [
     'select_shipping_price' => 'اختار سعر الشحن',
     'change_price' => ' تغير السعر',
 
-    'categories' => 'ألأقسام',
     'brands' => 'العلامات التجارية',
-    'category_create' => 'إنشاء قسم ',
     'brand_create' => 'إنشاء علامه تجاريه ',
     'table_yajra_paragraph' => 'جدول ديناميكي يعرض البيانات من قاعدة البيانات مع ميزات مثل البحث، الفرز، إظهار وإخفاء الأعمدة، وخيارات لتصدير البيانات إلى Excel أو طباعتها أو نسخها.',
     'are_you_sure' => 'هل انت متأكد؟',
@@ -87,6 +85,10 @@ return [
     'image' => 'الصورة',
     'select_Parent' => 'اختار الصنف الرئيسي',
     'form_edit' => 'الشكل تعديل',
+
+    // categories
+    'categories' => 'الأقسام',
+    'category_create' => 'إنشاء قسم ',
     'category_edit' => 'تعديل القسم',
     'create_category' => 'إنشاء قسم',
     'logo' => 'الشعار',
