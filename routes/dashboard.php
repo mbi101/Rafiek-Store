@@ -100,6 +100,7 @@ Route::group(
                     ->name('coupons.all');
             });
             ############################### End Coupouns ###############################
+
             ############################### Faqs Routes ################################
             Route::group(['middleware' => 'can:faqs'], function () {
                 Route::resource('faqs', FaqController::class);

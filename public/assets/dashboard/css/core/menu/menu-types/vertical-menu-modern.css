@@ -7,7 +7,7 @@
     Item Name: Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
     Version: 1.0
     Author:pharo101.tech
-    Author URL: https://www.pharao101.tech 
+    Author URL: https://www.pharao101.tech
 ==========================================================================================*/
 @media (min-width: 576px) {
     body.vertical-layout.vertical-menu-modern.menu-flipped .main-menu {
@@ -31,6 +31,11 @@ body.vertical-layout.vertical-menu-modern .main-menu li a span {
 body.vertical-layout.vertical-menu-modern.menu-expanded .navbar .navbar-header {
     float: left;
     width: 260px;
+    background: #16224a;
+}
+
+body.vertical-layout.vertical-menu-modern .navbar .navbar-header {
+    background: #16224a;
 }
 
 body.vertical-layout.vertical-menu-modern.menu-expanded
@@ -506,14 +511,14 @@ body.vertical-layout.vertical-menu-modern.menu-collapsed.menu-flipped .footer {
 
 /*=========================================================================================
 	File Name: vertical-overlay-menu.scss
-	Description: A overlay style vertical menu with show and hide support. It support 
-	light & dark version, filpped layout, right side icons, native scroll and borders menu 
+	Description: A overlay style vertical menu with show and hide support. It support
+	light & dark version, filpped layout, right side icons, native scroll and borders menu
 	item seperation.
 	----------------------------------------------------------------------------------------
 	Item Name: Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
 	Version: 1.0
 	Author:pharo101.tech
-	Author URL: https://www.pharao101.tech 
+	Author URL: https://www.pharao101.tech
 ==========================================================================================*/
 .vertical-overlay-menu .content {
     margin-left: 0;

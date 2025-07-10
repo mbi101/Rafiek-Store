@@ -81,6 +81,7 @@ return [
     'select_shipping_price' => 'Select Shipping Price',
     'change_price' => ' Change Price',
 
+    // categories
     'categories' => 'Categories',
     'brands' => 'Brands',
     'category_create' => 'Create Category',
@@ -247,4 +248,11 @@ return [
     'deleted_successfully' => 'The data was successfully deleted',
     'success' => 'Success',
     'error' => 'Error',
+    "" => "",
+    "" => "",
+    "" => "",
+    "" => "",
+    "" => "",
+    "" => "",
+    "" => "",
 ];

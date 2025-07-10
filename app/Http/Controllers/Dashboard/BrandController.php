@@ -18,7 +18,7 @@ class BrandController extends Controller
 
     public function index()
     {
-        return view('dashboard.brands.index');
+        return view('dashboard.pages.brands.index');
     }
 
     public function getAll()
@@ -28,7 +28,7 @@ class BrandController extends Controller
 
     public function create()
     {
-        return view('dashboard.brands.create');
+        return view('dashboard.pages.brands.create');
     }
 
     public function store(BrandRequest $request)
