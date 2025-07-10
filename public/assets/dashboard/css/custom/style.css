@@ -452,8 +452,15 @@ form .form-actions .btn {
     background-color: #323678;
     font-weight: bold;
 }
+
 /* ********************************************** */
 /* *****************Categories******************* */
 /* ********************************************** */
-.categories {
+
+.fl-wrapper {
+    z-index: 99999999999 !important;
+}
+
+.tooltip-inner {
+    font-family: 'Cairo', sans-serif;
 }

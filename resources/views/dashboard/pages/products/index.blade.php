@@ -25,7 +25,7 @@
                     <div class="card-content">
                         <div class="card-body">
                             <div class="table-responsive">
-                                <table class="table custom-rounded-table">
+                                <table class="table table-bordered custom-rounded-table">
                                     <thead>
                                     <tr>
                                         <th>#</th>
@@ -54,9 +54,7 @@
                                                     -----
                                                 @else
                                                     @can('roles.update')
-                                                        <a href="{{ route('dashboard.roles.edit', $role->id) }}"
-                                                           class="btn btn-icon btn-success mr-1 btn-sm d-inline-block"
-                                                           data-toggle="tooltip" data-placement="top" title="{{ __('dashboard.edit') }}">
+                                                        <a href="{{ route('dashboard.roles.edit', $role->id) }}" class="btn btn-icon btn-success mr-1 btn-sm d-inline-block">
                                                             <i class="la la-edit"></i>
                                                         </a>
                                                     @else
@@ -65,14 +63,12 @@
                                                         </a>
                                                     @endcan
                                                     @can('roles.delete')
-                                                        <span data-toggle="tooltip" data-placement="top" title="{{ __('dashboard.delete') }}">
-                                                            <button type="button"
-                                                                    class="btn btn-icon btn-danger btn-sm d-inline-block btn-delete"
-                                                                    data-toggle="modal" data-target="#confirmDeleteModal"
-                                                                    data-url="{{ route('dashboard.roles.destroy', $role->id) }}">
-                                                                <i class="la la-trash"></i>
-                                                            </button>
-                                                        </span>
+                                                        <button type="button"
+                                                                class="btn btn-icon btn-danger btn-sm d-inline-block btn-delete"
+                                                                data-toggle="modal" data-target="#confirmDeleteModal"
+                                                                data-url="{{ route('dashboard.roles.destroy', $role->id) }}">
+                                                            <i class="la la-trash"></i>
+                                                        </button>
                                                     @else
                                                         <button type="button"
                                                                 class="btn btn-icon btn-danger btn-sm d-inline-block btn-delete" disabled>

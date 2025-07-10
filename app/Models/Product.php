@@ -51,4 +51,53 @@ class Product extends Model
     {
         return $this->belongsTo(Brand::class, 'brand_id');
     }
+
+    public function getStatusTranslated()
+    {
+        return $this->status == 1 ? __('dashboard.active') : __('dashboard.inactive');
+    }
+
+    public function hasVariantsTranslated()
+    {
+        return $this->has_variants == 1 ? __('dashboard.yes_variants') : __('dashboard.no_variants');
+    }
+
+    public function isSimple()
+    {
+        return !$this->has_variants;
+    }
+
+    // accessores
+
+    public function getCreatedAtAttribute($value)
+    {
+        return date('d/m/Y H:i a', strtotime($value));
+    }
+
+    public function getUpdatedAtAttribute($value)
+    {
+        return date('d/m/Y H:i a', strtotime($value));
+    }
+
+    public function PriceAttribute()
+    {
+        return $this->has_variants == 0 ? number_format($this->price, 2) : __("dashboard.has_variants");
+    }
+
+    public function quantityAttribute()
+    {
+        return $this->has_variants == 0 ? $this->quantity : __("dashboard.has_variants");
+    }
+
+    // Scopes
+    public function scopeActive($query)
+    {
+        return $query->where('status', 1);
+    }
+
+    public function scopeInactive($query)
+    {
+        return $query->where('status', 0);
+    }
+
 }

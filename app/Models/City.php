@@ -4,17 +4,20 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Spatie\Translatable\HasTranslations;
 
 class City extends Model
 {
+    use HasTranslations;
 
     protected $table = 'cities';
     public $timestamps = true;
-    protected $fillable = array('governorate_id', 'name');
+    public array $translatable = ['name'];
+    protected $fillable = array('country_id', 'name', 'shipping', 'status');
 
-    public function governorate(): BelongsTo
+    public function country(): BelongsTo
     {
-        return $this->belongsTo(Governorate::class, 'governorate_id');
+        return $this->belongsTo(Country::class, 'country_id');
     }
 
     public function users()

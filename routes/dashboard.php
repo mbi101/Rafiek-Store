@@ -49,14 +49,28 @@ Route::group(
                 Route::controller(WorldController::class)->group(function () {
 
                     Route::prefix('countries')->name('countries.')->group(function () {
+                        ############################ Countries ##########################
                         Route::get('/', 'getAllCountries')->name('index');
-                        Route::get('/{country_id}/governorates', 'getGovsByCountry')->name('governorates.index');
+                        Route::get('/create', 'createCountry')->name('create');
+                        Route::post('/store', 'storeCountry')->name('store');
+                        Route::get('/{country}/edit', 'editCountry')->name('edit');
+                        Route::put('/{country}/update', 'updateCountry')->name('update');
                         Route::get('/change-status/{country_id}', 'changeStatus')->name('status');
-                    });
 
-                    Route::prefix('governorates')->name('governorates.')->group(function () {
-                        Route::get('/change-status/{gov_id}', 'changeGovStatus')->name('status');
-                        Route::put('/shipping-price', 'changeShippingPrice')->name('shipping-price');
+                        ############################ City ##########################
+                        Route::name('cities.')->group(function () {
+                            Route::prefix('{country}/cities')->group(function () {
+                                Route::get('/', 'getCitiesByCountry')->name('index');
+                                Route::get('/create', 'createCity')->name('create');
+                                Route::post('/store', 'storeCity')->name('store');
+                            });
+                            Route::prefix('cities')->group(function () {
+                                Route::get('/{city}/edit', 'editCity')->name('edit');
+                                Route::put('/{city}/update', 'updateCity')->name('update');
+                                Route::get('/change-status/{city_id}', 'changeCityStatus')->name('status');
+                                Route::put('/shipping-price', 'changeShippingPrice')->name('shipping-price');
+                            });
+                        });
                     });
                 });
             });

@@ -3,12 +3,7 @@
 namespace App\Http\Controllers\Dashboard;
 
 use App\Http\Controllers\Controller;
-use App\Models\Attribute;
-use App\Models\ProductVariant;
-use App\Services\Dashboard\AttributeService;
-use App\Services\Dashboard\BrandService;
-use App\Services\Dashboard\CategoryService;
-use App\Services\Dashboard\ProductService;
+use App\Services\ProductService;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -28,7 +23,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-        return view('dashboard.products.index');
+        return view('dashboard.pages.products.index');
     }
 
     public function getAll()

@@ -19,7 +19,7 @@ return Configuration::from([
     // Set global options for all notifications (optional)
     'options' => [
         'timeout' => 7000, // Time in milliseconds before the notification disappears
-        'position' => app()->getLocale() == 'ar' ? 'bottom-left' : 'bottom-right', // Where the notification appears on the screen
+        'position' => 'top-right', // Where the notification appears on the screen
     ],
 
     // Automatically inject JavaScript and CSS assets into your HTML pages
