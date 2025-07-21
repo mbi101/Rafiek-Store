@@ -5,8 +5,7 @@
 @endsection
 
 @push('style')
-
-    @if (app()->getLocale() == 'en')
+    @if ($siteLang)
         <link rel="stylesheet" type="text/css" href="{{ asset('assets/dashboard/css/custom/style.css') }}">
     @else
         <link rel="stylesheet" type="text/css" href="{{ asset('assets/dashboard/css-rtl/custom/style.css') }}">
@@ -20,6 +19,9 @@
 @section('title')
     {{ __('dashboard.categories') }}
 @endsection
+
+
+
 
 @section('content')
     <div class="app-content content">
@@ -45,12 +47,14 @@
                     <div class="card-content">
                         <div class="card-body">
                             <div class="table-responsive">
-                                <table class="table table-bordered custom-rounded-table  table-striped" id="yajra_table">
+                                <table class="table table-bordered custom-rounde    d-table  table-striped"
+                                    id="yajra_table">
                                     <thead>
                                         <tr>
                                             <th width="15%">#</th>
                                             <th width="15%">{{ __('dashboard.name') }}</th>
                                             <th width="20%">{{ __('dashboard.status') }}</th>
+                                            <th width="20%">{{ __('dashboard.image') }}</th>
                                             <th width="15%">{{ __('dashboard.operations') }} </th>
                                         </tr>
                                     </thead>
@@ -58,7 +62,8 @@
                                         @forelse ($categories as $category)
                                             <tr>
                                                 <td>{{ $loop->iteration }}</td>
-                                                <td>{{ $category->name }}</td>
+                                                <td>{{ $siteLang == 'ar' ? $category->name['ar'] : $category->name['en'] }}
+                                                </td>
                                                 <td>
                                                     <button
                                                         class="btn @if ($category->status == 1) btn-primary
@@ -67,8 +72,18 @@
                                                     </button>
                                                 </td>
                                                 <td>
+                                                    @if ($category->image)
+                                                        <img src="{{ asset('storage/' . $category->image) }}"
+                                                            loading="lazy" alt="{{ $category->name['ar'] }}"
+                                                            width="150px">
+                                                    @else
+                                                        {{ __('dashboard.no_data_found') }}
+                                                    @endif
+                                                </td>
+                                                {{-- controls --}}
+                                                <td>
                                                     @can('roles.update')
-                                                        <a href="{{ route('dashboard.categories.edit', $category->id) }}"
+                                                        <a href="{{ route('dashboard.categories.edit', $category) }}"
                                                             class="btn btn-icon btn-success mr-1 btn-sm d-inline-block">
                                                             <i class="la la-edit"></i>
                                                         </a>
@@ -81,7 +96,7 @@
                                                     @endcan
 
                                                     @can('roles.delete')
-                                                        <button type="button"
+                                                        <button type="button" data-id="{{ $category->id }}"
                                                             class="btn btn-icon btn-danger btn-sm d-inline-block btn-delete"
                                                             data-toggle="modal" data-target="#confirmDeleteModal"
                                                             data-url="#">
@@ -89,7 +104,7 @@
                                                         </button>
                                                     @else
                                                         <button type="button"
-                                                            class="btn btn-icon btn-danger btn-sm d-inline-block btn-delete"
+                                                            class="btn btn-icon btn-danger btn-sm d-inline-block btn-delete "
                                                             disabled>
                                                             <i class="la la-trash"></i>
                                                         </button>
@@ -114,5 +129,36 @@
 @endsection
 
 @push('script')
-    <script></script>
+    <script>
+        $(document).ready(function() {
+            // delete an category
+            var category_id;
+            $('.btn-delete').on('click', function() {
+                category_id = $(this).data('id');
+            })
+
+            $('#deleteForm').on('click', function(e) {
+                e.preventDefault()
+
+                $.ajax({
+                    url: "{{ route('dashboard.categories.destroy', ':id') }}".replace(':id',
+                        category_id),
+                    method: 'post',
+                    data: {
+                        _token: '{{ csrf_token() }}',
+                        _method: 'delete',
+                        "category_id": category_id
+                    },
+                    success: function(res) {
+                        location.reload();
+                        console.log(res);
+                    },
+                    error: function(err) {
+                        console.log(err);
+                    },
+                })
+            })
+
+        })
+    </script>
 @endpush

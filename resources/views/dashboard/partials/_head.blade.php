@@ -66,7 +66,9 @@
 @php
     $page_dir = app()->getLocale() == 'ar' ? 'css-rtl' : 'css';
 @endphp
-
+<!-- Start file input -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+    crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" href="{{ asset('assets/dashboard/' . $page_dir . '/vendors.css') }}">
 <link rel="stylesheet" type="text/css"
     href="{{ asset('assets/dashboard') }}/vendors/css/weather-icons/climacons.min.css">
@@ -92,6 +94,18 @@
 <link rel="stylesheet" type="text/css" href="{{ asset('assets/dashboard') }}/css/plugins/animate/animate.css">
 <link rel="stylesheet" href="{{ asset('vendor/flasher/flasher.min.css') }}">
 <!-- END Page Level CSS-->
+
+
+
+
+<!-- default icons used in the plugin are from Bootstrap 5.x icon library (which can be enabled by loading CSS below) -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.min.css"
+    crossorigin="anonymous">
+<!-- the fileinput plugin styling CSS file -->
+<link href="https://cdn.jsdelivr.net/gh/kartik-v/bootstrap-fileinput@5.5.0/css/fileinput.min.css" media="all"
+    rel="stylesheet" type="text/css" />
+
+{{-- ___________________________ --}}
 <!-- BEGIN Custom CSS-->
 <link rel="stylesheet" type="text/css" href="{{ asset("assets/dashboard/$page_dir/custom/style.css") }}">
 <!-- END Custom CSS -->

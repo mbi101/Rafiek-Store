@@ -1,7 +1,8 @@
 @extends('dashboard.layouts.app')
 
+
 @section('title')
-    {{ __('dashboard.categories') }}
+    {{ __('dashboard.category_create') }}
 @endsection
 
 @push('style')
@@ -13,136 +14,187 @@
     @else
         <link rel="stylesheet" type="text/css" href="{{ asset('assets/dashboard/css-rtl/custom/style.css') }}">
     @endif
+
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/dashboard/vendors/css/forms/toggle/switchery.min.css') }}">
+
+    <style>
+        form .form-check-input {
+            width: 4em !important;
+            height: 25px !important;
+            background-color: #d32f2f;
+            border-color: #d32f2f;
+            margin-left: 0rem !important;
+            float: none !important;
+        }
+
+        .switchery {
+            background-color: #16224a;
+            border-color: #16224a;
+        }
+
+        .switchery:checked {
+            background-color: #009919;
+            border-color: #009919
+        }
+
+        .form .form-check-input:focus {
+            box-shadow: none;
+            border-color: transparent !important;
+            /* background-image: url('asset("assets/dashboard/images/backgrounds/check-bg.webp")') */
+        }
+
+        .switchery>small {
+            height: 25px;
+            width: 25px;
+        }
+    </style>
 @endpush
 
 @push('modal')
     <x-dashboard.delete-modal />
 @endpush
 
-@section('title')
-    {{ __('dashboard.categories') }}
-@endsection
 
 @section('content')
     <div class="app-content content">
         <div class="content-wrapper">
             <div class="content-header">
-                <x-dashboard.breadceumb :title="__('dashboard.dashboard')" :first_link_url="route('dashboard.home')" :active="__('dashboard.categories')" />
+                <x-dashboard.breadceumb :title="__('dashboard.dashboard')" :first_link_url="route('dashboard.home')" :second_link_title="__('dashboard.categories')" :second_link_url="route('dashboard.categories.index')"
+                    :active="__('dashboard.category_edit')" />
             </div>
             <div class="content-body">
                 <div class="card">
+                    <div class="card-header d-flex align-items-center justify-content-between">
+                        <h3 class="card-title" id="basic-layout-colored-form-control">{{ __('dashboard.category_edit') }}
+                        </h3>
+                    </div>
+
                     <div class="card-content">
                         <div class="card-body">
-                            <div class="table-responsive">
-                                <table class="table table-bordered custom-rounded-table">
-                                    <thead>
-                                        <tr>
-                                            <th width="15%">#</th>
-                                            <th width="15%">{{ __('dashboard.name') }}</th>
-                                            <th width="20%">{{ __('dashboard.status') }}</th>
-                                            <th width="15%">{{ __('dashboard.operations') }} </th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        {{-- <td colspan="4" class="py-1 font-weight-bold">
-                                            {{ __('dashboard.no_data_found') }}</td> --}}
-                                        <tr>
-                                            <td>1</td>
-                                            <td>category</td>
-                                            <td> <button class="btn btn-success"> active</button> </td>
-                                            <td>
-                                                @can('roles.update')
-                                                    <a href="#"
-                                                        class="btn btn-icon btn-success mr-1 btn-sm d-inline-block">
-                                                        <i class="la la-edit"></i>
-                                                    </a>
-                                                @else
-                                                    <a href="javascript:void(0);"
-                                                        class="btn btn-icon btn-success mr-1 btn-sm d-inline-block" disabled>
-                                                        <i class="la la-edit"></i>
-                                                    </a>
-                                                @endcan
-                                                @can('roles.delete')
-                                                    <button type="button"
-                                                        class="btn btn-icon btn-danger btn-sm d-inline-block btn-delete"
-                                                        data-toggle="modal" data-target="#confirmDeleteModal" data-url="#">
-                                                        <i class="la la-trash"></i>
-                                                    </button>
-                                                @else
-                                                    <button type="button"
-                                                        class="btn btn-icon btn-danger btn-sm d-inline-block btn-delete"
-                                                        disabled>
-                                                        <i class="la la-trash"></i>
-                                                    </button>
-                                                @endcan
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>category</td>
-                                            <td> <button class="btn btn-danger">archived</button> </td>
-                                            <td>
-                                                @can('roles.update')
-                                                    <a href="#"
-                                                        class="btn btn-icon btn-success mr-1 btn-sm d-inline-block">
-                                                        <i class="la la-edit"></i>
-                                                    </a>
-                                                @else
-                                                    <a href="javascript:void(0);"
-                                                        class="btn btn-icon btn-success mr-1 btn-sm d-inline-block" disabled>
-                                                        <i class="la la-edit"></i>
-                                                    </a>
-                                                @endcan
-                                                @can('roles.delete')
-                                                    <button type="button"
-                                                        class="btn btn-icon btn-danger btn-sm d-inline-block btn-delete"
-                                                        data-toggle="modal" data-target="#confirmDeleteModal" data-url="#">
-                                                        <i class="la la-trash"></i>
-                                                    </button>
-                                                @else
-                                                    <button type="button"
-                                                        class="btn btn-icon btn-danger btn-sm d-inline-block btn-delete"
-                                                        disabled>
-                                                        <i class="la la-trash"></i>
-                                                    </button>
-                                                @endcan
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>category</td>
-                                            <td> <button class="btn btn-primary"> active</button> </td>
-                                            <td>
-                                                @can('roles.update')
-                                                    <a href="#"
-                                                        class="btn btn-icon btn-success mr-1 btn-sm d-inline-block">
-                                                        <i class="la la-edit"></i>
-                                                    </a>
-                                                @else
-                                                    <a href="javascript:void(0);"
-                                                        class="btn btn-icon btn-success mr-1 btn-sm d-inline-block" disabled>
-                                                        <i class="la la-edit"></i>
-                                                    </a>
-                                                @endcan
-                                                @can('roles.delete')
-                                                    <button type="button"
-                                                        class="btn btn-icon btn-danger btn-sm d-inline-block btn-delete"
-                                                        data-toggle="modal" data-target="#confirmDeleteModal" data-url="#">
-                                                        <i class="la la-trash"></i>
-                                                    </button>
-                                                @else
-                                                    <button type="button"
-                                                        class="btn btn-icon btn-danger btn-sm d-inline-block btn-delete"
-                                                        disabled>
-                                                        <i class="la la-trash"></i>
-                                                    </button>
-                                                @endcan
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                            {{-- {{ $caegorys->links() }} --}}
+                            <form class="form" action="{{ route('dashboard.categories.update', $category) }}"
+                                method="POST" enctype="multipart/form-data">
+                                @method('PUT')
+                                @csrf
+                                <div class="form-body">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="nameAr"
+                                                    class="font-weight-bold">{{ __('dashboard.name_ar') }}</label>
+                                                <input type="text" id="nameAr"
+                                                    class="form-control @error('name.ar') is-invalid @enderror"
+                                                    placeholder="{{ __('dashboard.name_ar') }}" name="name[ar]"
+                                                    value="{{ old('name.ar', $category->name['ar']) }}">
+                                                @error('name.ar')
+                                                    <div class="text-danger">{{ $message }}</div>
+                                                @enderror
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="nameEn"
+                                                    class="font-weight-bold">{{ __('dashboard.name_en') }}</label>
+                                                <input type="text" id="nameEn"
+                                                    class="form-control @error('name.en') is-invalid @enderror"
+                                                    placeholder="{{ __('dashboard.name_en') }}" name="name[en]"
+                                                    value="{{ old('name.en', $category->name['en']) }}">
+                                                @error('name.en')
+                                                    <div class="text-danger">{{ $message }}</div>
+                                                @enderror
+                                            </div>
+                                        </div>
+
+                                        {{-- file input for category image --}}
+                                        <div
+                                            class="col-md-12 d-flex justify-content-between align-items-center flex-wrap-reverse">
+                                            <div class="form-group col-md-8">
+                                                <label for="image" class="w-100 font-weight-bold">
+                                                    {{ __('dashboard.category_image') }}
+                                                </label>
+                                                <input type="file" name="image" id="cat_image" accept="image.*">
+                                                @error('image')
+                                                    <div class="text-danger">{{ $message }}</div>
+                                                @enderror
+                                            </div>
+
+                                            @if ($category->image)
+                                                <div class="form-group col-md-3">
+                                                    <img src="{{ asset('storage/' . $category->image) }}" width="100%"
+                                                        loading="lazy" alt="category image">
+                                                </div>
+                                            @endif
+                                        </div>
+
+                                        {{-- choose parent category --}}
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="parent"
+                                                    class="font-weight-bold">{{ __('dashboard.select_Parent') }}
+                                                </label>
+
+                                                <select name="parent" id="parent"
+                                                    class="form-control @error('parent') is-invalid @enderror">
+                                                    <option value="" selected disabled>
+                                                        {{ __('dashboard.select_Parent') }}
+                                                    </option>
+
+                                                    @forelse ($categories as $category)
+                                                        <option value="{{ $category->id }}">
+                                                            @if ($siteLang == 'ar')
+                                                                {{ ucfirst($category->name['ar']) }}
+                                                            @else
+                                                                {{ ucfirst($category->name['en']) }}
+                                                            @endif
+                                                        </option>
+                                                    @empty
+                                                        <option value="" disabled>{{ __('dashboard.no_data_found') }}
+                                                        </option>
+                                                    @endforelse
+                                                </select>
+
+                                                @error('parent')
+                                                    <div class="text-danger">{{ $message }}</div>
+                                                @enderror
+                                            </div>
+                                        </div>
+
+                                        {{-- category status --}}
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="switchery"
+                                                    class="font-weight-bold">{{ __('dashboard.status_management') }}</label>
+                                                <div class="form-check form-switch d-flex justify-content-flex-start px-0 align-items-center gap-1 @if (app()->getLocale() == 'en') flex-row-reverse @endif"
+                                                    style="width: fit-content">
+                                                    <p class="font-weight-bold">{{ __('dashboard.active') }}</p>
+                                                    <p class="mx-1">
+                                                        <input class="form-check-input switchery" type="checkbox"
+                                                            class="switchery change_status checked" role="switch"
+                                                            name="status" id="switchery" @checked($category->status == 1)>
+                                                    </p>
+                                                    <p class="font-weight-bold">{{ __('dashboard.inactive') }}</p>
+                                                </div>
+
+                                                @error('status')
+                                                    <div class="text-danger">{{ $message }}</div>
+                                                @enderror
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {{-- controls --}}
+                                <div class="form-actions right">
+                                    <a href="{{ route('dashboard.categories.index') }}"
+                                        class="btn btn-primary ms-3 round px-2 mr-1">
+                                        <i class="la la-undo b-me-1"></i> {{ __('dashboard.back') }}</a>
+
+                                    <button type="submit" class="btn btn-success ms-3 round px-2">
+                                        <i class="la la-check-circle b-me-1"></i> {{ __('dashboard.save') }}
+                                    </button>
+                                </div>
+                            </form>
+
                         </div>
                     </div>
                 </div>
@@ -152,6 +204,10 @@
 @endsection
 
 @push('script')
-    <script src="{{ asset('assets/dashboard') }}/vendors/js/tables/datatable/datatables.min.js" type="text/javascript">
+    <script>
+        $("#cat_image").fileinput({
+            'showUpload': false,
+            'previewFileType': 'any'
+        });
     </script>
 @endpush

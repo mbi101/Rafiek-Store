@@ -96,6 +96,7 @@ return [
     'category_create' => 'إنشاء قسم ',
     'category_edit' => 'تعديل القسم',
     'create_category' => 'إنشاء قسم',
+    'category_image' => 'صورة  القسم',
     'logo' => 'الشعار',
     'products_count' => 'عدد المنتجات',
     'not_found' => 'لا يوجد',
