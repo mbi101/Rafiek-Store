@@ -4,8 +4,12 @@ namespace App\Http\Controllers\Dashboard;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\CategoryRequest;
+use App\Models\Category;
 use App\Services\Dashboard\CategoryService;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
+
+use function Laravel\Prompts\alert;
 
 class CategoryController extends Controller
 {
@@ -27,52 +31,58 @@ class CategoryController extends Controller
 
     public function create()
     {
-        // $categories = $this->categoryService->getParentCategories();          compact('categories')
-        return view('dashboard.pages.categories.create');
+        $categories = $this->categoryService->getParentCategoreis();
+        return view('dashboard.pages.categories.create', compact('categories'));
     }
 
-    public function store()
+    public function store(CategoryRequest $request)
     {
+        $data = $request->except('image');
+
+
+        if (!$this->categoryService->store($request, $data)) {
+            Session::flash('success', __('dashboard.error_msg'));
+            return redirect()->back();
+        }
+
+        Session::flash('success', __('dashboard.success_msg'));
+        return redirect()->back();
+
     }
-    // public function store(CategoryRequest $request)
-    // {
-    //     $data = $request->only(['name', 'parent', 'status']);
-    //     if (!$this->categoryService->store($data)) {
-    //         Session::flash('error', __('dashboard.error_msg'));
-    //         return redirect()->back();
-    //     }
-
-    //     Session::flash('success', __('dashboard.success_msg'));
-    //     return redirect()->back();
-    // }
 
 
-    public function edit(string $id)
+    public function edit(Category $category)
     {
-        // $category = $this->categoryService->findById($id);
-        // $categories = $this->categoryService->getCategoriesExceptChildren($id);
-        // return view('dashboard.categories.edit', compact('categories', 'category'));
+        $categories = $this->categoryService->getCategoreisExceptChildern($category->id);
+        return view('dashboard.pages.categories.edit', compact('category', 'categories'));
     }
 
 
-    // public function update(CategoryRequest $request, string $id)
-    // {
-    //     $data = $request->only(['name', 'parent', 'status', 'id']);
-    //     if (!$this->categoryService->update($data)) {
-    //         Session::flash('error', __('dashboard.error_msg'));
-    //         return redirect()->back();
-    //     }
-    //     Session::flash('success', __('dashboard.success_msg'));
-    //     return redirect()->back();
-    // }
+    public function update(CategoryRequest $request, $id)
+    {
+        if (!$this->categoryService->update($request, $id)) {
+            Session::flash('error', __('dashboard.error_msg'));
+            return redirect()->back();
+        }
 
-    // public function destroy(string $id)
-    // {
-    //     if (!$this->categoryService->delete($id)) {
-    //         Session::flash('error', __('dashboard.error_msg'));
-    //         return redirect()->back();
-    //     }
-    //     Session::flash('success', __('dashboard.success_msg'));
-    //     return redirect()->back();
-    // }
+        Session::flash('success', __('dashboard.success_msg'));
+        return redirect()->route('dashboard.categories.index');
+    }
+
+    public function destroy(string $id)
+    {
+        if (!$this->categoryService->delete($id)) {
+            Session::flash('error', __('dashboard.error_msg'));
+            return response()->json([
+                "status" => false,
+                'message' => __('dashboard.error_msg')
+            ]);
+        }
+
+        Session::flash('success', __('dashboard.success_msg'));
+        return response()->json([
+            "status" => true,
+            'message' => __('dashboard.success_msg')
+        ]);
+    }
 }

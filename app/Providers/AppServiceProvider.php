@@ -2,8 +2,11 @@
 
 namespace App\Providers;
 
+use App\Models\Category;
+use App\Observers\CacheInvalidationObserver;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\Gate;
+use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 
 
@@ -23,12 +26,18 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
         Paginator::useBootstrap();
-        
+
         foreach (config('permissions_list') as $entity => $permissionData) {
             Gate::define($entity, fn($user) => $user->hasAccess($entity));
             foreach ($permissionData['options'] as $action) {
                 Gate::define("{$entity}.{$action}", fn($user) => $user->hasAccess($entity, $action));
             }
         }
+
+        View::share('siteLang', app()->getLocale());
+
+
+        // observers
+        Category::observe(CacheInvalidationObserver::class);
     }
 }
