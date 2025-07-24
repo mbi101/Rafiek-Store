@@ -5,6 +5,7 @@ namespace App\Repositories;
 
 use App\Models\City;
 use App\Models\Country;
+use App\Services\Dashboard\SearchService;
 
 class WorldRepository
 {
@@ -14,12 +15,20 @@ class WorldRepository
     }
 
 
-    public function getAllCountries()
+    public function getAllCountries($searchService)
     {
-        return Country::query()->withCount(['cities', 'users'])
-            ->when(!empty(request()->keyword), function ($query) {
-                $query->where('name', 'like', '%' . request()->keyword . '%');
-            })->paginate(10);
+        $search = request()->keyword;
+        $filters = [
+            'created_at' => [
+                'from' => request()->date_from,
+                'to' => request()->date_to,
+            ],
+            'status' => request()->status
+        ];
+
+        $query = Country::query();
+        return $searchService->applySearch($query, $search, ['name', 'code'], $filters)
+            ->withCount(['cities', 'users'])->paginate(10);
     }
 
 

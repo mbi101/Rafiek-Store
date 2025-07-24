@@ -38,7 +38,7 @@ return [
     'create' => 'إضافة',
     'active' => 'مفعل',
     'inactive' => ' غير مفعل',
-    'show' => 'رؤيه',
+    'show' => 'عرض',
     'back' => 'رجوع',
     'yes' => 'نعم',
     'no' => 'لا',
@@ -215,4 +215,9 @@ return [
     'deleted_successfully' => 'تم حذف البيانات بنجاح',
     'success' => 'نجاح',
     'error' => 'خطأ',
+    'filter' => 'تصفية',
+    'select_status' => 'أختر الحالة',
+    'date' => 'التاريخ',
+    'date_from' => 'التاريخ من',
+    'date_to' => 'التاريخ إلي',
 ];
