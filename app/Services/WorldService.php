@@ -23,9 +23,9 @@ class WorldService
     }
 
 
-    public function getAllCountries()
+    public function getAllCountries($searchService)
     {
-        return $this->worldRepository->getAllCountries();
+        return $this->worldRepository->getAllCountries($searchService);
     }
 
     public function storeCountry($data)

@@ -413,6 +413,7 @@ form .form-actions {
 
 form .form-control {
     border-radius: 10px;
+    box-shadow: none !important;
 }
 
 form .form-actions .btn {

@@ -7,6 +7,7 @@ use App\Http\Requests\Dashboard\CountryRequest;
 use App\Http\Requests\Dashboard\World\CItyRequest;
 use App\Models\City;
 use App\Models\Country;
+use App\Services\Dashboard\SearchService;
 use App\Services\WorldService;
 use Illuminate\Routing\Controllers\HasMiddleware;
 use Illuminate\Routing\Controllers\Middleware;
@@ -27,9 +28,9 @@ class WorldController extends Controller implements HasMiddleware
         ];
     }
 
-    public function getAllCountries()
+    public function getAllCountries(SearchService $searchService)
     {
-        $countries = $this->worldService->getAllCountries();
+        $countries = $this->worldService->getAllCountries($searchService);
         return view('dashboard.pages.world.countries.index', compact('countries'));
     }
 
