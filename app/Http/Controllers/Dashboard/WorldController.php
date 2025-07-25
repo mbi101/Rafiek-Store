@@ -75,9 +75,9 @@ class WorldController extends Controller implements HasMiddleware
         ]);
     }
 
-    public function getCitiesByCountry(Country $country)
+    public function getCitiesByCountry(Country $country, SearchService $searchService)
     {
-        $cities = $this->worldService->getAllCities($country);
+        $cities = $this->worldService->getAllCities($country, $searchService);
         return view('dashboard.pages.world.cities.index', compact(['cities', 'country']));
     }
 
