@@ -6,6 +6,7 @@ namespace App\Repositories;
 use App\Models\City;
 use App\Models\Country;
 use App\Services\Dashboard\SearchService;
+use Illuminate\Database\Eloquent\Builder;
 
 class WorldRepository
 {
@@ -55,9 +56,20 @@ class WorldRepository
         ]);
     }
 
-    public function getAllCities($country)
+    public function getAllCities($country, $searchService)
     {
-        return $country->cities()->withCount('users')->paginate(10);
+
+        $search = request()->keyword;
+        $filters = [
+            'created_at' => [
+                'from' => request()->date_from,
+                'to' => request()->date_to,
+            ],
+            'status' => request()->status
+        ];
+        $query = $country->cities()->getModel()->newQuery()->withCount('users');
+
+        return $searchService->applySearch($query, $search, ['name'], $filters)->paginate(10)->appends(request()->query());
     }
 
     public function storeCity($country, $data)

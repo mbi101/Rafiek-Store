@@ -34,6 +34,35 @@
                            class="btn btn-outline-primary ms-3 round px-2">{{ __('dashboard.create_city') }}</a>
                     </div>
 
+                    <x-dashboard.search>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="form-group">
+                                    <label for="status" class="font-weight-bold">{{ __('dashboard.status') }}</label>
+                                    <select class="custom-select form-control" id="status" name="status">
+                                        <option selected="">{{ __('dashboard.select_status') }}</option>
+                                        <option value="1" @selected(old('status', request()->status) == 1)>{{ __('dashboard.active') }}</option>
+                                        <option value="0" @selected(old('status', request()->status) == 0)>{{ __('dashboard.inactive') }}</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label for="dateFrom" class="font-weight-bold">{{ __('dashboard.date_from') }}</label>
+                                    <input type="date" id="dateFrom" class="form-control"
+                                           placeholder="{{ __('dashboard.date_from') }}" name="date_from" value="{{ old('date_from', request()->date_from) }}">
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label for="dateTo" class="font-weight-bold">{{ __('dashboard.date_to') }}</label>
+                                    <input type="date" id="dateTo" class="form-control"
+                                           placeholder="{{ __('dashboard.date_to') }}" name="date_to" value="{{ old('date_to', request()->date_to) }}">
+                                </div>
+                            </div>
+                        </div>
+                    </x-dashboard.search>
+
                     <div class="card-content">
                         <div class="card-body">
                             <div class="table-responsive">

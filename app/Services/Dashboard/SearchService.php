@@ -18,6 +18,7 @@ class SearchService
      * @param array $filters
      * @return Builder
      */
+
     public function applySearch(Builder $query, ?string $keyword = null, array $columns = [], array $filters = []): Builder
     {
         if ($keyword && !empty($columns)) {

@@ -11,12 +11,12 @@
     <div class="row breadcrumbs-top d-inline-block">
         <div class="breadcrumb-wrapper col-12">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item mx-1">
+                <li class="breadcrumb-item">
                     <a href="{{ $first_link_url }}" class="text-primary">{{ __('dashboard.dashboard') }}</a>
                 </li>
 
                 @if ($second_link_title != '')
-                    <li class="breadcrumb-item mx-1">
+                    <li class="breadcrumb-item">
                         <a href="{{ $second_link_url }}" class="text-primary">
                             {{ $second_link_title }}</a>
                     </li>

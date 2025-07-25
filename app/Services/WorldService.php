@@ -38,9 +38,9 @@ class WorldService
         return $this->worldRepository->updateCountry($country, $data);
     }
 
-    public function getAllCities($country)
+    public function getAllCities($country, $searchService)
     {
-        return $this->worldRepository->getAllCities($country);
+        return $this->worldRepository->getAllCities($country, $searchService);
     }
 
     public function storeCity($country, $data)
