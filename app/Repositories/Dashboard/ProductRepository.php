@@ -1,11 +1,12 @@
 <?php
 
-namespace App\Repositories;
+namespace App\Repositories\Dashboard;
 
 
 use App\Models\Product;
 use App\Models\ProductImage;
 use App\Models\ProductVariation;
+use App\Repositories\VariantAttribute;
 
 class ProductRepository
 {

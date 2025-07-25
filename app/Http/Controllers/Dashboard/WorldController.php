@@ -8,7 +8,7 @@ use App\Http\Requests\Dashboard\World\CItyRequest;
 use App\Models\City;
 use App\Models\Country;
 use App\Services\Dashboard\SearchService;
-use App\Services\WorldService;
+use App\Services\Dashboard\WorldService;
 use Illuminate\Routing\Controllers\HasMiddleware;
 use Illuminate\Routing\Controllers\Middleware;
 

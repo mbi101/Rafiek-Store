@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Services;
+namespace App\Services\Dashboard;
 
-use App\Repositories\WorldRepository;
+use App\Repositories\Dashboard\WorldRepository;
 
 class WorldService
 {
