@@ -444,6 +444,23 @@ form .form-actions .btn {
     border: 2px solid #1e9ff2 !important;
 }
 
+.modal .modal-header {
+    border-bottom: 1px solid #dee2e6;
+}
+
+.modal .modal-footer {
+    border-top: 1px solid #dee2e6;
+}
+
+button:focus-visible {
+    outline: none;
+}
+
+.card-filter {
+    padding: 1.5rem 1.5rem;
+    border-top: 1px solid #dee2e6;
+}
+
 /* ********************************************** */
 /* ***************** Side bar ******************* */
 /* ********************************************** */

@@ -12,9 +12,7 @@
             height: 25px;
             width: 25px;
         }
-        .card-filter {
-            padding: 1.5rem 1.5rem;
-        }
+
     </style>
 @endpush
 @push('modal')

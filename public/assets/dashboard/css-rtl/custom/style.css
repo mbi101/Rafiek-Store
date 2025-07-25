@@ -464,6 +464,12 @@ form .form-check-input {
 button:focus-visible {
     outline: none;
 }
+
+.card-filter {
+    padding: 1.5rem 1.5rem;
+    border-top: 1px solid #dee2e6;
+}
+
 /* ********************************************** */
 /* ***************** Side bar ******************* */
 /* ********************************************** */
