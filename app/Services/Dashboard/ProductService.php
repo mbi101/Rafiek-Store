@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Services;
+namespace App\Services\Dashboard;
 
 
-use App\Repositories\ProductRepository;
+use App\Repositories\Dashboard\ProductRepository;
 use App\Utils\ImageManger;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;

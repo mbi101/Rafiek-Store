@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Dashboard;
 
 use App\Http\Controllers\Controller;
-use App\Services\ProductService;
+use App\Services\Dashboard\ProductService;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller

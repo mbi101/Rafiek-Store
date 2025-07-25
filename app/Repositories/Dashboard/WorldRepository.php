@@ -1,12 +1,10 @@
 <?php
 
-namespace App\Repositories;
+namespace App\Repositories\Dashboard;
 
 
 use App\Models\City;
 use App\Models\Country;
-use App\Services\Dashboard\SearchService;
-use Illuminate\Database\Eloquent\Builder;
 
 class WorldRepository
 {

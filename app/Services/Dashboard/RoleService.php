@@ -1,7 +1,7 @@
 <?php
 
-namespace App\Services;
-use App\Repositories\RoleRepository;
+namespace App\Services\Dashboard;
+use App\Repositories\Dashboard\RoleRepository;
 
 class RoleService
 {
