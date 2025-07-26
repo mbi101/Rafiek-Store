@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Dashboard;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\BrandRequest;
+use App\Http\Requests\Dashboard\BrandRequest;
 use App\Services\Dashboard\BrandService;
 use Illuminate\Support\Facades\Session;
 
