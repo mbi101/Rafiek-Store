@@ -13,6 +13,7 @@ use App\Settings\AuthSettings;
 use App\Settings\GeneralSettings;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Config;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
@@ -53,13 +54,15 @@ class ViewServiceProvider extends ServiceProvider
         $general_settings = null;
         $auth_settings = null;
 
-        if (Schema::hasTable('settings')) {
+        if (Schema::hasTable('settings') && DB::table('settings')->count() > 0) {
             $general_settings = app(GeneralSettings::class);
             $auth_settings = app(AuthSettings::class);
         }
 
-        Config::set('captcha.secret', $auth_settings->recaptcha_secret);
-        Config::set('captcha.sitekey', $auth_settings->recaptcha_key);
+        if ($auth_settings) {
+            Config::set('captcha.secret', $auth_settings->recaptcha_secret);
+            Config::set('captcha.sitekey', $auth_settings->recaptcha_key);
+        }
 
         View::share([
             'general_settings' => $general_settings,

@@ -8,8 +8,8 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class Product extends Model
 {
-    protected $table = 'products';
     public $timestamps = true;
+    protected $table = 'products';
     protected $fillable = array('category_id', 'brand_id', 'name', 'slug', 'short_description', 'description', 'sku', 'available_for', 'views', 'status', 'manage_stock', 'quantity', 'available_in_stock', 'price', 'discount', 'discount_type', 'discount_date', 'discount_start', 'discount_end');
 
     public function category(): BelongsTo
@@ -24,7 +24,7 @@ class Product extends Model
 
     public function variations()
     {
-        return $this->hasMany(ProductVariation::class, 'product_id');
+        return $this->hasMany(ProductVariant::class, 'product_id');
     }
 
     public function reviews()

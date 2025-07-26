@@ -5,8 +5,8 @@ namespace App\Repositories\Dashboard;
 
 use App\Models\Product;
 use App\Models\ProductImage;
-use App\Models\ProductVariation;
-use App\Repositories\VariantAttribute;
+use App\Models\ProductVariant;
+use App\Models\VariantAttribute;
 
 class ProductRepository
 {
@@ -32,7 +32,7 @@ class ProductRepository
 
     public function createProductVariant($data)
     {
-        return ProductVariation::create($data);
+        return ProductVariant::create($data);
     }
 
     public function createProductVariantAttribute($data)
@@ -63,7 +63,7 @@ class ProductRepository
 
     public function deleteProductVariants($productId)
     {
-        return ProductVariation::where('product_id', $productId)->delete();
+        return ProductVariant::where('product_id', $productId)->delete();
     }
 
 }
