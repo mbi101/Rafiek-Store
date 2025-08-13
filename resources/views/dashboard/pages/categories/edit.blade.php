@@ -141,7 +141,7 @@
 
                                                     @forelse ($categories as $category)
                                                         <option value="{{ $category->id }}">
-                                                            @if ($siteLang == 'ar')
+                                                            @if (app()->getLocale() == 'ar')
                                                                 {{ ucfirst($category->name['ar']) }}
                                                             @else
                                                                 {{ ucfirst($category->name['en']) }}

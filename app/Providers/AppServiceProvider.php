@@ -2,8 +2,10 @@
 
 namespace App\Providers;
 
+use App\Models\Brand;
 use App\Models\Category;
-use App\Observers\CacheInvalidationObserver;
+use App\Observers\BrandsObserver;
+use App\Observers\CategoriesObserver;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\View;
@@ -34,10 +36,8 @@ class AppServiceProvider extends ServiceProvider
             }
         }
 
-        View::share('siteLang', app()->getLocale());
-
-
         // observers
-        Category::observe(CacheInvalidationObserver::class);
+        Category::observe(CategoriesObserver::class);
+        Brand::observe(BrandsObserver::class);
     }
 }

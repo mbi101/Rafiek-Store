@@ -22,12 +22,22 @@
             @endcan
 
             @can('brands')
-                <li class=" nav-item">
+                <li class="nav-item {{ Route::is('dashboard.brands.*') ? 'open' : '' }}">
                     <a>
-                        <i class="la la-check-square"></i>
-                        <span class="menu-title" data-i18n="nav.dash.main">{{ __('dashboard.brands') }}</span>
+                        <i class="la la-check-square"></i> <span class="menu-title"
+                            data-i18n="nav.dash.main">{{ __('dashboard.brands') }}</span>
                         <span class="badge badge badge-info badge-pill float-right mr-2">{{ $brands_count ?? 0 }}</span>
                     </a>
+                    <ul class="menu-content">
+                        <li class="{{ Route::is('dashboard.brands.index') ? 'active' : '' }}">
+                            <a class="menu-item " href="{{ route('dashboard.brands.index') }}"
+                                data-i18n="nav.dash.crypto">{{ __('dashboard.brands') }}</a>
+                        </li>
+                        <li class="{{ Route::is('dashboard.brands.create') ? 'active' : '' }}">
+                            <a class="menu-item " href="{{ route('dashboard.brands.create') }}"
+                                data-i18n="nav.dash.crypto">{{ __('dashboard.brand_create') }}</a>
+                        </li>
+                    </ul>
                 </li>
             @endcan
 
@@ -132,12 +142,12 @@
             @can('settings')
                 <li class="nav-item has-sub {{ Route::is('dashboard.countries.*') ? 'open' : '' }}">
                     <a href="javascript:void(0)"><i class="la la-cog"></i>
-                        <span class="menu-title"
-                              data-i18n="nav.dash.main">{{ __('dashboard.settings') }}</span>
+                        <span class="menu-title" data-i18n="nav.dash.main">{{ __('dashboard.settings') }}</span>
                     </a>
                     <ul class="menu-content">
                         <li class="">
-                            <a class="menu-item" href="{{ route('dashboard.countries.index') }}" data-i18n="nav.dash.ecommerce">{{ __('dashboard.countries_cities') }}</a>
+                            <a class="menu-item" href="{{ route('dashboard.countries.index') }}"
+                                data-i18n="nav.dash.ecommerce">{{ __('dashboard.countries_cities') }}</a>
                         </li>
                     </ul>
                 </li>

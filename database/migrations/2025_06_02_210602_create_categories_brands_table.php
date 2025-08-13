@@ -1,11 +1,10 @@
 <?php
 
 use Illuminate\Database\Migrations\Migration;
-use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
-class CreateCategoriesTable extends Migration
-{
+return new class extends Migration {
 
     public function up(): void
     {
@@ -18,10 +17,20 @@ class CreateCategoriesTable extends Migration
             $table->string('image')->nullable();
             $table->timestamps();
         });
+
+        Schema::create('brands', function (Blueprint $table) {
+            $table->id();
+            $table->foreignId('category_id')->nullable()->constrained('categories')->nullOnUpdate()->nullOnDelete();
+            $table->string('name');
+            $table->string('image')->nullable();
+            $table->boolean('status')->default(1);
+            $table->timestamps();
+        });
     }
 
     public function down(): void
     {
         Schema::dropIfExists('categories');
+        Schema::dropIfExists('brands');
     }
-}
+};

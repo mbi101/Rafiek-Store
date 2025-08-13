@@ -14,7 +14,7 @@ class BrandRepository
 {
     public function getBrands()
     {
-        return Brand::withCount('products')->latest()->get();
+        return Brand::withCount('products')->latest()->paginate(8);
     }
     public function getBrand($id)
     {

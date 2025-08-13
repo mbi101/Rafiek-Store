@@ -36,7 +36,7 @@ class CategoryRepository
             if ($request->hasFile('image')) {
                 $file = $request->image;
                 $fileName = Str::uuid() . '_' . time() . '.' . $file->getClientOriginalExtension();
-                $imagePath = $file->storeAs('categories', $fileName, 'public');
+                $imagePath = $file->storeAs('categories', $fileName, ['disk' => 'public']);
                 $data['image'] = $imagePath;
             }
 

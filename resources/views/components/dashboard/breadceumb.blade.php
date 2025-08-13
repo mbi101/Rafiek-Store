@@ -16,9 +16,10 @@
                 </li>
 
                 @if ($second_link_title != '')
-                    <li class="breadcrumb-item">
+                    <li class="breadcrumb-item mx-2">
                         <a href="{{ $second_link_url }}" class="text-primary">
-                            {{ $second_link_title }}</a>
+                            {{ $second_link_title }}
+                        </a>
                     </li>
                 @endif
 

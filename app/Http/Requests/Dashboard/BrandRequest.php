@@ -5,6 +5,7 @@ namespace App\Http\Requests\Dashboard;
 use CodeZero\UniqueTranslation\UniqueTranslationRule;
 use Illuminate\Contracts\Validation\ValidationRule;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
 class BrandRequest extends FormRequest
 {
@@ -23,17 +24,13 @@ class BrandRequest extends FormRequest
      */
     public function rules(): array
     {
-        $rules =  [
-            'name.*'=>['required','string','max:100',UniqueTranslationRule::for('brands')->ignore($this->id)],
-            'status'=>['required','in:0,1'],
+        $brand_id = $this->route('brand');
+        $status = $this->isMethod('PUT') ? 'nullable' : 'required';
+        $rules = [
+            'name.*' => ['required', 'string', 'min:3', 'max:100', UniqueTranslationRule::for('brands', 'name')->ignore($brand_id)],
+            'image' => "$status|file|mimes:png,jpg,jpeg,webp,svg",
+            'status' => "nullable|in:on,off,0,1"
         ];
-
-        if($this->method() == 'PUT'){
-            $rules['logo'] = ['nullable','max:2048'];
-        }else{
-            $rules['logo'] = ['required','max:2048'];
-        }
-
 
         return $rules;
     }
