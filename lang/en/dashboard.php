@@ -87,10 +87,15 @@ return [
     'categories' => 'Categories',
     'category_create' => 'Create Category',
     'category_edit' => 'Edit Category',
-    // 'create_category' => 'Create Category',
+
+    // brands
     'brands' => 'Brands',
+    'brand' => 'Brand',
+    "brand_image" => "brand Image",
+    'brand_create' => 'Create brand',
+    'brand_edit' => 'Edit brand',
+
     'table_yajra_paragraph' => 'A dynamic table that displays data from the database with features like search, sorting, column visibility toggle, and options to export to Excel, print, or copy data.',
-    'brand_create' => 'Create Brand',
     'are_you_sure' => ' Are You Sure ?',
     'name_ar' => 'Name ( Arabic )',
     'name_en' => 'Name ( English )',
@@ -105,7 +110,6 @@ return [
     'admins' => 'Admins ',
     'orders' => 'Orders ',
     'roles_permissions' => 'Roles & Permissions',
-    'create_brand' => 'Create Brand',
 
     'coupons' => 'Coupons ',
     'create_coupon' => 'Create Coupon',
@@ -181,8 +185,6 @@ return [
     'small_description_en' => 'Small Description English',
     'description_en' => 'Description English',
     'description_ar' => 'Description Arabic',
-
-    'brand' => 'Brand',
     'product_sku' => 'Product SKU',
     'has_variants' => 'Has Variants',
     'price' => 'Price',
@@ -192,8 +194,8 @@ return [
     'discount' => 'Discount',
     'start_discount' => 'Start Discount',
     'end_discount' => 'End Discount',
-    'product_images' => 'Product Images',
     'select_brand' => 'Select Brand',
+    'product_images' => 'Product Images',
     'select_category' => 'Select Category',
     'available_for' => 'Available For',
     'product_tags' => 'Product Tags',

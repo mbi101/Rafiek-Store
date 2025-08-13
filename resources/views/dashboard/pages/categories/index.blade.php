@@ -5,7 +5,7 @@
 @endsection
 
 @push('style')
-    @if ($siteLang)
+    @if (app()->getLocale())
         <link rel="stylesheet" type="text/css" href="{{ asset('assets/dashboard/css/custom/style.css') }}">
     @else
         <link rel="stylesheet" type="text/css" href="{{ asset('assets/dashboard/css-rtl/custom/style.css') }}">
@@ -62,7 +62,7 @@
                                         @forelse ($categories as $category)
                                             <tr>
                                                 <td>{{ $loop->iteration }}</td>
-                                                <td>{{ $siteLang == 'ar' ? $category->name['ar'] : $category->name['en'] }}
+                                                <td>{{ app()->getLocale() == 'ar' ? $category->name['ar'] : $category->name['en'] }}
                                                 </td>
                                                 <td>
                                                     <button

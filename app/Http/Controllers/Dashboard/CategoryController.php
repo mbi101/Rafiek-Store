@@ -3,13 +3,11 @@
 namespace App\Http\Controllers\Dashboard;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\CategoryRequest;
+use App\Http\Requests\Dashboard\CategoryRequest;
 use App\Models\Category;
 use App\Services\Dashboard\CategoryService;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 
-use function Laravel\Prompts\alert;
 
 class CategoryController extends Controller
 {
@@ -38,7 +36,6 @@ class CategoryController extends Controller
     public function store(CategoryRequest $request)
     {
         $data = $request->except('image');
-
 
         if (!$this->categoryService->store($request, $data)) {
             Session::flash('success', __('dashboard.error_msg'));

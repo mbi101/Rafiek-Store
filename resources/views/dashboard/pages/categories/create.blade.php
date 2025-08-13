@@ -133,7 +133,7 @@
 
                                                     @forelse ($categories as $category)
                                                         <option value="{{ $category->id }}">
-                                                            {{ ucfirst($siteLang == 'ar' ? $category->name['ar'] : $category->name['en']) }}
+                                                            {{ ucfirst(app()->getLocale() == 'ar' ? $category->name['ar'] : $category->name['en']) }}
                                                         </option>
                                                     @empty
                                                         <option value="" disabled>{{ __('dashboard.no_data_found') }}
