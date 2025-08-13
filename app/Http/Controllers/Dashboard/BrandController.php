@@ -35,7 +35,6 @@ class BrandController extends Controller
     public function store(BrandRequest $request)
     {
         $data = $request->except('image');
-
         if (!$this->brandService->createBrand($request, $data)) {
             Session::flash('error', trans('dashboard.error_msg'));
             return redirect()->back();
@@ -57,8 +56,7 @@ class BrandController extends Controller
     {
 
         $data = $request->except('image');
-        $brand = $this->brandService->updateBrand($request, $id, $data);
-        if (!$brand) {
+        if (!$this->brandService->updateBrand($request, $id, $data)) {
             Session::flash('error', trans('dashboard.error_msg'));
             return redirect()->back();
         }
