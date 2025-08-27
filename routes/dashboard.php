@@ -35,7 +35,7 @@ Route::group(
                 Route::resource('roles', RoleController::class);
             });
             ################################ End Roles ################################
-
+    
             ################################ Admins Routes ############################
             Route::group(['middleware' => 'can:admins'], function () {
                 Route::resource('admins', AdminController::class);
@@ -43,7 +43,7 @@ Route::group(
                     ->name('admins.status');
             });
             ################################ End Admins ################################
-
+    
             ############################ Shipping & Countries ##########################
             Route::group(['middleware' => 'can:global_shipping'], function () {
                 Route::controller(WorldController::class)->group(function () {
@@ -75,7 +75,7 @@ Route::group(
                 });
             });
             ############################### End Shipping ###############################
-
+    
 
             ############################### Category Routes ###############################
             Route::group(['middleware' => 'can:categories'], function () {
@@ -84,7 +84,7 @@ Route::group(
                     ->name('categories.all');
             });
             ############################### End categories ###############################
-
+    
             ############################### Brands Routes ###############################
             Route::group(['middleware' => 'can:brands'], function () {
                 Route::resource('brands', BrandController::class)->except('show');
@@ -92,7 +92,7 @@ Route::group(
                     ->name('brands.all');
             });
             ############################### End Brands ###################################
-
+    
             ############################### Coupons Routes ###############################
             Route::group(['middleware' => 'can:coupons'], function () {
                 Route::resource('coupons', CouponController::class)->except('show');
@@ -100,7 +100,7 @@ Route::group(
                     ->name('coupons.all');
             });
             ############################### End Coupouns ###############################
-
+    
             ############################### Faqs Routes ################################
             Route::group(['middleware' => 'can:faqs'], function () {
                 Route::resource('faqs', FaqController::class);
@@ -108,14 +108,14 @@ Route::group(
                     ->name('faqs.all');
             });
             ############################### End Faqs ######################################
-
+    
             ############################### Settings Routes ###############################
             Route::group(['middleware' => 'can:settings', 'as' => 'settings.'], function () {
                 Route::get('settings', [SettingController::class, 'index'])->name('index');
                 Route::put('settings/{id}', [SettingController::class, 'update'])->name('update');
             });
             ############################### End Settings ##################################
-
+    
             ############################### Attributes Routes #############################
             Route::group(['middleware' => 'can:attributes'], function () {
                 Route::resource('attributes', AttributeController::class);
@@ -123,7 +123,7 @@ Route::group(
                     ->name('attributes.all');
             });
             ############################### End attributes ################################
-
+    
             ############################### Products Routes ###############################
             Route::group(['middleware' => 'can:products'], function () {
                 Route::resource('products', ProductController::class);
@@ -139,22 +139,22 @@ Route::group(
             ############################### End products ################################
             ############################### Products Routes #############################
             Route::group(['middleware' => 'can:users'], function () {
-                Route::resource('users', UserController::class);
-                Route::post('users/status', [UserController::class, 'changeStatus'])
+                Route::resource('users', UserController::class)->except('show');
+                Route::post('users/status/{user}', [UserController::class, 'changeStatus'])
                     ->name('users.status');
-                Route::get('users-all', [UserController::class, 'getAll'])
-                    ->name('users.all');
+                // Route::get('users-all', [UserController::class, 'getAll'])
+                //     ->name('users.all');
             });
             ############################### End products ################################
-
+    
             ############################### Contact Routes ##############################
             Route::group(['middleware' => 'can:contacts'], function () {
                 Route::get('contacts', [ContactController::class, 'index'])->name('contacts.index');
                 Route::get('contacts-get/{id}', [ContactController::class, 'getContactById'])->name('contacts.get');
             });
             ############################### End Contacts ################################
-
-//            Livewire::setUpdateRoute(function ($handle) {
+    
+            //            Livewire::setUpdateRoute(function ($handle) {
 //                return Route::post('/livewire/update', $handle);
 //            });
         });

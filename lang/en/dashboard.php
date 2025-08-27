@@ -53,6 +53,13 @@ return [
     'close' => 'Close',
     'phone' => 'Phone',
     'address' => 'Address',
+    // filter
+    "clear" => 'Clear',
+    'sort_by' => 'Sort by',
+    'order_by' => 'Order',
+    'descending' => 'Descending',
+    'ascending' => 'Ascending',
+    'limit_by' => 'Items per page',
     'created_by' => 'Created By',
     'updated_by' => 'Updated By',
     'deleted_by' => 'Deleted By',
@@ -67,7 +74,6 @@ return [
     'edit_city' => 'Edit City',
     'edit_country' => 'Edit Country',
     'flag' => 'Flag',
-    'num_of_users' => 'Number Of Users',
     'shipping_price' => 'Shipping Price',
     'num_of_cities' => 'Number Of Cities',
     'country' => 'Country',
@@ -94,6 +100,14 @@ return [
     "brand_image" => "brand Image",
     'brand_create' => 'Create brand',
     'brand_edit' => 'Edit brand',
+
+    //users
+    'users' => 'Users',
+    'user' => 'User',
+    'user_image' => 'User Image',
+    'user_create' => 'Create User',
+    'user_edit' => 'Edit User',
+    'num_of_users' => 'Number Of Users',
 
     'table_yajra_paragraph' => 'A dynamic table that displays data from the database with features like search, sorting, column visibility toggle, and options to export to Excel, print, or copy data.',
     'are_you_sure' => ' Are You Sure ?',
@@ -218,7 +232,6 @@ return [
     'no_variants' => 'No Variants',
     'products_show' => 'Products Show',
 
-    'users' => 'Users',
     'num_of_orders' => 'Num Of Orders',
     'email_verified_at' => 'Email Verified At',
     'contacts' => 'Email Application',

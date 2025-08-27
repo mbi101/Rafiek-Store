@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Spatie\Translatable\HasTranslations;
@@ -15,6 +16,14 @@ class City extends Model
     public array $translatable = ['name'];
     protected $fillable = array('country_id', 'name', 'shipping', 'status');
 
+
+    //___________ scopes ____________________
+    public function scopeActive(Builder $builder)
+    {
+        return $builder->where('status', 1);
+    }
+
+    //___________ relation _________________
     public function country(): BelongsTo
     {
         return $this->belongsTo(Country::class, 'country_id');

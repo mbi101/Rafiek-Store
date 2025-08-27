@@ -72,8 +72,8 @@
 <link rel="stylesheet" type="text/css" href="{{ asset('assets/dashboard/' . $page_dir . '/vendors.css') }}">
 <link rel="stylesheet" type="text/css"
     href="{{ asset('assets/dashboard') }}/vendors/css/weather-icons/climacons.min.css">
-
 <!-- END VENDOR CSS-->
+
 <!-- BEGIN MODERN CSS-->
 <link rel="stylesheet" type="text/css" href="{{ asset('assets/dashboard') }}/{{ $page_dir }}/app.css">
 @if (app()->getLocale() == 'ar')
@@ -97,7 +97,6 @@
 
 
 
-
 <!-- default icons used in the plugin are from Bootstrap 5.x icon library (which can be enabled by loading CSS below) -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.min.css"
     crossorigin="anonymous">
@@ -105,7 +104,30 @@
 <link href="https://cdn.jsdelivr.net/gh/kartik-v/bootstrap-fileinput@5.5.0/css/fileinput.min.css" media="all"
     rel="stylesheet" type="text/css" />
 
+<!-- the select-2 plugin styling CSS file -->
+<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+
 {{-- ___________________________ --}}
 <!-- BEGIN Custom CSS-->
 <link rel="stylesheet" type="text/css" href="{{ asset("assets/dashboard/$page_dir/custom/style.css") }}">
 <!-- END Custom CSS -->
+
+{{-- coustom style at the root --}}
+<style>
+    .file-input .file-preview {
+        padding: 10px;
+    }
+
+    .file-preview .fileinput-remove {
+        top: 4px;
+        right: 3px;
+    }
+
+    .file-input .file-preview .file-drop-zone {
+        min-height: 150px;
+    }
+
+    .file-input .file-preview .file-drop-zone-title {
+        padding: 55px 10px;
+    }
+</style>
