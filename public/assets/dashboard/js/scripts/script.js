@@ -1,8 +1,10 @@
 $(function () {
-    $('.btn-delete').on('click', function () {
-        let $itemUrl = $(this).data('url');
-        $('#deleteForm').attr('action', $itemUrl);
+    $(".btn-delete").on("click", function () {
+        let $itemUrl = $(this).data("url");
+        $("#deleteForm").attr("action", $itemUrl);
     });
 
-    $('[data-toggle="tooltip"]').tooltip()
-})
+    $('[data-toggle="tooltip"]').tooltip();
+
+    $(".basic-single-select").select2();
+});

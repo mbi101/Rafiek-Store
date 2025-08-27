@@ -3,7 +3,9 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
+use App\Models\Scopes\ActiveScope;
 use Database\Factories\UserFactory;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
@@ -20,7 +22,18 @@ class User extends Authenticatable
      *
      * @var list<string>
      */
-    protected $fillable = array('name', 'email', 'phone', 'password', 'image', 'city_id', 'status', 'active');
+    protected $fillable = array(
+        'name',
+        'email',
+        'phone',
+        'password',
+        'image',
+        'country_id',
+        'governorate_id',
+        'city_id',
+        'status',
+        'active'
+    );
 
     /**
      * The attributes that should be hidden for serialization.
@@ -44,6 +57,20 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+    public function getStatusLabelAttribute()
+    {
+        return $this->status == 1 ? 'active' : 'inactive';
+
+    }
+    public function scopeActive(Builder $query): Builder
+    {
+        return $query->where('status', 1);
+    }
+    public function scopeInactive(Builder $query): Builder
+    {
+        return $query->where('status', 0);
+    }
+
 
     public function city(): BelongsTo
     {

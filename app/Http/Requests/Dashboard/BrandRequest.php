@@ -25,10 +25,10 @@ class BrandRequest extends FormRequest
     public function rules(): array
     {
         $brand_id = $this->route('brand');
-        $status = $this->isMethod('PUT') ? 'nullable' : 'required';
+        $required = $this->isMethod('PUT') ? 'nullable' : 'required';
         $rules = [
             'name.*' => ['required', 'string', 'min:3', 'max:100', UniqueTranslationRule::for('brands', 'name')->ignore($brand_id)],
-            'image' => "$status|file|mimes:png,jpg,jpeg,webp,svg",
+            'image' => "$required|file|mimes:png,jpg,jpeg,webp,svg",
             'status' => "nullable|in:on,off,0,1"
         ];
 

@@ -5,7 +5,6 @@
 <head>
     <title>{{ $general_settings->{'site_name_' . app()->getLocale()} ?? '' }} | @yield('title', __('dashboard.dashboard'))</title>
     @include('dashboard.partials._head')
-
     @stack('style')
 
 </head>
@@ -15,12 +14,12 @@
     <!-- fixed-top-->
     @include('dashboard.partials._header')
     @include('dashboard.partials._sidebar')
-    <!-- ////////////////////////////////////////////////////////////////////////////-->
 
+    <!-- ////////////////////////////////////////////////////////////////////////////-->
     @yield('content')
     @stack('modal')
-
     <!-- ////////////////////////////////////////////////////////////////////////////-->
+
     @include('dashboard.partials._footer')
     @include('dashboard.partials._scripts')
     @stack('script')

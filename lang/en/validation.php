@@ -197,6 +197,20 @@ return [
     |
     */
 
-    'attributes' => [],
+    'attributes' => [
+        'name' => 'name',
+        "phone" => "phone",
+        "city_id" => "city",
+        "status" => "status",
+        'email' => 'email',
+        'password' => 'password',
+        'code' => 'code',
+        'name.ar' => 'arabic name',
+        'name.en' => 'english name',
+        'permissions' => 'permissions',
+        'image' => 'image',
+        "logo" => 'logo'
+    ],
+
 
 ];
